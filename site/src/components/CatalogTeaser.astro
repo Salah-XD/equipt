@@ -1,0 +1,15 @@
+---
+interface Props { total: number; }
+const { total } = Astro.props;
+---
+<section class="teaser"><div class="wrap">
+  <h2 class="serif">All {total}, searchable.</h2>
+  <p class="sub">Filter by plugin, kind, and surface. Every skill and agent has its own page.</p>
+  <a class="b1" href="/catalog">Browse the catalog →</a>
+</div></section>
+<style>
+  .teaser { padding: 70px 0; border-top: 1px solid var(--hair); text-align: center; }
+  .serif { font-family: var(--font-serif); font-size: 40px; }
+  .sub { color: var(--muted); margin: 12px 0 22px; }
+  .b1 { background: var(--ink); color: var(--paper); font-weight: 600; font-size: 14px; padding: 14px 22px; border-radius: 10px; display: inline-block; }
+</style>

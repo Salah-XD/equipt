@@ -1,0 +1,44 @@
+---
+import { loadAssets } from '../lib/catalog';
+import { readFile, access } from 'node:fs/promises';
+import { join } from 'node:path';
+
+const assets = await loadAssets();
+
+// Resolve plugins.config.json by walking up from cwd until found (robust under Vite SSR build).
+async function findConfig(): Promise<string> {
+  let dir = process.cwd();
+  for (let i = 0; i < 6; i++) {
+    const candidate = join(dir, 'plugins.config.json');
+    try { await access(candidate); return candidate; } catch {}
+    dir = join(dir, '..');
+  }
+  throw new Error('plugins.config.json not found walking up from ' + process.cwd());
+}
+const cfg = JSON.parse(await readFile(await findConfig(), 'utf8'));
+const plugins = Object.entries(cfg.plugins).map(([name, c]: [string, any]) => ({
+  name, description: c.description,
+  count: assets.filter((a) => a.plugin === name).length,
+}));
+---
+<section id="plugins" class="plugins"><div class="wrap">
+  <p class="kicker">Five plugins</p>
+  <div class="grid">
+    {plugins.map((p) => (
+      <a class="card" href={`/catalog?plugin=${p.name}`}>
+        <div class="head"><h3>{p.name}</h3><span class="mono">{p.count}</span></div>
+        <p>{p.description}</p>
+      </a>
+    ))}
+  </div>
+</div></section>
+<style>
+  .plugins { padding: 70px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 20px; }
+  .card { border: 1px solid var(--hair); border-radius: 14px; padding: 22px; background: var(--paper); transition: transform .15s, border-color .15s; }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .head h3 { font-family: var(--font-display); font-size: 20px; }
+  .head .mono { color: var(--accent); font-size: 13px; }
+  .card p { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+</style>

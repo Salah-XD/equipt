@@ -1,0 +1,10 @@
+---
+interface Props { total: number; }
+const { total } = Astro.props;
+const items = [`${total} skills & agents`, '5 plugins', 'MIT + CC-BY-4.0', 'Claude Code · claude.ai · desktop'];
+---
+<section class="proof"><div class="wrap row">{items.map((i) => <span class="mono">{i}</span>)}</div></section>
+<style>
+  .proof { border-bottom: 1px solid var(--hair); background: var(--paper); }
+  .row { display: flex; gap: 28px; flex-wrap: wrap; padding: 16px 22px; font-size: 13px; color: var(--muted); }
+</style>

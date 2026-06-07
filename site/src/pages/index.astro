@@ -1,10 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import ProofBar from '../components/ProofBar.astro';
+import PluginGrid from '../components/PluginGrid.astro';
+import InstallTabs from '../components/InstallTabs.astro';
+import CatalogTeaser from '../components/CatalogTeaser.astro';
+import Footer from '../components/Footer.astro';
 import { loadAssets } from '../lib/catalog';
 const assets = await loadAssets();
 const chips = ['code-reviewer', 'seo-strategist', 'instagram-carousel', 'pricing-strategist', 'api-designer', 'cold-outreach-writer'];
 ---
 <Base title="Equipt — skills & agents for every AI assistant">
   <Hero chips={chips} total={assets.length} />
+  <ProofBar total={assets.length} />
+  <PluginGrid />
+  <InstallTabs />
+  <CatalogTeaser total={assets.length} />
+  <Footer />
 </Base>
