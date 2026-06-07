@@ -9,19 +9,25 @@ export async function getStaticPaths() {
   return assets.map((asset) => ({ params: { plugin: asset.plugin, name: asset.name }, props: { asset } }));
 }
 const { asset } = Astro.props;
-const bodyHtml = await marked.parse(asset.body);
+// Skill/agent bodies usually open with their own `# Title`. Lift it out so the
+// page has a single <h1> (the title) and the body's sub-headings stay in order.
+const titleMatch = asset.body.match(/^\s*#\s+(.+?)\s*\r?\n/);
+const displayTitle = titleMatch ? titleMatch[1].trim() : asset.name;
+const body = titleMatch ? asset.body.slice(titleMatch[0].length) : asset.body;
+const bodyHtml = await marked.parse(body);
 const surfaces = asset.kind === 'skill'
   ? 'Claude Code · claude.ai · Claude desktop'
   : 'Claude Code';
 ---
-<Base title={`${asset.name} — Equipt`} description={asset.description}>
+<Base title={`${displayTitle} — Equipt`} description={asset.description}>
   <main class="wrap" style="padding:40px 22px 70px;max-width:820px">
     <a href="/catalog" class="kicker">← Catalog</a>
     <div class="meta">
       <span class="k mono">{asset.kind}</span>
       <a class="pl mono" href={`/catalog?plugin=${asset.plugin}`}>{asset.plugin}</a>
     </div>
-    <h1>{asset.name}</h1>
+    <h1>{displayTitle}</h1>
+    <p class="slug mono">{asset.name}</p>
     <p class="desc">{asset.description}</p>
     <p class="kicker">Works in {surfaces}</p>
     <article class="prose" set:html={bodyHtml} />
@@ -33,7 +39,8 @@ const surfaces = asset.kind === 'skill'
   .meta { display: flex; gap: 10px; margin-top: 18px; }
   .k { color: var(--accent-text); text-transform: uppercase; font-size: 12px; }
   .pl { color: var(--muted); font-size: 12px; }
-  h1 { font-family: var(--font-display); font-size: 40px; margin: 8px 0; letter-spacing: -.02em; }
+  h1 { font-family: var(--font-display); font-size: 40px; margin: 8px 0 2px; letter-spacing: -.02em; }
+  .slug { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
   .desc { color: var(--muted); font-size: 17px; line-height: 1.5; margin-bottom: 18px; }
   .prose { margin-top: 26px; line-height: 1.7; }
   .prose :global(h1), .prose :global(h2), .prose :global(h3) { font-family: var(--font-display); margin: 22px 0 10px; }
