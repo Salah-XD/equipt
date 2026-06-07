@@ -1,10 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
+import Hero from '../components/Hero.astro';
+import { loadAssets } from '../lib/catalog';
+const assets = await loadAssets();
+const chips = ['code-reviewer', 'seo-strategist', 'instagram-carousel', 'pricing-strategist', 'api-designer', 'cold-outreach-writer'];
 ---
-<Base title="Equipt">
-  <main class="wrap" style="padding-top:40px">
-    <p class="kicker">Equipt</p>
-    <ThemeToggle />
-  </main>
+<Base title="Equipt — skills & agents for every AI assistant">
+  <Hero chips={chips} total={assets.length} />
 </Base>

@@ -1,0 +1,63 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+interface Props { chips: string[]; total: number; }
+const { chips, total } = Astro.props;
+const surfaces = [
+  { label: 'Claude Code', live: true }, { label: 'claude.ai', live: true }, { label: 'Claude desktop', live: true },
+  { label: 'Cursor — soon', live: false }, { label: 'Codex — soon', live: false }, { label: 'Antigravity — soon', live: false },
+];
+---
+<header class="hero">
+  <div class="wrap">
+    <nav class="topline">
+      <a class="wordmark" href="/">equip<b>t</b></a>
+      <div class="nav">
+        <a href="/catalog">Catalog</a><a href="/#plugins">Plugins</a><a href="/#install">Install</a>
+        <a href="https://github.com/Salah-XD/equipt">★ GitHub</a>
+        <ThemeToggle />
+      </div>
+    </nav>
+    <p class="kicker">{total} skills &amp; agents · one library · every AI assistant</p>
+    <h1 class="big">Equip<br />your <span class="pop">AI.</span></h1>
+    <p class="serif">Skills &amp; agents, <i>beautifully</i> organized.</p>
+    <div class="lower">
+      <p class="sub">One curated library — install into Claude Code, claude.ai, Cursor, Codex &amp; more. Searchable, free, open-source.</p>
+      <div class="cta">
+        <a class="b1" href="/#install">Add to Claude Code</a>
+        <a class="b2" href="https://github.com/Salah-XD/equipt">★ Star on GitHub</a>
+      </div>
+    </div>
+    <div class="chips">
+      {chips.map((c) => <span class="chip"><b>#</b> {c}</span>)}
+      <span class="chip">+{total - chips.length} more</span>
+    </div>
+    <div class="surf">
+      <span class="kicker" style="margin-right:6px">Works in</span>
+      {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}>{s.label}</span>)}
+    </div>
+  </div>
+</header>
+<style>
+  .hero { background: var(--paper); border-bottom: 1px solid var(--hair);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 54px 54px; padding: 22px 0 56px; }
+  .topline { display: flex; justify-content: space-between; align-items: center; }
+  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+  .wordmark b { color: var(--accent); }
+  .nav { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--muted); }
+  .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(56px, 11vw, 116px); line-height: .86; letter-spacing: -.04em; margin-top: 40px; }
+  .big .pop { color: var(--accent); }
+  .serif { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); line-height: 1.05; margin-top: 14px; }
+  .serif i { color: var(--accent); }
+  .lower { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
+  .sub { max-width: 440px; font-size: 16px; line-height: 1.55; color: var(--muted); }
+  .cta { display: flex; gap: 10px; }
+  .b1 { background: var(--ink); color: var(--paper); font-weight: 600; font-size: 13px; padding: 14px 20px; border-radius: 10px; }
+  .b2 { border: 1px solid var(--ink); font-weight: 600; font-size: 13px; padding: 14px 20px; border-radius: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 34px; }
+  .chip { font-family: var(--font-mono); font-size: 12px; color: var(--muted); background: var(--paper); border: 1px solid var(--hair); padding: 8px 11px; border-radius: 8px; }
+  .chip b { color: var(--accent); }
+  .surf { display: flex; gap: 8px; margin-top: 30px; flex-wrap: wrap; align-items: center; }
+  .pill { font-size: 12px; font-weight: 500; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--hair); color: var(--muted); }
+  .pill.soon { border-style: dashed; opacity: .7; }
+</style>
