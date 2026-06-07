@@ -1,4 +1,4 @@
-import { readdir, readFile } from 'node:fs/promises';
+import { readdir, readFile, access } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
@@ -13,9 +13,40 @@ export interface Asset {
   slug: string;
 }
 
-/** Repo root = three levels up from this file (site/src/lib -> site/src -> site -> repo). */
+/** Walk up from `start` until a directory containing `plugins/` is found. */
+async function findRepoRoot(start: string): Promise<string> {
+  let dir = start;
+  for (let i = 0; i < 10; i++) {
+    try {
+      await access(join(dir, 'plugins'));
+      return dir;
+    } catch {
+      const parent = dirname(dir);
+      if (parent === dir) break; // filesystem root
+      dir = parent;
+    }
+  }
+  return start; // fallback
+}
+
+/** Repo root = directory containing `plugins/`. Walks up from this file's location. */
 export function repoRoot(): string {
+  // Synchronous best-effort: 3 levels up from source (site/src/lib -> repo).
+  // At Astro SSG build time import.meta.url may resolve to the project root,
+  // so we also check cwd-relative paths below via the async variant.
   return join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+}
+
+/** Async-safe repo root that walks upward to find the plugins/ directory. */
+async function resolveRepoRoot(): Promise<string> {
+  const fromMeta = repoRoot();
+  try {
+    await access(join(fromMeta, 'plugins'));
+    return fromMeta;
+  } catch {
+    // import.meta.url was not the source file path (Vite SSR build) — walk up from cwd
+    return findRepoRoot(process.cwd());
+  }
 }
 
 async function safeReaddir(dir: string) {
@@ -48,7 +79,8 @@ async function read(file: string, kind: 'skill' | 'agent', plugin: string): Prom
   };
 }
 
-export async function loadAssets(root: string = repoRoot()): Promise<Asset[]> {
+export async function loadAssets(root?: string): Promise<Asset[]> {
+  if (root === undefined) root = await resolveRepoRoot();
   const pluginsDir = join(root, 'plugins');
   const assets: Asset[] = [];
   for (const plugin of await safeReaddir(pluginsDir)) {
