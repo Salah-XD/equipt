@@ -1,0 +1,30 @@
+{
+  "marketplace": { "name": "equipt", "owner": "equipt" },
+  "plugins": {
+    "equipt-engineering": {
+      "description": "Subagents for developers: code review, debugging, testing, refactoring, security audits, API & schema design.",
+      "skills": ["AI & Technology"],
+      "agents": ["engineering"]
+    },
+    "equipt-content": {
+      "description": "Writing skills and agents: blog posts, copywriting, email, scripts, courses.",
+      "skills": ["Content & Copywriting", "Courses & Education"],
+      "agents": ["content"]
+    },
+    "equipt-marketing": {
+      "description": "Marketing skills and agents: ads, SEO, social, email, sales funnels, growth, branding.",
+      "skills": ["Ads & Paid Media", "SEO & Search", "Social Media", "Email Marketing & Automation", "Sales & Funnels", "Launch & Growth", "Branding & Design"],
+      "agents": ["marketing"]
+    },
+    "equipt-business": {
+      "description": "Operator skills and agents: finance, operations, HR, legal, client work, e-commerce, events.",
+      "skills": ["Finance & Pricing", "Operations & Systems", "HR & Team", "Legal & Compliance", "Client & Consulting", "E-commerce & Products", "Events & Speaking", "Industry-Specific", "Nonprofit & Community"],
+      "agents": ["business", "productivity", "legal", "personal", "india"]
+    },
+    "equipt-data": {
+      "description": "Data & analytics skills and agents: SQL, dashboards, analytics narrative.",
+      "skills": ["Analytics & Data"],
+      "agents": ["data"]
+    }
+  }
+}

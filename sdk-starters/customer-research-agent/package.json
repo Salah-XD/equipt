@@ -1,0 +1,23 @@
+{
+  "name": "customer-research-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Given a URL or company name, produce a structured research brief using Claude + web search.",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

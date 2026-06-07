@@ -1,0 +1,5 @@
+{
+  "name": "equipt-engineering",
+  "description": "Subagents for developers: code review, debugging, testing, refactoring, security audits, API & schema design.",
+  "version": "0.1.0"
+}

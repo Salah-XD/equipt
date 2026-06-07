@@ -1,0 +1,5 @@
+# Normalize all text files to LF in the repo on every platform.
+# Keeps generated files (marketplace.json, plugin.json, directory.md, README)
+# byte-identical to what scripts/build.mjs writes, so `build:check` is stable
+# on Windows checkouts too.
+* text=auto eol=lf

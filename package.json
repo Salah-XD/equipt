@@ -1,0 +1,17 @@
+{
+  "name": "equipt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Equip Claude with 600+ ready-to-use skills & agents.",
+  "scripts": {
+    "lint": "node scripts/lint.mjs",
+    "build": "node scripts/build.mjs",
+    "build:check": "node scripts/build.mjs --check",
+    "new-skill": "node scripts/new-skill.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

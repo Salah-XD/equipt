@@ -1,0 +1,29 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build:check
+      - name: Build per-plugin skill zips
+        run: |
+          mkdir -p dist
+          for d in plugins/*/skills; do
+            plugin=$(basename "$(dirname "$d")")
+            (cd "plugins/$plugin" && zip -r "../../dist/${plugin}-skills.zip" skills)
+          done
+          ls -la dist
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip

@@ -1,0 +1,33 @@
+{
+  "name": "equipt",
+  "owner": {
+    "name": "equipt"
+  },
+  "plugins": [
+    {
+      "name": "equipt-business",
+      "source": "./plugins/equipt-business",
+      "description": "Operator skills and agents: finance, operations, HR, legal, client work, e-commerce, events."
+    },
+    {
+      "name": "equipt-content",
+      "source": "./plugins/equipt-content",
+      "description": "Writing skills and agents: blog posts, copywriting, email, scripts, courses."
+    },
+    {
+      "name": "equipt-data",
+      "source": "./plugins/equipt-data",
+      "description": "Data & analytics skills and agents: SQL, dashboards, analytics narrative."
+    },
+    {
+      "name": "equipt-engineering",
+      "source": "./plugins/equipt-engineering",
+      "description": "Subagents for developers: code review, debugging, testing, refactoring, security audits, API & schema design."
+    },
+    {
+      "name": "equipt-marketing",
+      "source": "./plugins/equipt-marketing",
+      "description": "Marketing skills and agents: ads, SEO, social, email, sales funnels, growth, branding."
+    }
+  ]
+}
