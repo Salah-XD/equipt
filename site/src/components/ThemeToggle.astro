@@ -1,0 +1,20 @@
+---
+---
+<button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
+  <span class="dot"></span>
+</button>
+<style>
+  .theme-toggle { width: 46px; height: 24px; border-radius: 999px; background: var(--hair); border: 1px solid var(--hair); position: relative; cursor: pointer; }
+  .dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); top: 2px; left: 2px; transition: left .18s ease; }
+  :root[data-theme='dark'] .dot { left: 24px; }
+</style>
+<script>
+  import { resolveTheme, nextTheme, type Theme } from '../lib/theme';
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle')!;
+  function apply(t: Theme) { root.setAttribute('data-theme', t); localStorage.setItem('equipt-theme', t); }
+  btn.addEventListener('click', () => {
+    const current = (root.getAttribute('data-theme') as Theme) ?? resolveTheme(localStorage.getItem('equipt-theme'), matchMedia('(prefers-color-scheme: dark)').matches);
+    apply(nextTheme(current));
+  });
+</script>

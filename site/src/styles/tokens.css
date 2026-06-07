@@ -1,0 +1,12 @@
+:root {
+  --paper: #f5f2ea; --page: #e7e3d8; --ink: #171310; --accent: #cf4a1e;
+  --muted: #7c746a; --hair: #ddd6c7; --grid: #ece7da;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+:root[data-theme='dark'] {
+  --paper: #15110b; --page: #0d0a06; --ink: #f0e9d8; --accent: #f4622e;
+  --muted: #9a8f7d; --hair: #2a2114; --grid: #1e1810;
+}
