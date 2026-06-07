@@ -8,12 +8,13 @@ const surfaces = [
 ];
 ---
 <header class="hero">
+  <div class="grid-layer" data-hero-grid aria-hidden="true"></div>
   <div class="wrap">
-    <nav class="topline">
+    <nav class="topline" aria-label="Primary">
       <a class="wordmark" href="/">equip<b>t</b></a>
       <div class="nav">
-        <a href="/catalog">Catalog</a><a href="/#plugins">Plugins</a><a href="/#install">Install</a>
-        <a href="https://github.com/Salah-XD/equipt">★ GitHub</a>
+        <a class="link-underline" href="/catalog">Catalog</a><a class="link-underline" href="/#plugins">Plugins</a><a class="link-underline" href="/#install">Install</a>
+        <a class="link-underline" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>GitHub</a>
         <ThemeToggle />
       </div>
     </nav>
@@ -24,40 +25,79 @@ const surfaces = [
       <p class="sub">One curated library — install into Claude Code, claude.ai, Cursor, Codex &amp; more. Searchable, free, open-source.</p>
       <div class="cta">
         <a class="b1" href="/#install">Add to Claude Code</a>
-        <a class="b2" href="https://github.com/Salah-XD/equipt">★ Star on GitHub</a>
+        <a class="b2" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>Star on GitHub</a>
       </div>
     </div>
     <div class="chips">
-      {chips.map((c) => <span class="chip"><b>#</b> {c}</span>)}
+      {chips.map((c) => <span class="chip"><b aria-hidden="true">#</b> {c}</span>)}
       <span class="chip">+{total - chips.length} more</span>
     </div>
     <div class="surf">
-      <span class="kicker" style="margin-right:6px">Works in</span>
+      <span class="kicker surf-label">Works in</span>
       {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}>{s.label}</span>)}
     </div>
   </div>
 </header>
 <style>
-  .hero { background: var(--paper); border-bottom: 1px solid var(--hair);
+  .hero { position: relative; isolation: isolate; overflow: hidden;
+    background: var(--paper); border-bottom: 1px solid var(--hair);
+    padding: 22px 0 60px; }
+  /* Signature moment: the brutalist grid is its own layer so it can parallax on scroll */
+  .grid-layer { position: absolute; inset: -10% 0 -20% 0; z-index: -1; pointer-events: none;
     background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 54px 54px; padding: 22px 0 56px; }
+    background-size: 54px 54px;
+    will-change: transform; }
+  /* a faint warm vignette so the headline anchors the grid */
+  .grid-layer::after { content: ''; position: absolute; inset: 0;
+    background: radial-gradient(120% 90% at 12% 8%, transparent 40%, var(--paper) 100%); }
+
   .topline { display: flex; justify-content: space-between; align-items: center; }
-  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
   .wordmark b { color: var(--accent); }
-  .nav { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--muted); }
-  .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(56px, 11vw, 116px); line-height: .86; letter-spacing: -.04em; margin-top: 40px; }
+  .nav { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
+  .nav a { color: var(--ink); }
+
+  .kicker { margin-top: 0; }
+  .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(56px, 11vw, 116px);
+    line-height: .85; letter-spacing: -.045em; margin-top: 38px; }
   .big .pop { color: var(--accent); }
-  .serif { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); line-height: 1.05; margin-top: 14px; }
+  .serif { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); line-height: 1.04;
+    letter-spacing: -.01em; margin-top: 16px; }
   .serif i { color: var(--accent); }
-  .lower { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
-  .sub { max-width: 440px; font-size: 16px; line-height: 1.55; color: var(--muted); }
+
+  .lower { display: flex; justify-content: space-between; align-items: flex-end; gap: 34px; flex-wrap: wrap; margin-top: 34px; }
+  .sub { max-width: 446px; font-size: 16px; line-height: 1.6; color: var(--muted); }
   .cta { display: flex; gap: 10px; }
-  .b1 { background: var(--ink); color: var(--paper); font-weight: 600; font-size: 13px; padding: 14px 20px; border-radius: 10px; }
-  .b2 { border: 1px solid var(--ink); font-weight: 600; font-size: 13px; padding: 14px 20px; border-radius: 10px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 34px; }
-  .chip { font-family: var(--font-mono); font-size: 12px; color: var(--muted); background: var(--paper); border: 1px solid var(--hair); padding: 8px 11px; border-radius: 8px; }
-  .chip b { color: var(--accent); }
-  .surf { display: flex; gap: 8px; margin-top: 30px; flex-wrap: wrap; align-items: center; }
+  .b1, .b2 { font-weight: 600; font-size: 13px; letter-spacing: .005em; padding: 14px 20px; border-radius: 10px;
+    transition: transform .18s cubic-bezier(.22,1,.36,1), background-color .18s ease, color .18s ease, box-shadow .18s ease; }
+  .b1 { background: var(--ink); color: var(--paper); box-shadow: 0 1px 0 var(--hair); }
+  .b1:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px var(--accent-soft); background: var(--accent); }
+  .b2 { border: 1px solid var(--ink); }
+  .b2:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-text); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+  .chip { font-family: var(--font-mono); font-size: 12px; color: var(--muted); background: var(--paper);
+    border: 1px solid var(--hair); padding: 8px 11px; border-radius: 8px;
+    transition: border-color .18s ease, color .18s ease, transform .18s ease; }
+  .chip:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .chip b { color: var(--accent-text); }
+
+  .surf { display: flex; gap: 8px; margin-top: 32px; flex-wrap: wrap; align-items: center; }
+  .surf-label { margin-right: 6px; }
   .pill { font-size: 12px; font-weight: 500; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--hair); color: var(--muted); }
-  .pill.soon { border-style: dashed; opacity: .7; }
+  .pill.soon { border-style: dashed; opacity: .72; }
 </style>
+<script>
+  // Signature: lightweight parallax seam on the hero grid. rAF-throttled, reduced-motion safe.
+  const grid = document.querySelector<HTMLElement>('[data-hero-grid]');
+  if (grid && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    const update = () => {
+      grid.style.transform = `translate3d(0, ${window.scrollY * 0.12}px, 0)`;
+      ticking = false;
+    };
+    addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+  }
+</script>

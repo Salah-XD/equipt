@@ -1,18 +1,30 @@
 ---
 ---
-<button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
-  <span class="dot"></span>
+<button id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" class="theme-toggle">
+  <span class="dot" aria-hidden="true"></span>
 </button>
 <style>
-  .theme-toggle { width: 46px; height: 24px; border-radius: 999px; background: var(--hair); border: 1px solid var(--hair); position: relative; cursor: pointer; }
-  .dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); top: 2px; left: 2px; transition: left .18s ease; }
+  .theme-toggle { width: 46px; height: 24px; border-radius: 999px; background: var(--hair);
+    border: 1px solid var(--hair); position: relative; cursor: pointer; flex: none;
+    transition: border-color .18s ease, background-color .18s ease; }
+  .theme-toggle:hover { border-color: var(--accent); }
+  .dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: var(--accent);
+    top: 2px; left: 2px; transition: left .22s cubic-bezier(.22,1,.36,1); }
   :root[data-theme='dark'] .dot { left: 24px; }
+  @media (prefers-reduced-motion: reduce) {
+    .dot, .theme-toggle { transition: none; }
+  }
 </style>
 <script>
   import { resolveTheme, nextTheme, type Theme } from '../lib/theme';
   const root = document.documentElement;
   const btn = document.getElementById('theme-toggle')!;
-  function apply(t: Theme) { root.setAttribute('data-theme', t); localStorage.setItem('equipt-theme', t); }
+  function syncPressed() {
+    btn.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
+  }
+  function apply(t: Theme) { root.setAttribute('data-theme', t); localStorage.setItem('equipt-theme', t); syncPressed(); }
+  // reflect the theme chosen by the inline boot script
+  syncPressed();
   btn.addEventListener('click', () => {
     const current = (root.getAttribute('data-theme') as Theme) ?? resolveTheme(localStorage.getItem('equipt-theme'), matchMedia('(prefers-color-scheme: dark)').matches);
     apply(nextTheme(current));

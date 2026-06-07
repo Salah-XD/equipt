@@ -22,7 +22,7 @@ const plugins = Object.entries(cfg.plugins).map(([name, c]: [string, any]) => ({
 }));
 ---
 <section id="plugins" class="plugins"><div class="wrap">
-  <p class="kicker">Five plugins</p>
+  <h2 class="kicker">Five plugins</h2>
   <div class="grid">
     {plugins.map((p) => (
       <a class="card" href={`/catalog?plugin=${p.name}`}>
@@ -33,12 +33,14 @@ const plugins = Object.entries(cfg.plugins).map(([name, c]: [string, any]) => ({
   </div>
 </div></section>
 <style>
-  .plugins { padding: 70px 0; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 20px; }
-  .card { border: 1px solid var(--hair); border-radius: 14px; padding: 22px; background: var(--paper); transition: transform .15s, border-color .15s; }
-  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
-  .head { display: flex; justify-content: space-between; align-items: baseline; }
-  .head h3 { font-family: var(--font-display); font-size: 20px; }
-  .head .mono { color: var(--accent); font-size: 13px; }
-  .card p { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+  .plugins { padding: 96px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 26px; }
+  .card { position: relative; border: 1px solid var(--hair); border-radius: 14px; padding: 22px; background: var(--paper);
+    transition: transform .2s cubic-bezier(.22,1,.36,1), border-color .2s ease, box-shadow .2s ease; }
+  .card:hover, .card:focus-visible { transform: translateY(-3px); border-color: var(--accent);
+    box-shadow: 0 14px 30px -20px var(--accent-soft); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .head h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -.02em; }
+  .head .mono { color: var(--accent-text); font-size: 13px; }
+  .card p { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.55; }
 </style>

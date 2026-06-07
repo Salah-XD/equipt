@@ -8,8 +8,11 @@ const { total } = Astro.props;
   <a class="b1" href="/catalog">Browse the catalog →</a>
 </div></section>
 <style>
-  .teaser { padding: 70px 0; border-top: 1px solid var(--hair); text-align: center; }
-  .serif { font-family: var(--font-serif); font-size: 40px; }
-  .sub { color: var(--muted); margin: 12px 0 22px; }
-  .b1 { background: var(--ink); color: var(--paper); font-weight: 600; font-size: 14px; padding: 14px 22px; border-radius: 10px; display: inline-block; }
+  .teaser { padding: 96px 0; border-top: 1px solid var(--hair); text-align: center; }
+  .serif { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 40px); letter-spacing: -.01em; }
+  .sub { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 14px 0 24px; }
+  .b1 { background: var(--ink); color: var(--paper); font-weight: 600; font-size: 14px; padding: 14px 22px;
+    border-radius: 10px; display: inline-block;
+    transition: transform .18s cubic-bezier(.22,1,.36,1), background-color .18s ease, box-shadow .18s ease; }
+  .b1:hover { transform: translateY(-2px); background: var(--accent); box-shadow: 0 10px 24px -12px var(--accent-soft); }
 </style>

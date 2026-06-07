@@ -1,6 +1,11 @@
 :root {
   --paper: #f5f2ea; --page: #e7e3d8; --ink: #171310; --accent: #cf4a1e;
-  --muted: #7c746a; --hair: #ddd6c7; --grid: #ece7da;
+  /* --muted darkened from #7c746a (was 4.11:1 on paper — failed AA) to pass AA for small body text */
+  --muted: #655d53; --hair: #ddd6c7; --grid: #ece7da;
+  /* AA-safe burnt-orange for SMALL text/links on paper (5.24:1); plain --accent stays for display/borders/icons */
+  --accent-text: #b53a15;
+  /* translucent accent for the signature underline + focus rings */
+  --accent-soft: rgba(207, 74, 30, .14);
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -9,4 +14,7 @@
 :root[data-theme='dark'] {
   --paper: #15110b; --page: #0d0a06; --ink: #f0e9d8; --accent: #f4622e;
   --muted: #9a8f7d; --hair: #2a2114; --grid: #1e1810;
+  /* accent already clears AA on dark surfaces (5.9:1), so small accent text can use it directly */
+  --accent-text: #f4622e;
+  --accent-soft: rgba(244, 98, 46, .16);
 }

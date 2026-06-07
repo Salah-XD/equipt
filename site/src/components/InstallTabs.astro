@@ -3,38 +3,44 @@
 <section id="install" class="install"><div class="wrap">
   <p class="kicker">Install</p>
   <h2 class="serif">Bring Equipt into your assistant.</h2>
-  <div class="tabs" role="tablist">
-    <button class="tab active" data-tab="cc" role="tab">Claude Code</button>
-    <button class="tab" data-tab="web" role="tab">claude.ai / desktop</button>
-    <button class="tab" data-tab="soon" role="tab">Cursor / Codex / Antigravity</button>
+  <div class="tabs" role="tablist" aria-label="Install instructions">
+    <button class="tab active" data-tab="cc" role="tab" aria-selected="true" id="tab-cc" aria-controls="panel-cc">Claude Code</button>
+    <button class="tab" data-tab="web" role="tab" aria-selected="false" id="tab-web" aria-controls="panel-web">claude.ai / desktop</button>
+    <button class="tab" data-tab="soon" role="tab" aria-selected="false" id="tab-soon" aria-controls="panel-soon">Cursor / Codex / Antigravity</button>
   </div>
-  <pre class="panel" data-panel="cc">/plugin marketplace add Salah-XD/equipt
+  <pre class="panel" data-panel="cc" id="panel-cc" role="tabpanel" aria-labelledby="tab-cc">/plugin marketplace add Salah-XD/equipt
 /plugin install equipt-engineering</pre>
-  <div class="panel" data-panel="web" hidden>
-    <ol><li>Download a per-category zip from the latest <a href="https://github.com/Salah-XD/equipt/releases">Release</a>.</li>
+  <div class="panel" data-panel="web" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
+    <ol><li>Download a per-category zip from the latest <a class="link-underline" href="https://github.com/Salah-XD/equipt/releases">Release</a>.</li>
     <li>In claude.ai or Claude desktop, open Settings → Skills → upload the skill folder.</li></ol>
   </div>
-  <div class="panel" data-panel="soon" hidden>
+  <div class="panel" data-panel="soon" id="panel-soon" role="tabpanel" aria-labelledby="tab-soon" hidden>
     <p class="soon">Cursor, Codex, and Antigravity adapters are coming. The content is universal — the installers are in progress.</p>
   </div>
 </div></section>
 <style>
-  .install { padding: 70px 0; border-top: 1px solid var(--hair); }
-  .serif { font-family: var(--font-serif); font-size: 34px; margin: 8px 0 22px; }
+  .install { padding: 96px 0; border-top: 1px solid var(--hair); }
+  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 34px); letter-spacing: -.01em; margin: 8px 0 24px; }
   .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
-  .tab { font-family: var(--font-mono); font-size: 13px; padding: 9px 14px; border: 1px solid var(--hair); border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
+  .tab { font-family: var(--font-mono); font-size: 13px; padding: 9px 14px; border: 1px solid var(--hair);
+    border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer;
+    transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
+  .tab:hover { color: var(--ink); border-color: var(--accent); }
   .tab.active { color: var(--paper); background: var(--ink); border-color: var(--ink); }
-  .panel { margin-top: 16px; background: var(--paper); border: 1px solid var(--hair); border-radius: 12px; padding: 20px; font-family: var(--font-mono); font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
+  .tab.active:hover { color: var(--paper); }
+  .panel { margin-top: 18px; background: var(--paper); border: 1px solid var(--hair); border-radius: 12px; padding: 20px;
+    font-family: var(--font-mono); font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
   .panel ol { padding-left: 18px; font-family: var(--font-body); }
-  .panel a { color: var(--accent); }
+  .panel a { color: var(--accent-text); }
   .soon { color: var(--muted); font-family: var(--font-body); }
 </style>
 <script>
   const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');
   const panels = document.querySelectorAll<HTMLElement>('.panel');
   tabs.forEach((t) => t.addEventListener('click', () => {
-    tabs.forEach((x) => x.classList.remove('active'));
+    tabs.forEach((x) => { x.classList.remove('active'); x.setAttribute('aria-selected', 'false'); });
     t.classList.add('active');
+    t.setAttribute('aria-selected', 'true');
     panels.forEach((p) => (p.hidden = p.dataset.panel !== t.dataset.tab));
   }));
 </script>

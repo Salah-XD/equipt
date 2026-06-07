@@ -9,9 +9,43 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--page); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--page); color: var(--ink); font-family: var(--font-body);
+  font-size: 16px; line-height: 1.6; letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
 a { color: inherit; text-decoration: none; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
 .mono { font-family: var(--font-mono); }
-.kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Refined editorial label — slightly tighter, optical alignment */
+.kicker {
+  font-family: var(--font-mono); font-size: 12px; line-height: 1.4;
+  letter-spacing: .2em; color: var(--muted); text-transform: uppercase;
+}
+
+/* ---- Signature: accent underline that draws on hover/focus ---- */
+.link-underline {
+  position: relative; display: inline-block;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size .28s cubic-bezier(.22, 1, .36, 1), color .2s ease;
+}
+.link-underline:hover, .link-underline:focus-visible { background-size: 100% 2px; }
+
+/* ---- On-brand, globally consistent keyboard focus ring ---- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* underline links shouldn't also draw a boxy ring — keep the ring tight */
+.link-underline:focus-visible { outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .link-underline { transition: none; }
+  * { scroll-behavior: auto !important; }
+}
