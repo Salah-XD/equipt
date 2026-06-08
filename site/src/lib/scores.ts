@@ -80,6 +80,18 @@ export const AXIS_BLURB: Record<string, string> = {
   upkeep: 'Alive & current',
 };
 
+/** "How we measure it" copy, surfaced as tooltips on each axis. */
+export const AXIS_TIP: Record<string, string> = {
+  craft: 'Static analysis of the SKILL/agent file — frontmatter completeness, description quality, body substance, structure, and examples.',
+  fit: 'Whether it triggers at the right time and not the wrong time — measured by an LLM eval. Lands in v1.1.',
+  guard: 'A static safety scan: secret-exfiltration / destructive hard-fails, network / shell / eval risk, and tool scope (least privilege). Guard also gates the overall score.',
+  proof: 'Evidence it works — examples and usage sections in the body, plus adoption signals (low weight).',
+  upkeep: 'Alive & current — recency of the last change (git) and compatibility with the current skill spec.',
+};
+
+export const READINESS_TIP =
+  'Readiness is a weighted blend of the axes (Craft .30, Guard .30, Proof .20, Upkeep .20), capped by the Guard safety gate. Fit joins the blend in v1.1.';
+
 /** Human label for a tier slug. */
 export function tierLabel(tier: string): string {
   if (tier === 'field-ready') return 'Field-Ready';

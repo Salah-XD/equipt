@@ -1,6 +1,6 @@
 ---
 import type { Scorecard } from '../lib/scores';
-import { AXIS_LABELS, AXIS_BLURB, tierLabel } from '../lib/scores';
+import { AXIS_LABELS, AXIS_BLURB, AXIS_TIP, READINESS_TIP, tierLabel } from '../lib/scores';
 
 interface Props { card: Scorecard }
 const { card } = Astro.props;
@@ -16,7 +16,7 @@ const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
     <span class="num">{card.readiness}</span>
     <div class="rmeta">
       <span class="den">/ 100</span>
-      <span class="rlabel">Readiness{card.partial ? ' · partial' : ''}</span>
+      <span class="rlabel has-tip" tabindex="0">Readiness{card.partial ? ' · partial' : ''}<span class="tip tip-right" role="tooltip">{READINESS_TIP}</span></span>
     </div>
   </div>
 
@@ -27,7 +27,7 @@ const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
       return (
         <li class="axis">
           <div class="ax-top">
-            <span class="ax-name">{AXIS_LABELS[k]}</span>
+            <span class="ax-name has-tip" tabindex="0">{AXIS_LABELS[k]}<span class="tip" role="tooltip">{AXIS_TIP[k]}</span></span>
             <span class={`ax-score${scored ? '' : ' pending'}`}>{scored ? a!.score : '—'}</span>
           </div>
           <div class="bar"><span style={`width:${scored ? a!.score : 0}%`} class={scored ? '' : 'is-pending'}></span></div>
@@ -67,6 +67,19 @@ const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
   .bar span { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
   .bar span.is-pending { background: repeating-linear-gradient(45deg, var(--hair), var(--hair) 4px, transparent 4px, transparent 8px); }
   .ax-blurb { grid-column: 1 / -1; font-size: 11.5px; color: var(--muted); }
+
+  /* "How we measure it" tooltips on the axes + Readiness label. */
+  .has-tip { position: relative; cursor: help; }
+  .ax-name.has-tip, .rlabel.has-tip { border-bottom: 1px dotted var(--hair); }
+  .tip { position: absolute; left: 0; top: calc(100% + 7px); z-index: 30; width: 250px; max-width: 78vw;
+    background: var(--ink); color: var(--paper); font-family: var(--font-body); font-weight: 400;
+    font-size: 12px; line-height: 1.5; text-transform: none; letter-spacing: 0;
+    padding: 10px 12px; border-radius: 9px; box-shadow: 0 12px 32px -16px rgba(0, 0, 0, .6);
+    opacity: 0; visibility: hidden; transform: translateY(-3px);
+    transition: opacity .14s ease, transform .14s ease; pointer-events: none; }
+  .tip-right { left: auto; right: 0; }
+  .has-tip:hover .tip, .has-tip:focus .tip, .has-tip:focus-visible .tip { opacity: 1; visibility: visible; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
 
   .unsafe { margin-top: 14px; font-size: 12.5px; color: var(--accent-text); }
 </style>
