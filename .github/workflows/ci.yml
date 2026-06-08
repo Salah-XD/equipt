@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 jobs:
-  check:
+  marketplace:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,3 +15,27 @@ jobs:
       - run: npm test
       - run: npm run lint
       - run: npm run build:check
+  cli:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+        working-directory: cli
+      - run: npm test
+        working-directory: cli
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+        working-directory: site
+      - run: npm test
+        working-directory: site
+      - run: npm run build
+        working-directory: site

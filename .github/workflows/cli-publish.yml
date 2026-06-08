@@ -1,0 +1,25 @@
+name: Publish CLI
+# Publishes @equipt/cli to npm when a `cli-v*` tag is pushed (e.g. cli-v0.1.0).
+# Requires an NPM_TOKEN repo secret (an npm automation token for the @equipt org).
+on:
+  push:
+    tags: ['cli-v*']
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+        working-directory: cli
+      - run: npm test
+        working-directory: cli
+      - run: npm publish --access public
+        working-directory: cli
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
