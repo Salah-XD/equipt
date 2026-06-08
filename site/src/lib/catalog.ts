@@ -38,7 +38,7 @@ export function repoRoot(): string {
 }
 
 /** Async-safe repo root that walks upward to find the plugins/ directory. */
-async function resolveRepoRoot(): Promise<string> {
+export async function resolveRepoRoot(): Promise<string> {
   const fromMeta = repoRoot();
   try {
     await access(join(fromMeta, 'plugins'));

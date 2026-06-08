@@ -1,54 +1,181 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import Footer from '../../../components/Footer.astro';
+import Scorecard from '../../../components/Scorecard.astro';
 import { loadAssets } from '../../../lib/catalog';
+import { loadScoreIndex, loadScorecard, tierLabel } from '../../../lib/scores';
 import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const assets = await loadAssets();
-  return assets.map((asset) => ({ params: { plugin: asset.plugin, name: asset.name }, props: { asset } }));
+  const scores = await loadScoreIndex();
+  return assets.map((asset) => {
+    const related = assets
+      .filter((a) => a.plugin === asset.plugin && a.slug !== asset.slug)
+      .slice(0, 4)
+      .map((a) => ({
+        slug: a.slug,
+        name: a.name,
+        kind: a.kind,
+        description: a.description,
+        readiness: scores.get(a.slug)?.readiness ?? null,
+      }));
+    return { params: { plugin: asset.plugin, name: asset.name }, props: { asset, related } };
+  });
 }
-const { asset } = Astro.props;
+
+const { asset, related } = Astro.props;
+const card = await loadScorecard(asset.plugin, asset.name);
+
 // Skill/agent bodies usually open with their own `# Title`. Lift it out so the
 // page has a single <h1> (the title) and the body's sub-headings stay in order.
 const titleMatch = asset.body.match(/^\s*#\s+(.+?)\s*\r?\n/);
 const displayTitle = titleMatch ? titleMatch[1].trim() : asset.name;
 const body = titleMatch ? asset.body.slice(titleMatch[0].length) : asset.body;
 const bodyHtml = await marked.parse(body);
+
 const surfaces = asset.kind === 'skill'
   ? 'Claude Code · claude.ai · Claude desktop'
   : 'Claude Code';
+const sourceUrl = `https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${asset.kind === 'skill' ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`;
+const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
 ---
 <Base title={`${displayTitle} — Equipt`} description={asset.description}>
-  <main class="wrap" style="padding:40px 22px 70px;max-width:820px">
-    <a href="/catalog" class="kicker">← Catalog</a>
-    <div class="meta">
-      <span class="k mono">{asset.kind}</span>
-      <a class="pl mono" href={`/catalog?plugin=${asset.plugin}`}>{asset.plugin}</a>
+  <main class="detail wrap">
+    <a href="/catalog" class="kicker back">← Catalog</a>
+
+    <div class="layout">
+      <article class="main">
+        <div class="meta">
+          <span class={`k k-${asset.kind}`}>{asset.kind}</span>
+          <a class="pl mono" href={`/catalog/${asset.plugin}`}>{asset.plugin}</a>
+        </div>
+        <h1>{displayTitle}</h1>
+        <p class="slug mono">{asset.name}</p>
+        <p class="desc">{asset.description}</p>
+
+        <div class="install">
+          <span class="kicker">Install</span>
+          <div class="cmd">
+            <pre data-copy><code>{installCmd}</code></pre>
+            <button class="copy" type="button" aria-label="Copy install command">Copy</button>
+          </div>
+        </div>
+
+        <article class="prose" set:html={bodyHtml} />
+
+        <p class="src"><a href={sourceUrl}>View source on GitHub →</a></p>
+
+        {related.length > 0 && (
+          <section class="related">
+            <h2 class="kicker">More in {asset.plugin}</h2>
+            <div class="rgrid">
+              {related.map((r) => (
+                <a class="rcard" href={`/catalog/${r.slug}`}>
+                  <div class="rtop"><span class={`k k-${r.kind}`}>{r.kind}</span>{r.readiness != null && <span class="rscore mono">{r.readiness}</span>}</div>
+                  <strong>{r.name}</strong>
+                  <p>{r.description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <aside class="side">
+        {card
+          ? <Scorecard card={card} />
+          : <div class="noscore">Not yet scored.</div>}
+        <dl class="metabox">
+          <div><dt>Plugin</dt><dd><a href={`/catalog/${asset.plugin}`}>{asset.plugin}</a></dd></div>
+          <div><dt>Kind</dt><dd>{asset.kind}</dd></div>
+          <div><dt>Works in</dt><dd>{surfaces}</dd></div>
+          {card && <div><dt>Tier</dt><dd>{tierLabel(card.tier)}</dd></div>}
+          <div><dt>License</dt><dd><a href="https://github.com/Salah-XD/equipt/blob/main/LICENSE-CONTENT">CC-BY-4.0</a></dd></div>
+          <div><dt>Source</dt><dd><a href={sourceUrl}>GitHub ↗</a></dd></div>
+        </dl>
+      </aside>
     </div>
-    <h1>{displayTitle}</h1>
-    <p class="slug mono">{asset.name}</p>
-    <p class="desc">{asset.description}</p>
-    <p class="kicker">Works in {surfaces}</p>
-    <article class="prose" set:html={bodyHtml} />
-    <p class="src"><a href={`https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${asset.kind === 'skill' ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`}>View source on GitHub →</a></p>
   </main>
   <Footer />
 </Base>
 <style>
-  .meta { display: flex; gap: 10px; margin-top: 18px; }
-  .k { color: var(--accent-text); text-transform: uppercase; font-size: 12px; }
+  .detail { padding: 36px 22px 72px; max-width: 1120px; }
+  .back { display: inline-block; margin-bottom: 22px; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 312px; gap: 44px; align-items: start; }
+
+  .meta { display: flex; gap: 10px; align-items: center; }
+  .k { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+    padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
+  .k-skill { color: var(--accent-text); }
+  .k-agent { color: var(--ink); }
   .pl { color: var(--muted); font-size: 12px; }
-  h1 { font-family: var(--font-display); font-size: 40px; margin: 8px 0 2px; letter-spacing: -.02em; }
-  .slug { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
-  .desc { color: var(--muted); font-size: 17px; line-height: 1.5; margin-bottom: 18px; }
-  .prose { margin-top: 26px; line-height: 1.7; }
-  .prose :global(h1), .prose :global(h2), .prose :global(h3) { font-family: var(--font-display); margin: 22px 0 10px; }
+  .pl:hover { color: var(--accent-text); }
+
+  h1 { font-family: var(--font-display); font-size: clamp(32px, 5vw, 46px); margin: 14px 0 2px; letter-spacing: -.025em; line-height: 1.02; }
+  .slug { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .desc { font-size: 18px; line-height: 1.55; color: var(--ink); max-width: 60ch; }
+
+  .install { margin: 26px 0 8px; }
+  .install .kicker { display: block; margin-bottom: 8px; }
+  .cmd { position: relative; }
+  .cmd pre { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 84px 14px 16px;
+    overflow: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--ink); white-space: pre; }
+  .copy { position: absolute; top: 10px; right: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em;
+    padding: 6px 11px; border-radius: 7px; border: 1px solid var(--hair); background: var(--page); color: var(--muted); cursor: pointer;
+    transition: border-color .15s, color .15s; }
+  .copy:hover { border-color: var(--accent); color: var(--accent-text); }
+
+  .prose { margin-top: 30px; line-height: 1.7; }
+  .prose :global(h1), .prose :global(h2), .prose :global(h3) { font-family: var(--font-display); margin: 24px 0 10px; letter-spacing: -.01em; }
+  .prose :global(h2) { font-size: 22px; }
   .prose :global(pre) { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px; overflow: auto; font-family: var(--font-mono); font-size: 13px; }
   .prose :global(code) { font-family: var(--font-mono); font-size: .9em; }
   .prose :global(table) { width: 100%; border-collapse: collapse; }
   .prose :global(th), .prose :global(td) { border: 1px solid var(--hair); padding: 8px; text-align: left; }
+  .prose :global(a) { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .prose :global(ul), .prose :global(ol) { padding-left: 22px; }
+  .prose :global(blockquote) { border-left: 3px solid var(--accent); padding-left: 14px; color: var(--muted); margin: 14px 0; }
+
   .src { margin-top: 30px; }
   .src a { color: var(--accent-text); }
-  .prose :global(a) { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+
+  .related { margin-top: 48px; padding-top: 26px; border-top: 1px solid var(--hair); }
+  .rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+  .rcard { display: block; border: 1px solid var(--hair); border-radius: 12px; padding: 15px; background: var(--paper);
+    transition: border-color .15s, transform .15s; }
+  .rcard:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .rtop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .rscore { font-size: 12px; color: var(--muted); }
+  .rcard strong { font-family: var(--font-display); font-size: 15px; }
+  .rcard p { color: var(--muted); font-size: 12.5px; line-height: 1.5; margin-top: 6px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  .side { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 16px; }
+  .noscore { border: 1px dashed var(--hair); border-radius: 14px; padding: 20px; color: var(--muted); font-size: 13px; }
+  .metabox { border: 1px solid var(--hair); border-radius: 14px; padding: 6px 16px; }
+  .metabox > div { display: flex; justify-content: space-between; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--hair); }
+  .metabox > div:last-child { border-bottom: none; }
+  .metabox dt { color: var(--muted); font-size: 12.5px; }
+  .metabox dd { font-size: 12.5px; text-align: right; }
+  .metabox dd a { color: var(--accent-text); }
+
+  @media (max-width: 880px) {
+    .layout { grid-template-columns: 1fr; gap: 28px; }
+    .side { position: static; }
+  }
 </style>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const pre = btn.parentElement?.querySelector('pre[data-copy]');
+      if (!pre) return;
+      try {
+        await navigator.clipboard.writeText(pre.textContent ?? '');
+        const prev = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = prev; }, 1400);
+      } catch {}
+    });
+  });
+</script>

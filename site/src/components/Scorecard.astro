@@ -1,0 +1,72 @@
+---
+import type { Scorecard } from '../lib/scores';
+import { AXIS_LABELS, AXIS_BLURB, tierLabel } from '../lib/scores';
+
+interface Props { card: Scorecard }
+const { card } = Astro.props;
+const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
+---
+<section class="scorecard" aria-label="Equipt Standard scorecard">
+  <header class="sc-head">
+    <a class="sc-kicker" href="/standard">Equipt Standard</a>
+    <span class={`tier tier-${card.tier}`}>{tierLabel(card.tier)}</span>
+  </header>
+
+  <div class="readiness">
+    <span class="num">{card.readiness}</span>
+    <div class="rmeta">
+      <span class="den">/ 100</span>
+      <span class="rlabel">Readiness{card.partial ? ' · partial' : ''}</span>
+    </div>
+  </div>
+
+  <ul class="axes">
+    {order.map((k) => {
+      const a = card.axes[k];
+      const scored = a && Number.isFinite(a.score);
+      return (
+        <li class="axis">
+          <div class="ax-top">
+            <span class="ax-name">{AXIS_LABELS[k]}</span>
+            <span class={`ax-score${scored ? '' : ' pending'}`}>{scored ? a!.score : '—'}</span>
+          </div>
+          <div class="bar"><span style={`width:${scored ? a!.score : 0}%`} class={scored ? '' : 'is-pending'}></span></div>
+          <span class="ax-blurb">{scored ? AXIS_BLURB[k] : 'eval pending'}</span>
+        </li>
+      );
+    })}
+  </ul>
+
+  {card.unsafe && <p class="unsafe">⚠ Flagged unsafe by the static guard — not recommended.</p>}
+</section>
+<style>
+  .scorecard { border: 1px solid var(--hair); border-radius: 14px; background: var(--paper); padding: 20px; }
+  .sc-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .sc-kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .sc-kicker:hover { color: var(--accent-text); }
+
+  .tier { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .04em;
+    padding: 4px 9px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  .tier-provisional { color: var(--muted); }
+  .tier-certified { color: var(--accent-text); border-color: var(--accent); }
+  .tier-field-ready { color: #2f8f5d; border-color: #2f8f5d; }
+
+  .readiness { display: flex; align-items: baseline; gap: 10px; margin: 16px 0 6px; }
+  .readiness .num { font-family: var(--font-display); font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: -.03em; }
+  .rmeta { display: flex; flex-direction: column; }
+  .rmeta .den { color: var(--muted); font-size: 14px; }
+  .rmeta .rlabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+  .axes { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--hair); }
+  .axis { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; }
+  .ax-top { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: baseline; }
+  .ax-name { font-size: 13px; font-weight: 600; }
+  .ax-score { font-family: var(--font-mono); font-size: 13px; color: var(--ink); }
+  .ax-score.pending { color: var(--muted); }
+  .bar { grid-column: 1 / -1; height: 5px; background: var(--grid); border-radius: 999px; overflow: hidden; margin: 3px 0 2px; }
+  .bar span { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+  .bar span.is-pending { background: repeating-linear-gradient(45deg, var(--hair), var(--hair) 4px, transparent 4px, transparent 8px); }
+  .ax-blurb { grid-column: 1 / -1; font-size: 11.5px; color: var(--muted); }
+
+  .unsafe { margin-top: 14px; font-size: 12.5px; color: var(--accent-text); }
+</style>
