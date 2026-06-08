@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+<Base
+  title="404 — Page not found · Equipt"
+  description="That page isn't in the library. Browse 607 ready-to-install skills & agents instead."
+>
+  <header class="hero">
+    <div class="grid-layer" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="topline" aria-label="Primary">
+        <a class="wordmark" href="/">equip<b>t</b></a>
+        <div class="nav">
+          <a class="link-underline" href="/catalog">Catalog</a>
+          <a class="link-underline" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>GitHub</a>
+          <ThemeToggle />
+        </div>
+      </nav>
+      <main class="stage">
+        <p class="kicker">Error 404 · not in the library</p>
+        <h1 class="big">4<span class="pop">0</span>4</h1>
+        <p class="serif">This page <i>isn&rsquo;t equipped</i>&nbsp;— yet.</p>
+        <p class="sub">
+          The skill or agent you&rsquo;re after may have moved, or never existed.
+          Search the full library, or head back to base.
+        </p>
+        <div class="cta">
+          <a class="b1" href="/">Back home</a>
+          <a class="b2" href="/catalog">Browse the catalog</a>
+        </div>
+      </main>
+    </div>
+  </header>
+  <Footer />
+</Base>
+<style>
+  .hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    background: var(--paper); border-bottom: 1px solid var(--hair);
+    padding: 22px 0 84px; min-height: 78vh;
+    display: flex; flex-direction: column;
+  }
+  /* Same brutalist grid + warm vignette as the home hero, kept static (reduced-motion safe). */
+  .grid-layer {
+    position: absolute; inset: -10% 0 -20% 0; z-index: -1; pointer-events: none;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 54px 54px;
+  }
+  .grid-layer::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(120% 90% at 12% 8%, transparent 40%, var(--paper) 100%);
+  }
+  .wrap { display: flex; flex-direction: column; flex: 1; }
+
+  .topline { display: flex; justify-content: space-between; align-items: center; }
+  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
+  .wordmark b { color: var(--accent); }
+  .nav { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
+  .nav a { color: var(--ink); }
+
+  .stage { margin-top: auto; margin-bottom: auto; padding-top: 48px; }
+  .kicker { margin: 0 0 18px; }
+  .big {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(96px, 22vw, 248px); line-height: .82; letter-spacing: -.05em;
+  }
+  .big .pop { color: var(--accent); }
+  .serif {
+    font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.04; letter-spacing: -.01em; margin-top: 18px;
+  }
+  .serif i { color: var(--accent); }
+  .sub { max-width: 446px; font-size: 16px; line-height: 1.6; color: var(--muted); margin-top: 18px; }
+
+  .cta { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
+  .b1, .b2 {
+    font-weight: 600; font-size: 13px; letter-spacing: .005em; padding: 14px 20px; border-radius: 10px;
+    transition: transform .18s cubic-bezier(.22,1,.36,1), background-color .18s ease, color .18s ease, box-shadow .18s ease;
+  }
+  .b1 { background: var(--ink); color: var(--paper); box-shadow: 0 1px 0 var(--hair); }
+  .b1:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -10px var(--accent-soft); background: var(--accent); }
+  .b2 { border: 1px solid var(--ink); }
+  .b2:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-text); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b1, .b2 { transition: none; }
+  }
+</style>

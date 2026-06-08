@@ -12,7 +12,7 @@ import { SYSTEM_PROMPT } from "./prompts.js";
  * web search tool — no custom scrapers, no API keys beyond Anthropic.
  */
 
-const MODEL = process.env.CLAUDE_MODEL || "claude-sonnet-4-5";
+const MODEL = process.env.CLAUDE_MODEL || "claude-sonnet-4-6";
 
 async function research(target: string): Promise<void> {
   if (!process.env.ANTHROPIC_API_KEY) {
