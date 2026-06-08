@@ -61,6 +61,9 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   }
 
   ['q', 'plugin', 'kind', 'tier', 'sort'].forEach((id) => $(id).addEventListener('input', render));
+  // Prefill from ?q= so the WebSite SearchAction (and shared links) actually filter.
+  const q0 = new URLSearchParams(location.search).get('q');
+  if (q0) $('q').value = q0;
   render();
 </script>
 <style>

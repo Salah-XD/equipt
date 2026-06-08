@@ -2,11 +2,12 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import CommandPalette from '../components/CommandPalette.astro';
-interface Props { title: string; description?: string; image?: string; }
+interface Props { title: string; description?: string; image?: string; jsonld?: object | object[]; }
 const {
   title,
   description = 'Equip your AI — 607 ready-to-install skills & agents for every AI assistant.',
   image = '/og.png',
+  jsonld,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
@@ -36,6 +37,7 @@ const ogImage = new URL(image, Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    {jsonld && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonld)} />}
     <script is:inline>
       (() => {
         const s = localStorage.getItem('equipt-theme');
@@ -45,6 +47,7 @@ const ogImage = new URL(image, Astro.site).href;
     </script>
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <Nav />
     <slot />
     <CommandPalette />

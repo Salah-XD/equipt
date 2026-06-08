@@ -11,15 +11,38 @@ import Footer from '../components/Footer.astro';
 import Motion from '../components/Motion.astro';
 import { loadAssets } from '../lib/catalog';
 const assets = await loadAssets();
+const site = (Astro.site?.href ?? 'https://equipt-agent.vercel.app/').replace(/\/$/, '');
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization', '@id': `${site}/#org`, name: 'Equipt', url: `${site}/`,
+      logo: `${site}/favicon.svg`,
+      sameAs: ['https://github.com/Salah-XD/equipt', 'https://www.npmjs.com/package/@equipt/cli'],
+    },
+    {
+      '@type': 'WebSite', '@id': `${site}/#website`, url: `${site}/`, name: 'Equipt',
+      description: 'Verified marketplace of AI skills & agents for founders & operators.',
+      publisher: { '@id': `${site}/#org` },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: { '@type': 'EntryPoint', urlTemplate: `${site}/catalog?q={search_term_string}` },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
+};
 ---
-<Base title="Equipt — skills & agents for every AI assistant">
-  <Hero total={assets.length} />
-  <div data-reveal><ProofBar total={assets.length} /></div>
-  <div data-reveal><FeaturedAssets /></div>
-  <div data-reveal><TrustSection /></div>
-  <div data-reveal><PluginGrid /></div>
-  <div data-reveal><InstallTabs /></div>
-  <div data-reveal><CatalogTeaser total={assets.length} /></div>
+<Base title="Equipt — skills & agents for every AI assistant" jsonld={jsonld}>
+  <main id="main">
+    <Hero total={assets.length} />
+    <div data-reveal><ProofBar total={assets.length} /></div>
+    <div data-reveal><FeaturedAssets /></div>
+    <div data-reveal><TrustSection /></div>
+    <div data-reveal><PluginGrid /></div>
+    <div data-reveal><InstallTabs /></div>
+    <div data-reveal><CatalogTeaser total={assets.length} /></div>
+  </main>
   <Footer />
   <Motion />
 </Base>

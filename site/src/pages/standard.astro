@@ -19,7 +19,7 @@ const body = m ? md.slice(m[0].length) : md;
 const html = await marked.parse(body);
 ---
 <Base title="The Equipt Standard — Equipt" description="How Equipt rates skills & agents: a Readiness score across Craft, Fit, Guard, Proof, and Upkeep, with a Guard safety gate and Provisional/Certified/Field-Ready tiers.">
-  <main class="standard wrap">
+  <main id="main" class="standard wrap">
     <a href="/catalog" class="kicker back">← Catalog</a>
     <p class="kicker eyebrow">Verified marketplace</p>
     <h1>{title}</h1>
