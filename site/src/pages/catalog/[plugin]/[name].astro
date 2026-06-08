@@ -118,6 +118,8 @@ const ccCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.
   .detail { padding: 36px 22px 72px; max-width: 1120px; }
   .back { display: inline-block; margin-bottom: 22px; }
   .layout { display: grid; grid-template-columns: minmax(0, 1fr) 312px; gap: 44px; align-items: start; }
+  /* Let the columns shrink below their content so wide <pre>/tables can't force horizontal overflow on mobile. */
+  .main, .side { min-width: 0; }
 
   .meta { display: flex; gap: 10px; align-items: center; }
   .k { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
@@ -141,7 +143,8 @@ const ccCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.
     transition: border-color .15s, color .15s; }
   .copy:hover { border-color: var(--accent); color: var(--accent-text); }
 
-  .prose { line-height: 1.7; }
+  .prose { line-height: 1.7; overflow-wrap: break-word; }
+  .prose :global(pre), .prose :global(table) { max-width: 100%; }
   .prose :global(h1), .prose :global(h2), .prose :global(h3) { font-family: var(--font-display); margin: 24px 0 10px; letter-spacing: -.01em; }
   .prose :global(h2) { font-size: 22px; }
   .prose :global(pre) { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px; overflow: auto; font-family: var(--font-mono); font-size: 13px; }
