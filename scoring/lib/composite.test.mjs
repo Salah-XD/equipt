@@ -18,9 +18,15 @@ test('full set of axes → weighted readiness', () => {
   assert.equal(r.tier, 'provisional');
 });
 
-test('a null axis reweights and marks partial', () => {
+test('fit being null does NOT mark partial (Fit is deferred in v1)', () => {
   const r = computeReadiness({ craft: ax(90), fit: null, guard: ax(90), proof: ax(90), upkeep: ax(90) });
   assert.equal(r.readiness, 90);
+  assert.equal(r.partial, false);
+  assert.equal(r.eligibleTier, 'field-ready');
+});
+
+test('a missing deterministic axis reweights and marks partial', () => {
+  const r = computeReadiness({ craft: ax(90), fit: null, guard: null, proof: ax(90), upkeep: ax(90) });
   assert.equal(r.partial, true);
   assert.equal(r.eligibleTier, null);
 });
