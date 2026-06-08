@@ -9,18 +9,46 @@ import ThemeToggle from './ThemeToggle.astro';
       <a class="link-underline" href="/#plugins">Plugins</a>
       <a class="link-underline" href="/#install">Install</a>
       <a class="link-underline" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>GitHub</a>
+      <button class="navcmd mono" type="button" data-cmd="npx @equipt/cli init" aria-label="Copy: npx @equipt/cli init">
+        <span class="d" aria-hidden="true">$</span> npx @equipt/cli
+      </button>
+      <a class="publish" href="/publish">Publish</a>
       <ThemeToggle />
     </nav>
   </div>
 </header>
 <style>
   .site-nav { background: var(--paper); border-bottom: 1px solid var(--hair); }
-  .row { display: flex; justify-content: space-between; align-items: center; padding: 17px 0; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px 0; }
   .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
   .wordmark b { color: var(--accent); }
-  .links { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
+  .links { display: flex; gap: 20px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
   .links a { color: var(--ink); }
+
+  .navcmd { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 12px;
+    color: var(--muted); background: var(--page); border: 1px solid var(--hair); border-radius: 8px; padding: 6px 10px; cursor: pointer;
+    transition: border-color .15s ease, color .15s ease; }
+  .navcmd:hover, .navcmd.copied { border-color: var(--accent); color: var(--accent-text); }
+  .navcmd .d { color: var(--accent); }
+
+  .publish { font-weight: 600; font-size: 13px; padding: 7px 14px; border-radius: 8px; border: 1px solid var(--ink); color: var(--ink);
+    transition: transform .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease; }
+  .publish:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); transform: translateY(-1px); }
+
+  @media (max-width: 960px) { .navcmd { display: none; } }
   @media (max-width: 560px) {
     .links { gap: 13px; font-size: 13px; }
+    .publish { padding: 6px 11px; font-size: 12px; }
   }
 </style>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.navcmd').forEach((b) => {
+    b.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(b.dataset.cmd ?? '');
+        b.classList.add('copied');
+        setTimeout(() => b.classList.remove('copied'), 1200);
+      } catch {}
+    });
+  });
+</script>

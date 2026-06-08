@@ -29,6 +29,10 @@ const surfaces = [
         <a class="b2" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>Star on GitHub</a>
       </div>
     </div>
+    <button class="cmdcopy mono" type="button" data-cmd="npx @equipt/cli init" aria-label="Copy: npx @equipt/cli init">
+      <span class="dollar" aria-hidden="true">$</span> npx @equipt/cli init
+      <span class="copyhint" aria-hidden="true">copy</span>
+    </button>
     <div class="surf">
       <span class="kicker surf-label">Works in</span>
       {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}><span class="ico" aria-hidden="true" set:html={ICONS[s.icon]} />{s.label}</span>)}
@@ -66,6 +70,15 @@ const surfaces = [
   .b2 { border: 1px solid var(--ink); }
   .b2:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-text); }
 
+  .cmdcopy { display: inline-flex; align-items: center; gap: 8px; margin-top: 30px;
+    font-family: var(--font-mono); font-size: 13px; color: var(--ink);
+    background: var(--page); border: 1px solid var(--hair); border-radius: 10px; padding: 11px 15px; cursor: pointer;
+    transition: border-color .18s ease; }
+  .cmdcopy:hover { border-color: var(--accent); }
+  .cmdcopy .dollar { color: var(--accent); }
+  .cmdcopy .copyhint { margin-left: 4px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .cmdcopy:hover .copyhint { color: var(--accent-text); }
+
   .surf { display: flex; gap: 8px; margin-top: 40px; flex-wrap: wrap; align-items: center; }
   .surf-label { margin-right: 6px; }
   .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500;
@@ -86,5 +99,16 @@ const surfaces = [
     addEventListener('scroll', () => {
       if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
+  }
+
+  const cmd = document.querySelector<HTMLButtonElement>('.cmdcopy');
+  if (cmd) {
+    cmd.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(cmd.dataset.cmd ?? '');
+        const hint = cmd.querySelector('.copyhint');
+        if (hint) { const prev = hint.textContent; hint.textContent = 'copied'; setTimeout(() => { hint.textContent = prev; }, 1400); }
+      } catch {}
+    });
   }
 </script>

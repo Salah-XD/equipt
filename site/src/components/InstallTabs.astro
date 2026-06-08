@@ -4,11 +4,14 @@
   <p class="kicker">Install</p>
   <h2 class="serif">Bring Equipt into your assistant.</h2>
   <div class="tabs" role="tablist" aria-label="Install instructions">
-    <button class="tab active" data-tab="cc" role="tab" aria-selected="true" id="tab-cc" aria-controls="panel-cc">Claude Code</button>
+    <button class="tab active" data-tab="cli" role="tab" aria-selected="true" id="tab-cli" aria-controls="panel-cli">Equipt CLI</button>
+    <button class="tab" data-tab="cc" role="tab" aria-selected="false" id="tab-cc" aria-controls="panel-cc">Claude Code</button>
     <button class="tab" data-tab="web" role="tab" aria-selected="false" id="tab-web" aria-controls="panel-web">claude.ai / desktop</button>
     <button class="tab" data-tab="soon" role="tab" aria-selected="false" id="tab-soon" aria-controls="panel-soon">Cursor / Codex / Antigravity</button>
   </div>
-  <pre class="panel" data-panel="cc" id="panel-cc" role="tabpanel" aria-labelledby="tab-cc">/plugin marketplace add Salah-XD/equipt
+  <pre class="panel" data-panel="cli" id="panel-cli" role="tabpanel" aria-labelledby="tab-cli">npx @equipt/cli init
+npx @equipt/cli add equipt-engineering   # or a single skill: add code-reviewer</pre>
+  <pre class="panel" data-panel="cc" id="panel-cc" role="tabpanel" aria-labelledby="tab-cc" hidden>/plugin marketplace add Salah-XD/equipt
 /plugin install equipt-engineering</pre>
   <div class="panel" data-panel="web" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
     <ol><li>Download a per-category zip from the latest <a class="link-underline" href="https://github.com/Salah-XD/equipt/releases">Release</a>.</li>

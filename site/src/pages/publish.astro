@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base
+  title="Publish to Equipt — coming soon"
+  description="Submit your skills & agents to the Equipt verified marketplace — scored on the Equipt Standard."
+>
+  <main class="publish wrap">
+    <p class="kicker eyebrow">For authors</p>
+    <h1>Publish to Equipt</h1>
+    <p class="lead">
+      Get your skills &amp; agents into the Equipt verified marketplace — scored on
+      <a class="link-underline" href="/standard">the Equipt Standard</a> and, once reviewed,
+      badged <b>Certified</b> or <b>Field-Ready</b>.
+    </p>
+
+    <div class="soon">
+      <span class="badge mono">Coming soon</span>
+      <p>
+        The self-serve publish flow is still in design. In the meantime, open a
+        <a href="https://github.com/Salah-XD/equipt/pulls">pull request</a> against
+        <code>Salah-XD/equipt</code> to propose an asset, or
+        <a href="https://github.com/Salah-XD/equipt/issues/new">open an issue</a> to start the conversation.
+      </p>
+    </div>
+
+    <p class="more"><a class="link-underline" href="/standard">See how scoring works →</a></p>
+  </main>
+  <Footer />
+</Base>
+<style>
+  .publish { padding: 48px 22px 80px; max-width: 720px; }
+  .eyebrow { color: var(--accent-text); margin-bottom: 10px; }
+  h1 { font-family: var(--font-display); font-size: clamp(36px, 7vw, 58px); letter-spacing: -.03em; line-height: 1.0; }
+  .lead { font-size: 19px; line-height: 1.55; color: var(--muted); margin-top: 16px; max-width: 56ch; }
+  .lead a, .lead b { color: var(--ink); }
+  .soon { margin-top: 30px; border: 1px solid var(--hair); border-radius: 14px; padding: 22px; background: var(--paper); }
+  .badge { display: inline-block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text);
+    border: 1px solid var(--accent); border-radius: 999px; padding: 4px 11px; margin-bottom: 12px; }
+  .soon p { color: var(--muted); line-height: 1.6; }
+  .soon a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .soon code { font-family: var(--font-mono); font-size: .9em; }
+  .more { margin-top: 28px; }
+</style>
