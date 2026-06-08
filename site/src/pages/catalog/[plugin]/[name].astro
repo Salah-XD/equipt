@@ -41,9 +41,33 @@ const surfaces = asset.kind === 'skill'
 const sourceUrl = `https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${asset.kind === 'skill' ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`;
 const cliCmd = `npx @equipt/cli add ${asset.name}`;
 const ccCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
+
+const site = (Astro.site?.href ?? 'https://equipt-agent.vercel.app/').replace(/\/$/, '');
+const url = `${site}/catalog/${asset.plugin}/${asset.name}`;
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CreativeWork', '@id': `${url}#asset`,
+      name: displayTitle, description: asset.description, url,
+      genre: asset.kind === 'agent' ? 'AI subagent' : 'AI skill',
+      keywords: [asset.plugin, asset.kind, 'Claude', 'AI', 'skill'].join(', '),
+      isPartOf: { '@type': 'WebSite', '@id': `${site}/#website` },
+      license: 'https://github.com/Salah-XD/equipt/blob/main/LICENSE-CONTENT',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Catalog', item: `${site}/catalog` },
+        { '@type': 'ListItem', position: 2, name: asset.plugin, item: `${site}/catalog/${asset.plugin}` },
+        { '@type': 'ListItem', position: 3, name: displayTitle, item: url },
+      ],
+    },
+  ],
+};
 ---
-<Base title={`${displayTitle} — Equipt`} description={asset.description}>
-  <main class="detail wrap">
+<Base title={`${displayTitle} — Equipt`} description={asset.description} jsonld={jsonld}>
+  <main id="main" class="detail wrap">
     <a href="/catalog" class="kicker back">← Catalog</a>
 
     <div class="layout">

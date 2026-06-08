@@ -42,7 +42,7 @@ const { plugin, description, items, skills, agents, avg } = Astro.props;
 const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${plugin}`;
 ---
 <Base title={`${plugin} — Equipt`} description={description}>
-  <main class="plugin wrap">
+  <main id="main" class="plugin wrap">
     <a href="/catalog" class="kicker back">← Catalog</a>
 
     <header class="phead">

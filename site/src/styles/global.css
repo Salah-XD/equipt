@@ -16,6 +16,12 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+
+/* Skip-to-content link — visually hidden until keyboard-focused */
+.skip { position: absolute; left: 8px; top: -56px; z-index: 200;
+  background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 8px;
+  font-weight: 600; font-size: 14px; transition: top .15s ease; }
+.skip:focus { top: 8px; }
 .mono { font-family: var(--font-mono); }
 
 /* Refined editorial label — slightly tighter, optical alignment */
