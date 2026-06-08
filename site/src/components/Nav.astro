@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 <header class="site-nav">
   <div class="wrap row">
     <a class="wordmark" href="/">equip<b>t</b></a>
-    <nav class="links" aria-label="Primary">
+    <nav id="navlinks" class="links" aria-label="Primary">
       <a class="link-underline" href="/catalog">Catalog</a>
       <a class="link-underline" href="/#plugins">Plugins</a>
       <a class="link-underline" href="/#install">Install</a>
@@ -14,12 +14,17 @@ import ThemeToggle from './ThemeToggle.astro';
         <span class="d" aria-hidden="true">$</span> npx @equipt/cli
       </button>
       <a class="publish" href="/publish">Publish</a>
-      <ThemeToggle />
     </nav>
+    <div class="navctl">
+      <ThemeToggle />
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 <style>
-  .site-nav { background: var(--paper); border-bottom: 1px solid var(--hair); }
+  .site-nav { position: relative; background: var(--paper); border-bottom: 1px solid var(--hair); }
   .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px 0; }
   .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
   .wordmark b { color: var(--accent); }
@@ -36,13 +41,37 @@ import ThemeToggle from './ThemeToggle.astro';
     transition: transform .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease; }
   .publish:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); transform: translateY(-1px); }
 
+  .navctl { display: flex; align-items: center; gap: 10px; }
+
+  /* Hamburger — hidden on desktop */
+  .burger { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    width: 36px; height: 36px; padding: 0; border: 1px solid var(--hair); border-radius: 9px; background: var(--paper); cursor: pointer; }
+  .burger span { display: block; width: 17px; height: 2px; background: var(--ink); border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease; }
+  .burger:hover { border-color: var(--accent); }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
   @media (max-width: 960px) { .navcmd { display: none; } }
-  @media (max-width: 560px) {
-    .links { gap: 13px; font-size: 13px; }
-    .publish { padding: 6px 11px; font-size: 12px; }
+
+  /* Mobile: collapse links into a dropdown panel behind the hamburger */
+  @media (max-width: 760px) {
+    .burger { display: flex; }
+    .links {
+      position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--paper); border-bottom: 1px solid var(--hair);
+      padding: 6px 22px 18px; box-shadow: 0 18px 30px -22px rgba(0,0,0,.5);
+      display: none;
+    }
+    .links.open { display: flex; }
+    .links a { padding: 12px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
+    .publish { margin-top: 14px; text-align: center; border-color: var(--ink); }
   }
 </style>
 <script>
+  // Copy the npx command from the nav.
   document.querySelectorAll<HTMLButtonElement>('.navcmd').forEach((b) => {
     b.addEventListener('click', async () => {
       try {
@@ -52,4 +81,19 @@ import ThemeToggle from './ThemeToggle.astro';
       } catch {}
     });
   });
+
+  // Mobile menu toggle.
+  const burger = document.querySelector<HTMLButtonElement>('.burger');
+  const links = document.getElementById('navlinks');
+  if (burger && links) {
+    const setOpen = (open: boolean) => {
+      links.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    burger.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+    // Close when a link is tapped or on Escape.
+    links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  }
 </script>
