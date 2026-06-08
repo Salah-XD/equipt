@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "license": "MIT",
   "description": "Given a URL or company name, produce a structured research brief using Claude + web search.",
   "scripts": {
     "start": "tsx src/index.ts",

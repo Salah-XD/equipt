@@ -75,4 +75,4 @@ A few patterns that work:
 
 ## License
 
-Personal commercial license — see `../../LICENSE.md` in the bundle root.
+MIT — see [`LICENSE`](../../LICENSE) at the repo root.
