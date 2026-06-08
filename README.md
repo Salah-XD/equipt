@@ -7,31 +7,29 @@
 [![code: MIT](https://img.shields.io/badge/code-MIT-3b82f6)](LICENSE)
 [![content: CC-BY-4.0](https://img.shields.io/badge/content-CC--BY--4.0-3b82f6)](LICENSE-CONTENT)
 
-**Equipt** is an open-source, **curated & verified marketplace** of skills and subagents for [Claude Code](https://claude.com/claude-code) and other AI assistants — **501 skills + 106 agents** across **5 installable plugins**. Every asset is machine-scored on **the Equipt Standard** before it ships, so you install vetted tools instead of a dump of prompts.
+**Equipt** is an open-source, **curated & verified marketplace** of AI skills & agents for **founders and operators** — the work of *running a business*: marketing, sales, ops, finance, content. **501 skills + 106 agents** across **5 plugins**, each machine-scored on **the Equipt Standard** before it ships, so you add vetted tools to [claude.ai](https://claude.ai) (or [Claude Code](https://claude.com/claude-code)) instead of a dump of prompts.
 
 ### → Browse the catalog: **[equipt-agent.vercel.app](https://equipt-agent.vercel.app)**
 
 ## Install
 
-**With the Equipt CLI** — drops skills & agents into your project's `.claude/`:
-
-```bash
-npx @equipt/cli init                     # scaffold .claude/ + a manifest
-npx @equipt/cli add equipt-engineering   # install a whole plugin
-npx @equipt/cli add code-reviewer        # install a single skill or agent
-npx @equipt/cli list                     # browse the catalog (with Readiness)
-```
+**On claude.ai / desktop** (no code — the way most operators use it): download a
+category bundle from the latest [Release](https://github.com/Salah-XD/equipt/releases),
+then in **Settings → Capabilities → Skills**, upload the skill folder. That's it.
 
 **In Claude Code** — via the plugin marketplace:
 
 ```
 /plugin marketplace add Salah-XD/equipt
-/plugin install equipt-engineering
+/plugin install equipt-marketing
 ```
 
-**On claude.ai / desktop** — download a per-category bundle from the latest
-[Release](https://github.com/Salah-XD/equipt/releases) and upload the skill folder
-in your Claude settings. (Subagents are Claude Code only.)
+**With the Equipt CLI** (for the dev-savvy) — drops skills & agents into a project's `.claude/`:
+
+```bash
+npx @equipt/cli init                   # scaffold .claude/ + a manifest
+npx @equipt/cli add equipt-marketing   # a whole plugin — or: add cold-outreach-writer
+```
 
 ## The five plugins
 

@@ -8,13 +8,18 @@ const scores = await loadScoreIndex();
 // Showcase the curated picks (Field-Ready / Certified) — real assets that also
 // prove the Equipt Standard. Field-Ready first, then Certified, then by readiness.
 const tierRank: Record<string, number> = { 'field-ready': 0, certified: 1, provisional: 2 };
+// Lead with operator/GTM plugins (business, marketing, content) — that's the focus.
+const OPERATOR = new Set(['equipt-business', 'equipt-marketing', 'equipt-content']);
 const featured = assets
   .map((a) => {
     const s = scores.get(a.slug);
     return { ...a, readiness: s?.readiness ?? null, tier: s?.tier ?? null };
   })
   .filter((a) => a.tier && a.tier !== 'provisional')
-  .sort((x, y) => (tierRank[x.tier!] - tierRank[y.tier!]) || ((y.readiness ?? 0) - (x.readiness ?? 0)))
+  .sort((x, y) =>
+    (OPERATOR.has(x.plugin) ? 0 : 1) - (OPERATOR.has(y.plugin) ? 0 : 1)
+    || (tierRank[x.tier!] - tierRank[y.tier!])
+    || ((y.readiness ?? 0) - (x.readiness ?? 0)))
   .slice(0, 8);
 ---
 <section class="featured"><div class="wrap">

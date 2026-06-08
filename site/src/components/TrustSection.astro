@@ -2,10 +2,10 @@
 import Scorecard from './Scorecard.astro';
 import { loadScorecard } from '../lib/scores';
 
-// A real Field-Ready showcase for the live demo scorecard.
+// A real Field-Ready showcase for the live demo scorecard (operator-focused).
 const card =
-  (await loadScorecard('equipt-engineering', 'code-reviewer')) ??
-  (await loadScorecard('equipt-marketing', 'seo-audit'));
+  (await loadScorecard('equipt-marketing', 'seo-audit')) ??
+  (await loadScorecard('equipt-content', 'blog-post-writer'));
 ---
 <section class="trust" id="standard-preview"><div class="wrap row">
   <div class="copy">
