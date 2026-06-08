@@ -4,7 +4,7 @@
     "name": "speech-writer",
     "kind": "skill"
   },
-  "standardVersion": "1.1.0",
+  "standardVersion": "1.1.1",
   "readiness": 89,
   "tier": "provisional",
   "unsafe": false,
@@ -32,9 +32,9 @@
     "proof": {
       "score": 45,
       "signals": [
-        "no code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "no example blocks",
+        "has usage / how-to",
+        "12 section(s)"
       ]
     },
     "upkeep": {

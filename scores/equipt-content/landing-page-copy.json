@@ -4,8 +4,8 @@
     "name": "landing-page-copy",
     "kind": "skill"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 96,
+  "standardVersion": "1.1.1",
+  "readiness": 97,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 85,
+      "score": 90,
       "signals": [
-        "has code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "10 example block(s)",
+        "has usage / how-to",
+        "30 section(s)"
       ]
     },
     "upkeep": {

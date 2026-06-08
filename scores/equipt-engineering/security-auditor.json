@@ -4,12 +4,12 @@
     "name": "security-auditor",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
+  "standardVersion": "1.1.1",
   "readiness": 90,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
-  "eligibleTier": "certified",
+  "eligibleTier": "field-ready",
   "axes": {
     "craft": {
       "score": 100,
@@ -23,18 +23,19 @@
     },
     "fit": null,
     "guard": {
-      "score": 95,
+      "score": 83,
       "signals": [
+        "spawns shells / processes",
         "broad tool access: Bash"
       ],
       "gated": false
     },
     "proof": {
-      "score": 55,
+      "score": 77,
       "signals": [
-        "has code/example blocks",
-        "no usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "1 example block(s)",
+        "has usage / how-to",
+        "19 section(s)"
       ]
     },
     "upkeep": {

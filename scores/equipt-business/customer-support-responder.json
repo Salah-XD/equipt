@@ -4,12 +4,12 @@
     "name": "customer-support-responder",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 97,
-  "tier": "field-ready",
+  "standardVersion": "1.1.1",
+  "readiness": 90,
+  "tier": "certified",
   "unsafe": false,
   "partial": false,
-  "eligibleTier": "field-ready",
+  "eligibleTier": "certified",
   "axes": {
     "craft": {
       "score": 100,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 85,
+      "score": 52,
       "signals": [
-        "has code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "1 example block(s)",
+        "no usage / how-to section",
+        "9 section(s)"
       ]
     },
     "upkeep": {
@@ -46,7 +46,7 @@
     }
   },
   "curation": {
-    "tier": "field-ready",
+    "tier": "certified",
     "reviewer": "Salah-XD",
     "note": "starter pick — well-scoped, safe",
     "reviewedAt": "2026-06-08",

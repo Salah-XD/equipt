@@ -4,8 +4,8 @@
     "name": "gst-india-helper",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 76,
+  "standardVersion": "1.1.1",
+  "readiness": 77,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 15,
+      "score": 20,
       "signals": [
-        "no code/example blocks",
-        "no usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "no example blocks",
+        "no usage / how-to section",
+        "12 section(s)"
       ]
     },
     "upkeep": {

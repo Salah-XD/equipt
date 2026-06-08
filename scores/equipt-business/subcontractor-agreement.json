@@ -4,12 +4,12 @@
     "name": "subcontractor-agreement",
     "kind": "skill"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 90,
+  "standardVersion": "1.1.1",
+  "readiness": 91,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
-  "eligibleTier": "certified",
+  "eligibleTier": "field-ready",
   "axes": {
     "craft": {
       "score": 100,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 55,
+      "score": 64,
       "signals": [
-        "has code/example blocks",
-        "no usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "2 example block(s)",
+        "no usage / how-to section",
+        "24 section(s)"
       ]
     },
     "upkeep": {
