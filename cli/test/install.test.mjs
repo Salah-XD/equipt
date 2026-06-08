@@ -29,3 +29,11 @@ test('skips an existing asset, overwrites with force', async () => {
   assert.equal((await installAsset(agent, { targetDir: t, force: true })).status, 'overwritten');
   await rm(t, { recursive: true, force: true });
 });
+
+test('shouldOverwrite callback decides an existing-file conflict', async () => {
+  const t = await mkdtemp(join(tmpdir(), 'eq-'));
+  await installAsset(agent, { targetDir: t });
+  assert.equal((await installAsset(agent, { targetDir: t, shouldOverwrite: async () => false })).status, 'skipped');
+  assert.equal((await installAsset(agent, { targetDir: t, shouldOverwrite: async () => true })).status, 'overwritten');
+  await rm(t, { recursive: true, force: true });
+});

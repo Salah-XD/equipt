@@ -4,7 +4,7 @@ import { resolveTargetDir } from '../lib/paths.mjs';
 import { installAsset } from '../lib/install.mjs';
 import { readManifest, writeManifest } from '../lib/manifest.mjs';
 
-export async function add(query, { global = false, force = false, from, cwd = process.cwd() } = {}) {
+export async function add(query, { global = false, force = false, from, cwd = process.cwd(), shouldOverwrite } = {}) {
   if (!query) return { error: 'usage: equipt add <plugin|name>' };
 
   const { dir } = await resolveSource({ from, cwd });
@@ -18,7 +18,7 @@ export async function add(query, { global = false, force = false, from, cwd = pr
   const manifest = await readManifest(targetDir);
   const results = [];
   for (const asset of r.matches) {
-    const res = await installAsset(asset, { targetDir, force });
+    const res = await installAsset(asset, { targetDir, force, shouldOverwrite });
     if (res.status !== 'skipped') {
       manifest.installed[asset.name] = { plugin: asset.plugin, kind: asset.kind, addedAt: new Date().toISOString() };
     }
