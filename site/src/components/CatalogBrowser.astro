@@ -1,7 +1,8 @@
 ---
 import { loadAssets } from '../lib/catalog';
 import { toIndex } from '../lib/search';
-const entries = toIndex(await loadAssets());
+import { loadScoreIndex } from '../lib/scores';
+const entries = toIndex(await loadAssets(), await loadScoreIndex());
 const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
 ---
 <div class="controls">
@@ -25,11 +26,17 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
     const plugin = $('plugin').value, kind = $('kind').value;
     return base.filter((e: any) => (!plugin || e.plugin === plugin) && (!kind || e.kind === kind));
   }
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
   function render() {
     const out = current();
     count.textContent = out.length + ' results';
     results.innerHTML = out.map((e: any) =>
-      `<li class="item"><a href="/catalog/${e.slug}"><div class="t"><span class="k">${e.kind}</span><strong>${e.name}</strong></div><p>${e.description}</p><span class="pl mono">${e.plugin}</span></a></li>`).join('');
+      `<li class="item"><a href="/catalog/${e.slug}">`
+      + `<div class="ctop"><span class="k k-${e.kind}">${e.kind}</span>${e.readiness != null ? `<span class="score mono">${e.readiness}</span>` : ''}</div>`
+      + `<strong class="nm">${esc(e.name)}</strong>`
+      + `<p>${esc(e.description)}</p>`
+      + `<span class="pl mono">${e.plugin}</span>`
+      + `</a></li>`).join('');
   }
   ['q', 'plugin', 'kind'].forEach((id) => $(id).addEventListener('input', render));
   render();
@@ -39,12 +46,17 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   #q { flex: 1; min-width: 240px; padding: 12px 14px; border: 1px solid var(--hair); border-radius: 10px; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
   select { padding: 12px; border: 1px solid var(--hair); border-radius: 10px; background: var(--paper); color: var(--ink); }
   #count { color: var(--muted); font-size: 13px; }
-  .results { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
-  .item a { display: block; border: 1px solid var(--hair); border-radius: 12px; padding: 18px; background: var(--paper); height: 100%; transition: border-color .15s, transform .15s; }
-  .item a:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .t { display: flex; gap: 8px; align-items: baseline; }
-  .t .k { font-family: var(--font-mono); font-size: 11px; color: var(--accent-text); text-transform: uppercase; }
-  .t strong { font-family: var(--font-display); font-size: 16px; }
-  .item p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 8px 0; }
-  .pl { font-size: 11px; color: var(--muted); }
+  .results { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 13px; }
+  .item a { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 13px; padding: 17px 18px; background: var(--paper); height: 100%;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .item a:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 26px -20px var(--accent-soft); }
+  .ctop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
+  .k-skill { color: var(--accent-text); }
+  .k-agent { color: var(--ink); }
+  .score { font-size: 12.5px; color: var(--muted); }
+  .nm { font-family: var(--font-display); font-size: 16px; letter-spacing: -.01em; }
+  .item p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 7px 0 12px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .pl { font-size: 11px; color: var(--muted); margin-top: auto; }
 </style>

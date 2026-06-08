@@ -25,7 +25,7 @@ const plugins = Object.entries(cfg.plugins).map(([name, c]: [string, any]) => ({
   <h2 class="kicker">Five plugins</h2>
   <div class="grid">
     {plugins.map((p) => (
-      <a class="card" href={`/catalog?plugin=${p.name}`}>
+      <a class="card" href={`/catalog/${p.name}`}>
         <div class="head"><h3>{p.name}</h3><span class="mono">{p.count}</span></div>
         <p>{p.description}</p>
       </a>
