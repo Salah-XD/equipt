@@ -9,6 +9,8 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   <input id="q" type="search" placeholder="Search 607 skills & agents…" aria-label="Search" />
   <select id="plugin" aria-label="Filter by plugin"><option value="">All plugins</option>{plugins.map((p) => <option value={p}>{p}</option>)}</select>
   <select id="kind" aria-label="Filter by kind"><option value="">Skills & agents</option><option value="skill">Skills</option><option value="agent">Agents</option></select>
+  <select id="tier" aria-label="Filter by tier"><option value="">All tiers</option><option value="field-ready">Field-Ready</option><option value="certified">Certified</option><option value="provisional">Provisional</option></select>
+  <select id="sort" aria-label="Sort by"><option value="readiness">Highest readiness</option><option value="relevance">Best match</option><option value="az">A–Z</option></select>
   <span id="count" class="mono"></span>
 </div>
 <ul id="results" class="results"></ul>
@@ -19,26 +21,46 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
   const results = document.getElementById('results')!, count = document.getElementById('count')!;
   // Fuzzy text match (typo-tolerant); facets stay exact.
-  const fuse = new Fuse(data, { keys: ['name', 'description'], threshold: 0.35, ignoreLocation: true });
+  const fuse = new Fuse(data, { keys: [{ name: 'name', weight: 3 }, 'description'], threshold: 0.32, ignoreLocation: true });
+
   function current() {
     const q = $('q').value.trim();
-    const base = q ? fuse.search(q).map((r) => r.item as any) : data;
-    const plugin = $('plugin').value, kind = $('kind').value;
-    return base.filter((e: any) => (!plugin || e.plugin === plugin) && (!kind || e.kind === kind));
+    let base = q ? fuse.search(q).map((r) => r.item as any) : data.slice();
+    const plugin = $('plugin').value, kind = $('kind').value, tier = $('tier').value;
+    base = base.filter((e: any) => (!plugin || e.plugin === plugin) && (!kind || e.kind === kind) && (!tier || e.tier === tier));
+    const sort = $('sort').value;
+    if (sort === 'az') base.sort((a: any, b: any) => a.name.localeCompare(b.name));
+    else if (sort === 'readiness') base.sort((a: any, b: any) => (b.readiness ?? 0) - (a.readiness ?? 0) || a.name.localeCompare(b.name));
+    return base;
   }
+
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
+  const tierPill = (e: any) =>
+    e.tier === 'field-ready' ? '<span class="tierbadge t-field-ready">Field-Ready</span>'
+    : e.tier === 'certified' ? '<span class="tierbadge t-certified">Certified</span>' : '';
+
   function render() {
     const out = current();
-    count.textContent = out.length + ' results';
+    count.textContent = out.length + ' result' + (out.length === 1 ? '' : 's');
+    if (!out.length) {
+      results.innerHTML = '<li class="empty">No matches. <button type="button" id="clear">Clear filters</button></li>';
+      document.getElementById('clear')!.addEventListener('click', () => {
+        ['q', 'plugin', 'kind', 'tier'].forEach((id) => { $(id).value = ''; });
+        render();
+      });
+      return;
+    }
     results.innerHTML = out.map((e: any) =>
       `<li class="item"><a href="/catalog/${e.slug}">`
-      + `<div class="ctop"><span class="k k-${e.kind}">${e.kind}</span>${e.readiness != null ? `<span class="score mono">${e.readiness}</span>` : ''}</div>`
+      + `<div class="ctop"><span class="k k-${e.kind}">${e.kind}</span>`
+      + `<span class="rt">${tierPill(e)}${e.readiness != null ? `<span class="score mono">${e.readiness}</span>` : ''}</span></div>`
       + `<strong class="nm">${esc(e.name)}</strong>`
       + `<p>${esc(e.description)}</p>`
       + `<span class="pl mono">${e.plugin}</span>`
       + `</a></li>`).join('');
   }
-  ['q', 'plugin', 'kind'].forEach((id) => $(id).addEventListener('input', render));
+
+  ['q', 'plugin', 'kind', 'tier', 'sort'].forEach((id) => $(id).addEventListener('input', render));
   render();
 </script>
 <style>
@@ -55,13 +77,19 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   #results .item a { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 13px; padding: 17px 18px; background: var(--paper); height: 100%; text-decoration: none; color: var(--ink);
     transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
   #results .item a:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 26px -20px var(--accent-soft); }
-  #results .ctop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  #results .ctop { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; }
   #results .k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
   #results .k-skill { color: var(--accent-text); }
   #results .k-agent { color: var(--ink); }
+  #results .rt { display: inline-flex; align-items: center; gap: 7px; }
+  #results .tierbadge { font-family: var(--font-mono); font-size: 10px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  #results .t-certified { color: var(--accent-text); border-color: var(--accent); }
+  #results .t-field-ready { color: #2f8f5d; border-color: #2f8f5d; }
   #results .score { font-size: 12.5px; color: var(--muted); }
   #results .nm { font-family: var(--font-display); font-size: 16px; letter-spacing: -.01em; }
   #results .item p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 7px 0 12px;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   #results .pl { font-size: 11px; color: var(--muted); margin-top: auto; }
+  #results .empty { grid-column: 1 / -1; padding: 34px; text-align: center; color: var(--muted); font-size: 14px; }
+  #results .empty button { margin-left: 4px; font-family: var(--font-mono); font-size: 13px; color: var(--accent-text); background: none; border: none; cursor: pointer; text-decoration: underline; }
 </style>

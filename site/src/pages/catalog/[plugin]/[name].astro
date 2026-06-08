@@ -12,14 +12,15 @@ export async function getStaticPaths() {
   return assets.map((asset) => {
     const related = assets
       .filter((a) => a.plugin === asset.plugin && a.slug !== asset.slug)
-      .slice(0, 4)
       .map((a) => ({
         slug: a.slug,
         name: a.name,
         kind: a.kind,
         description: a.description,
         readiness: scores.get(a.slug)?.readiness ?? null,
-      }));
+      }))
+      .sort((x, y) => (y.readiness ?? 0) - (x.readiness ?? 0))
+      .slice(0, 4);
     return { params: { plugin: asset.plugin, name: asset.name }, props: { asset, related } };
   });
 }
