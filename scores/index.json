@@ -1,0 +1,5469 @@
+{
+  "standardVersion": "1.0.0",
+  "count": 607,
+  "assets": [
+    {
+      "plugin": "equipt-business",
+      "name": "book-summarizer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "customer-support-responder",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "data-protection-checker",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "fitness-planner",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "instagram-reels-script-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "journaling-prompter",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "kpi-dashboard-builder",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "learning-coach",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "meeting-summarizer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "nda-reviewer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "nutrition-coach",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "parenting-advisor",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "resume-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "retrospective-facilitator",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "trademark-research",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "vendor-contract-reviewer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "whatsapp-marketing-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "caption-writer",
+      "kind": "skill",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-brief",
+      "kind": "skill",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "blog-post-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "case-study-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "email-copywriter",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "linkedin-post-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "podcast-show-notes-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "tweet-thread-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "video-script-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "youtube-script-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "seo-audit",
+      "kind": "skill",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "ad-copywriter",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-voice-coach",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "cold-outreach-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "influencer-pitch-writer",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "lifecycle-marketing-strategist",
+      "kind": "agent",
+      "readiness": 97,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "accessibility-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "agency-onboarding",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "annual-review",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "award-application",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "batch-processing-system",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "beta-launch-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "bookkeeping-setup",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "breakeven-analysis",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "budget-planner",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "catering-proposal",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cease-and-desist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "change-management-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "client-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "client-crm",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "client-feedback-system",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "commission-structure",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "compliance-checklist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "consulting-proposal-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "contract-writer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "contractor-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cookie-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "copyright-notice",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cost-analysis",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "data-processing-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "delegation-framework",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "diagnostic-assessment",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "digital-product-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "disclaimer-generator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "employee-handbook",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "escalation-procedure",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-planner",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "exchange-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "expense-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "expense-tracker",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "financial-dashboard",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "financial-model",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "financial-projection",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "food-delivery-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "food-truck-business-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "freelance-rate-card",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "fundraising-tracker",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "gdpr-compliance-checklist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "grant-application",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "hiring-scorecard",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "independent-contractor-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "intellectual-property-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "investor-update",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "invoice-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "job-posting",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "knowledge-base-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "launch-assets",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "letter-of-intent",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "licensing-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "marketplace-launch-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "marketplace-listing",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "meeting-agenda",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "meeting-notes",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "nda-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "no-code-app-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "non-compete-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "offboarding-checklist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "offer-letter",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "okr-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "partnership-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "payment-terms-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "performance-review",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "pip-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "platform-help-center",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "platform-partnership",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "platform-trust-system",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "pricing-calculator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "pricing-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "product-hunt-launch",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "profit-loss-report",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "project-tracker",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "quality-assurance-checklist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "quarterly-review",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "remote-work-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "restaurant-marketing-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "restaurant-review-response",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "restaurant-sop",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "retrospective",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "return-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "revenue-forecast",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "risk-assessment",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "roi-calculator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "saas-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "saas-evaluation",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "seasonal-menu-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "seller-onboarding",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "service-productization",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "sop-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "subscription-box-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "subscription-metrics",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "survey-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "tax-deduction-finder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "tax-prep-checklist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "tech-stack-recommendation",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "terms-of-use-app",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "time-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "tool-stack-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "trademark-application",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "unit-economics",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "vendor-evaluation",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "vendor-onboarding",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "waiver-release",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "workflow-mapper",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "workplace-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "customer-research-interviewer",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "founder-journal-coach",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "gtm-strategist",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "hiring-jd-writer",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "market-sizing-analyst",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "one-pager-builder",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "partnership-deal-structurer",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "about-page",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "article-rewriter",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "authority-content-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "blog-post",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "case-study",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "comparison-article",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-calendar",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-gap-finder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-pillar-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-repurpose",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-style-guide",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "course-outline",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "ebook-outline",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "expert-roundup-pitch",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "faq-generator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "feature-announcement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "ghostwriter-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "headline-generator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "help-center-article",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "landing-page-copy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "linkedin-article",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "listicle-generator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "microcopy-writer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "newsletter-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "newsletter-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "nutrition-content-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "pillar-page",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "podcast-one-sheet",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "podcast-show-notes",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "press-kit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "press-release",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "pricing-page-copy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "product-changelog",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "product-description",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "professional-bio",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "recipe-card",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "release-notes",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "script-to-blog",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "seo-content-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "student-feedback-form",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "thought-leadership",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "video-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "viral-content-formula",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "webinar-planner",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "white-paper",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "workshop-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "youtube-thumbnail",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "marketplace-fee-structure",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "marketplace-metrics",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "nonprofit-board-packet",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "prompt-library",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "saas-metrics-dashboard",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "spreadsheet-formula-builder",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "ai-content-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "ai-ethics-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "ai-use-case-finder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "automation-workflow",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "code-reviewer",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "git-rebase-coach",
+      "kind": "agent",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "abandoned-cart-email",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "ad-copy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "ad-performance-report",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "ad-spend-calculator",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "affiliate-program",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "affiliate-terms",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "ambassador-program",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "annual-report-writer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-refresh",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-tagline",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-voice-guide",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "chatbot-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "checkout-optimizer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "churn-prevention-playbook",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "coaching-framework",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "cold-outreach",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "collaboration-agreement",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "community-launch",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "community-moderation",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "competitor-analysis",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "complaint-resolution",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "cross-sell-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-journey-map",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-persona",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-segmentation",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-success-playbook",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-support-kb",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-win-story",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "discount-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "discovery-call-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "downsell-sequence",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "drip-campaign",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-ab-test-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-deliverability-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-newsletter-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-sequence",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "engagement-playbook",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "facebook-ad-campaign",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "facebook-group-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "feature-request-system",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "featured-snippet-optimizer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "food-photography-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "google-ads-campaign",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "guest-post-pitch",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "influencer-campaign-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "influencer-outreach",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "instagram-carousel",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "keyword-research",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "landing-page-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "launch-email-sequence",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "lead-magnet",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "link-building-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "linkedin-ad-campaign",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "linkedin-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "local-seo-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "lookalike-audience-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "marketplace-seo",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "membership-site-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "meme-content-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "menu-design-brief",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "meta-tag-optimizer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "milestone-email",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "order-bump-copy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "partnership-proposal",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "payment-plan-offer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "pinterest-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "pitch-deck",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "platform-community-guidelines",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "platform-migration",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "podcast-ad-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "portfolio-page",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "price-increase-notice",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-feedback-loop",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-launch-email",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-roadmap",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "proposal-writer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "re-engagement-email",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "reddit-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "renewal-campaign",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "retargeting-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "saas-cancellation-flow",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "saas-onboarding-flow",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-battlecard",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-deck",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-email-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-funnel-builder",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-page",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "schema-markup-guide",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "self-service-portal",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "seo-migration-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "seo-reporting-template",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "service-recovery-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "short-form-video-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "signature-talk",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-listening-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-media-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-media-calendar",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-media-graphics",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-media-policy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-media-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "social-proof-collector",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sponsor-pitch",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "store-page-audit",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "support-response-templates",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "swot-analysis",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "technical-seo-checklist",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "testimonial-collector",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "thread-hook-writer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "tiktok-ad-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "tiktok-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "transactional-email",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "trial-to-paid-email",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "tripwire-offer",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "twitter-thread",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "two-sided-email-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "upsell-sequence",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "user-generated-content",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "user-research-plan",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "value-proposition-canvas",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "webinar-sales-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "win-back-campaign",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "win-loss-analysis",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "youtube-ad-script",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "youtube-seo",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "youtube-strategy",
+      "kind": "skill",
+      "readiness": 96,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "tutorial-writer",
+      "kind": "skill",
+      "readiness": 94,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "csv-investigator",
+      "kind": "agent",
+      "readiness": 94,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "bug-hunter",
+      "kind": "agent",
+      "readiness": 94,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "performance-profiler",
+      "kind": "agent",
+      "readiness": 94,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "bundle-creator",
+      "kind": "skill",
+      "readiness": 94,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "hashtag-strategy",
+      "kind": "skill",
+      "readiness": 94,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "business-continuity-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "client-intake-form",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "client-report-template",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cohort-program",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "conference-planner",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "consulting-framework",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-budget-planner",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-follow-up",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-marketing-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-registration-page",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-run-of-show",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "event-sponsorship-proposal",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "group-program-design",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "hybrid-event-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "industry-association-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "lease-agreement-checklist",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "mastermind-group",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "mentorship-program",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "networking-event-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "nonprofit-fundraising-letter",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "open-house-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "process-automation-audit",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "product-recall-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "property-listing",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "real-estate-crm-setup",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "real-estate-newsletter",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "rental-listing",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "service-guarantee",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "skill-assessment",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "speaker-outreach",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "speaking-proposal",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "sponsor-thank-you",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "supplement-disclaimer",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "tenant-screening-checklist",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "training-manual",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "virtual-event-platform",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "volunteer-recruitment",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "book-proposal",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "continuing-education",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "curriculum-review",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "donation-page-copy",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "homework-assignment",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "lesson-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "micro-course",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "study-guide",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "ted-talk-outline",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "thought-leader-content-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "wellness-assessment",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "wellness-workshop-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "workshop-handout",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "grant-report",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "impact-report",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "social-impact-measurement",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "api-designer",
+      "kind": "agent",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "ci-cd-architect",
+      "kind": "agent",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "dependency-upgrader",
+      "kind": "agent",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "refactor-specialist",
+      "kind": "agent",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "test-writer",
+      "kind": "agent",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "typescript-migrator",
+      "kind": "agent",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "author-platform-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "cause-marketing-campaign",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "co-marketing-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-health-score",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-review-strategy",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "executive-resume",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "expert-positioning",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "joint-venture-proposal",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "linkedin-profile-optimizer",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "mission-statement",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "networking-strategy",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "onboarding-flow",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "personal-brand-strategy",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "podcast-guest-pitch",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "service-level-agreement",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "speaking-one-sheet",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "strategic-alliance-plan",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "voice-of-customer",
+      "kind": "skill",
+      "readiness": 93,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "burnout-recovery-coach",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cease-and-desist-drafter",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "competitor-analyst",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "decision-journal",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "delegation-coach",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "employment-contract-reviewer",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "interview-prepper",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "licensing-agreement-reviewer",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "negotiation-coach",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "note-organizer",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "one-on-one-prepper",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "pricing-strategist",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "privacy-policy-drafter",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "project-status-reporter",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "relationship-letter-writer",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "side-project-coach",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "tos-drafter",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "travel-planner",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "weekly-review-coach",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "landing-page-copywriter",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "newsletter-writer",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "press-release-writer",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "analytics-narrator",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "content-calendar-planner",
+      "kind": "agent",
+      "readiness": 92,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "annual-planning",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cash-flow-forecast",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "compensation-plan",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "culture-document",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "decision-matrix",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "energy-management",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "gift-guide",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "interview-question-bank",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "inventory-management",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "morning-routine-builder",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "onboarding-checklist",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "one-on-one-template",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "privacy-policy",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "product-launch-plan",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "project-scope-change",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "property-management-sop",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "rate-negotiation-script",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "retainer-agreement",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "scope-of-work",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "status-update-template",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "subcontractor-agreement",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "team-charter",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "terms-of-service",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "wholesale-catalog",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "board-deck-builder",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "business-plan-builder",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "zomato-swiggy-listing-optimizer",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "book-outline",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "brand-story",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "content-cluster-plan",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "hook-generator",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "podcast-launch",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "speech-writer",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "feedback-analysis",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "kpi-dashboard",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "ab-test-analyzer",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "cohort-analyst",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "metric-definer",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "legacy-code-explainer",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "security-auditor",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "tech-debt-prioritizer",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "ad-creative-brief",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "affiliate-recruitment",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "black-friday-emails",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "business-plan",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "cart-recovery-sms",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "churn-analysis",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "crisis-comms",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "customer-advisory-board",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-list-cleanup",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-preference-center",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-subject-line-tester",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "flash-sale-campaign",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "google-business-profile",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "high-ticket-sales-page",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "loyalty-program",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "market-research",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "media-buy-plan",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "media-kit",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "objection-handler",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "pr-pitch",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "referral-program",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "revenue-model",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-script",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "satisfaction-survey",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "seo-competitor-analysis",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "site-architecture-plan",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "waitlist-builder",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "webinar-email-sequence",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "welcome-sequence",
+      "kind": "skill",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "funnel-architect",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "retention-strategist",
+      "kind": "agent",
+      "readiness": 90,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "api-documentation",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "technical-docs-writer",
+      "kind": "agent",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "benefits-guide",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "diversity-policy",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "dropshipping-supplier-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "employee-survey",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "exit-interview-template",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "freelancer-management",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "fulfillment-sop",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "pricing-analysis",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "product-sourcing-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "referral-bonus-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "remote-team-handbook",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "report-automation",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "size-guide",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "store-launch-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "succession-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "team-building-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "training-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "weekly-report",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "unit-economics-analyst",
+      "kind": "agent",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "collection-page-copy",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "product-faq",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "ab-test-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "analytics-setup-guide",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "attribution-model",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "benchmarking-report",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "cohort-analysis",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "conversion-funnel-analysis",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "customer-lifetime-value",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "data-collection-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "data-dashboard-design",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "metric-definition-guide",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "sentiment-analysis",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "survey-analysis",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-architecture",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-audit",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-identity-guide",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-positioning-statement",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "color-palette-generator",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "email-design-system",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "icon-set-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "market-sizing",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "merch-design-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "naming-workshop",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "packaging-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "presentation-template-guide",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-listing-optimizer",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "rebrand-plan",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "signage-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "style-tile",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "unboxing-experience",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "visual-identity-brief",
+      "kind": "skill",
+      "readiness": 88,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "client-transformation-story",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cross-border-selling",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "health-disclaimer",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "investment-property-analysis",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "launch-checklist",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "neighborhood-guide",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "quiz-generator",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "retreat-planner",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "seasonal-inventory-plan",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "shipping-policy",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "task-prioritization",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "certification-program",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "class-schedule-planner",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "learning-path",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "database-schema-designer",
+      "kind": "agent",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-engineering",
+      "name": "observability-engineer",
+      "kind": "agent",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-photography-brief",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "nps-survey",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-comparison",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-photography-brief",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "review-response",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "seasonal-campaign",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "thank-you-campaign",
+      "kind": "skill",
+      "readiness": 87,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "data-cleaner",
+      "kind": "agent",
+      "readiness": 85,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "financial-planner",
+      "kind": "agent",
+      "readiness": 82,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "inbox-triage",
+      "kind": "agent",
+      "readiness": 82,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "fitness-program-outline",
+      "kind": "skill",
+      "readiness": 81,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "fundraising-pitch-coach",
+      "kind": "agent",
+      "readiness": 80,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "sql-expert",
+      "kind": "agent",
+      "readiness": 80,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "sql-query-optimizer",
+      "kind": "agent",
+      "readiness": 80,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "etl-pipeline-builder",
+      "kind": "agent",
+      "readiness": 77,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "calendar-optimizer",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "focus-coach",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "gst-india-helper",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "hindi-english-content-writer",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "india-tax-filing-helper",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "okr-coach",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "data-vis-designer",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "growth-hacker",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "paid-campaign-optimizer",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "seo-strategist",
+      "kind": "agent",
+      "readiness": 76,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "dashboard-designer",
+      "kind": "agent",
+      "readiness": 75,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": true
+    }
+  ]
+}

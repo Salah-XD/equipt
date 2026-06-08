@@ -1,0 +1,49 @@
+{
+  "asset": {
+    "plugin": "equipt-data",
+    "name": "sql-query-optimizer",
+    "kind": "agent"
+  },
+  "standardVersion": "1.0.0",
+  "readiness": 80,
+  "tier": "provisional",
+  "unsafe": false,
+  "partial": true,
+  "eligibleTier": null,
+  "axes": {
+    "craft": {
+      "score": 75,
+      "signals": [
+        "description length ok",
+        "description has trigger cue",
+        "substantive body",
+        "has headings",
+        "no examples"
+      ]
+    },
+    "fit": null,
+    "guard": {
+      "score": 95,
+      "signals": [
+        "broad tool access: Bash"
+      ],
+      "gated": false
+    },
+    "proof": {
+      "score": 45,
+      "signals": [
+        "no code/example blocks",
+        "has usage/how-to section",
+        "no adoption data (neutral baseline)"
+      ]
+    },
+    "upkeep": {
+      "score": 100,
+      "signals": [
+        "updated 0d ago",
+        "spec-compatible frontmatter"
+      ]
+    }
+  },
+  "curation": null
+}
