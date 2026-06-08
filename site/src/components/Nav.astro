@@ -12,6 +12,10 @@ import ThemeToggle from './ThemeToggle.astro';
       <a class="link-underline" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>GitHub</a>
     </nav>
     <div class="navctl">
+      <button class="navsearch" type="button" data-open-palette aria-label="Search skills & agents">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <kbd class="mono">⌘ K</kbd>
+      </button>
       <a class="publish" href="/publish">Publish</a>
       <ThemeToggle />
       <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
@@ -28,7 +32,13 @@ import ThemeToggle from './ThemeToggle.astro';
   .links { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
   .links a { color: var(--ink); }
 
-  .navctl { display: flex; align-items: center; gap: 14px; }
+  .navctl { display: flex; align-items: center; gap: 12px; }
+  .navsearch { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+    background: var(--page); border: 1px solid var(--hair); border-radius: 8px; padding: 6px 10px; cursor: pointer;
+    transition: border-color .15s ease, color .15s ease; }
+  .navsearch:hover { border-color: var(--accent); color: var(--accent-text); }
+  .navsearch kbd { font-size: 11px; border: 1px solid var(--hair); border-radius: 5px; padding: 1px 5px; }
+  @media (max-width: 560px) { .navsearch kbd { display: none; } }
   .publish { font-weight: 600; font-size: 13px; padding: 7px 16px; border-radius: 8px; border: 1px solid var(--ink); color: var(--ink);
     transition: transform .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease; }
   .publish:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); transform: translateY(-1px); }

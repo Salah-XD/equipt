@@ -1,0 +1,33 @@
+---
+const steps = [
+  { n: '01', t: 'Find the skill', d: 'Search 607 skills & agents by the job to be done — cold outreach, SEO, hiring, dashboards, support replies.' },
+  { n: '02', t: 'See it’s verified', d: 'Every asset is scored on the Equipt Standard. You see its Readiness and tier before you ever install it.' },
+  { n: '03', t: 'Add to your AI', d: 'Drop it into claude.ai in minutes — no code. Power users can wire it into Claude Code with the CLI.' },
+];
+---
+<section class="how"><div class="wrap">
+  <p class="kicker">How it works</p>
+  <h2 class="serif">From “I need to…” to <i>done</i>, in three steps.</h2>
+  <ol class="steps">
+    {steps.map((s) => (
+      <li class="step">
+        <span class="num mono">{s.n}</span>
+        <h3>{s.t}</h3>
+        <p>{s.d}</p>
+      </li>
+    ))}
+  </ol>
+</div></section>
+<style>
+  .how { padding: 88px 0; border-top: 1px solid var(--hair); }
+  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 38px); letter-spacing: .02em; margin: 6px 0 38px; }
+  .serif i { color: var(--accent); }
+  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .step { border: 1px solid var(--hair); border-radius: 14px; padding: 24px 22px; background: var(--paper);
+    transition: border-color .15s ease, transform .15s ease; }
+  .step:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .num { display: inline-block; font-size: 13px; color: var(--accent-text); border: 1px solid var(--hair); border-radius: 8px; padding: 4px 10px; margin-bottom: 16px; }
+  .step h3 { font-family: var(--font-display); font-size: 19px; letter-spacing: -.01em; }
+  .step p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 9px; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+</style>
