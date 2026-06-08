@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import ProofBar from '../components/ProofBar.astro';
 import FeaturedAssets from '../components/FeaturedAssets.astro';
+import DemoCompare from '../components/DemoCompare.astro';
 import TrustSection from '../components/TrustSection.astro';
 import PluginGrid from '../components/PluginGrid.astro';
 import InstallTabs from '../components/InstallTabs.astro';
@@ -41,6 +42,7 @@ const jsonld = {
     <div data-reveal><ProofBar total={assets.length} /></div>
     <div data-reveal><HowItWorks /></div>
     <div data-reveal><FeaturedAssets /></div>
+    <div data-reveal><DemoCompare /></div>
     <div data-reveal><TrustSection /></div>
     <div data-reveal><ByRole /></div>
     <div data-reveal><PluginGrid /></div>

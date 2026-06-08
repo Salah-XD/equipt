@@ -1,0 +1,119 @@
+---
+const examples = [
+  {
+    label: 'Cold email',
+    skill: 'cold-outreach-writer',
+    tier: 'field-ready',
+    task: 'Write a cold email to a SaaS founder about our usage-analytics tool.',
+    without: 'Hi there, I hope this email finds you well! I came across your company and was really impressed by what you’re building. I’d love to show you our analytics platform — it can help you grow and make better, data-driven decisions. Do you have 15 minutes for a quick call this week? Best regards.',
+    withSkill: 'Saw you just shipped usage-based billing — most teams botch the revenue reporting that comes with it. We built [tool] for exactly that: MRR, churn, and expansion in one view, no SQL. Want a 2-minute Loom? No call needed.',
+  },
+  {
+    label: 'Blog intro',
+    skill: 'blog-post-writer',
+    tier: 'field-ready',
+    task: 'Write the opening to a blog post on reducing SaaS churn.',
+    without: 'In today’s fast-paced digital world, reducing churn is more important than ever. Churn can have a significant impact on your bottom line. In this article, we’ll explore some proven tips and tricks to help you reduce churn and keep your customers happy.',
+    withSkill: 'You don’t have a churn problem. You have twelve of them — and they don’t share a fix. The annual plan that quietly lapses, the power user who outgrows you, the trial that never activated. Averaging them into one “retention” number is exactly why most churn work fails.',
+  },
+  {
+    label: 'Support reply',
+    skill: 'customer-support-responder',
+    tier: 'certified',
+    task: 'Reply to an angry customer asking for a refund after a bug.',
+    without: 'Dear valued customer, we sincerely apologize for any inconvenience this may have caused. Your satisfaction is our top priority. We have escalated your issue to the relevant team and will get back to you as soon as possible. Thank you for your patience and understanding.',
+    withSkill: 'You’re right to be annoyed — the export broke and you lost an afternoon to it. I’ve refunded this month, and the fix ships tomorrow. If it bites you again before then, reply straight here and I’ll handle it personally. Sorry for the mess.',
+  },
+];
+const e0 = examples[0];
+---
+<section class="demo"><div class="wrap">
+  <p class="kicker">See the difference</p>
+  <h2 class="serif">Same prompt. <i>Worlds apart.</i></h2>
+  <p class="lead">A raw prompt gives you confident-sounding filler. An Equipt skill gives you something you’d actually send.</p>
+
+  <div class="chips" role="tablist" aria-label="Example">
+    {examples.map((e, i) => (
+      <button class={`chip${i === 0 ? ' on' : ''}`} type="button" data-i={i} role="tab" aria-selected={i === 0 ? 'true' : 'false'}>{e.label}</button>
+    ))}
+  </div>
+
+  <div class="frame">
+    <div class="prompt">
+      <span class="plabel mono">PROMPT</span>
+      <span class="ptext" data-task>{e0.task}</span>
+    </div>
+    <div class="cols">
+      <div class="col col-plain">
+        <div class="chead"><span class="badge bad mono">✕ Plain AI</span></div>
+        <p class="out" data-without>{e0.without}</p>
+      </div>
+      <div class="col col-skill">
+        <div class="chead">
+          <span class="badge good mono">✓ With <b data-skill>{e0.skill}</b></span>
+          <span class={`tier tier-${e0.tier} mono`} data-tier>{e0.tier === 'field-ready' ? 'Field-Ready' : 'Certified'}</span>
+        </div>
+        <p class="out" data-with>{e0.withSkill}</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+<script type="application/json" id="demo-data" set:html={JSON.stringify(examples)} />
+<script>
+  const data = JSON.parse(document.getElementById('demo-data')!.textContent!);
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.chip'));
+  const $ = (s: string) => document.querySelector<HTMLElement>(s)!;
+  const taskEl = $('[data-task]'), withoutEl = $('[data-without]'), withEl = $('[data-with]'), skillEl = $('[data-skill]'), tierEl = $('[data-tier]');
+  function show(i: number) {
+    const e = data[i];
+    taskEl.textContent = e.task;
+    withoutEl.textContent = e.without;
+    withEl.textContent = e.withSkill;
+    skillEl.textContent = e.skill;
+    tierEl.textContent = e.tier === 'field-ready' ? 'Field-Ready' : 'Certified';
+    tierEl.className = `tier tier-${e.tier} mono`;
+    chips.forEach((c, j) => { c.classList.toggle('on', j === i); c.setAttribute('aria-selected', String(j === i)); });
+  }
+  chips.forEach((c, i) => c.addEventListener('click', () => show(i)));
+</script>
+<style>
+  .demo { padding: 88px 0; border-top: 1px solid var(--hair); }
+  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 38px); letter-spacing: .02em; margin: 6px 0 0; }
+  .serif i { color: var(--accent); }
+  .lead { color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 56ch; margin: 12px 0 26px; }
+
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .chip { font-family: var(--font-mono); font-size: 12.5px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--hair);
+    background: var(--paper); color: var(--muted); cursor: pointer; transition: border-color .15s ease, color .15s ease, background-color .15s ease; }
+  .chip:hover { border-color: var(--accent); color: var(--accent-text); }
+  .chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .frame { border: 1px solid var(--hair); border-radius: 16px; overflow: hidden; background: var(--paper);
+    box-shadow: 0 30px 60px -40px rgba(0,0,0,.4); }
+  .prompt { display: flex; align-items: center; gap: 13px; padding: 15px 20px; border-bottom: 1px solid var(--hair); background: var(--page); }
+  .plabel { font-size: 10px; letter-spacing: .14em; color: var(--muted); border: 1px solid var(--hair); border-radius: 5px; padding: 3px 7px; flex: none; }
+  .ptext { font-size: 14.5px; color: var(--ink); }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; }
+  .col { padding: 22px 24px 26px; }
+  .col-plain { border-right: 1px solid var(--hair); }
+  .col-skill { background: linear-gradient(180deg, var(--accent-soft), transparent 55%); }
+  .chead { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; flex-wrap: wrap; }
+  .badge { font-size: 11px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  .badge.bad { color: var(--muted); }
+  .badge.good { color: var(--accent-text); border-color: var(--accent); }
+  .badge.good b { font-weight: 600; }
+  .tier { font-size: 10px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  .tier-field-ready { color: #2f8f5d; border-color: #2f8f5d; }
+  .tier-certified { color: var(--accent-text); border-color: var(--accent); }
+  .out { font-size: 14.5px; line-height: 1.66; transition: opacity .15s ease; }
+  .col-plain .out { color: var(--muted); }
+  .col-skill .out { color: var(--ink); }
+
+  :root[data-theme='dark'] .tier-field-ready { color: #8fb89a; border-color: color-mix(in srgb, #8fb89a 45%, var(--hair)); }
+
+  @media (max-width: 760px) {
+    .cols { grid-template-columns: 1fr; }
+    .col-plain { border-right: 0; border-bottom: 1px solid var(--hair); }
+  }
+</style>
