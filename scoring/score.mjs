@@ -17,8 +17,14 @@ const PLUGINS = join(ROOT, 'plugins');
 const OUT = join(ROOT, 'scores');
 
 async function readCuration() {
-  try { return JSON.parse(await readFile(join(ROOT, 'curation.json'), 'utf8')); }
-  catch { return {}; }
+  let raw;
+  try {
+    raw = await readFile(join(ROOT, 'curation.json'), 'utf8');
+  } catch (err) {
+    if (err.code === 'ENOENT') return {}; // no curation file yet is fine
+    throw err;
+  }
+  return JSON.parse(raw); // a malformed curation.json must fail loudly, not be ignored
 }
 
 async function main() {
