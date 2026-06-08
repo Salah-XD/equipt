@@ -80,6 +80,9 @@ const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
   .tip-right { left: auto; right: 0; }
   .has-tip:hover .tip, .has-tip:focus .tip, .has-tip:focus-visible .tip { opacity: 1; visibility: visible; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+  /* Tooltips are hover-only (no use on touch) and their 250px box overflows narrow
+     screens — drop them on mobile to prevent horizontal overflow. */
+  @media (max-width: 760px) { .tip { display: none; } }
 
   .unsafe { margin-top: 14px; font-size: 12.5px; color: var(--accent-text); }
 </style>
