@@ -4,12 +4,12 @@
     "name": "dashboard-designer",
     "kind": "agent"
   },
-  "standardVersion": "1.0.0",
-  "readiness": 75,
+  "standardVersion": "1.1.0",
+  "readiness": 74,
   "tier": "provisional",
   "unsafe": false,
-  "partial": true,
-  "eligibleTier": null,
+  "partial": false,
+  "eligibleTier": "certified",
   "axes": {
     "craft": {
       "score": 75,
