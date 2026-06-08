@@ -1,4 +1,4 @@
-# The Equipt Standard — Methodology (v1.1.0)
+# The Equipt Standard — Methodology (v1.1.1)
 
 Equipt rates how *ready* a skill or agent is to equip into your AI. The headline
 is **Readiness (0–100)**, a weighted blend of four axes (a fifth, **Fit**, is
@@ -10,8 +10,8 @@ deferred to v1.1), capped by a safety gate.
 |---|---|---|
 | **Craft** | How well it is built | Static: frontmatter completeness, description quality, body substance, structure, examples |
 | **Fit** | Triggers at the right time, not the wrong time | *Deferred to v1.1* (needs an LLM eval). Shown on cards as “coming”. |
-| **Guard** | Safety to run | Static scan: secret-exfiltration / destructive hard-fails, network/shell/eval risk, tool-scope (least privilege) |
-| **Proof** | Evidence it works | Static: examples/usage sections, adoption inputs (low weight) |
+| **Guard** | Safety to run | Static scan of the asset's **code** (fenced/inline, not prose): destructive / credential-in-URL hard-fails, secret-exfiltration over the network (curl/wget **and** fetch/XHR/requests/Invoke-WebRequest/…), shell/eval/spawn risk, tool-scope (least privilege) |
+| **Proof** | Evidence it works | Static, **continuous**: count of example blocks + usage/how-to + structure depth + adoption (low weight) — no flat baseline, so thin assets score low |
 | **Upkeep** | Alive & current | Git recency + current-spec frontmatter compatibility |
 
 ## Readiness
@@ -42,7 +42,9 @@ honours it when the asset still meets the numeric threshold.
 ## Versioning
 
 Changing any weight, threshold, or hard-fail rule bumps `standardVersion`
-(currently `1.1.0`) so historical scorecards remain interpretable.
+(currently `1.1.1`) so historical scorecards remain interpretable.
+
+> **Note on tiers:** *Provisional* means **machine-scored, not yet human-reviewed** — it is not a quality verdict. A high Readiness with a Provisional tier just means a human hasn't signed off yet.
 
 ## Roadmap
 
