@@ -23,6 +23,7 @@ export async function getStaticPaths() {
         kind: a.kind,
         description: a.description,
         readiness: scores.get(a.slug)?.readiness ?? null,
+        tier: scores.get(a.slug)?.tier ?? null,
       }))
       .sort((x, y) => (y.readiness ?? 0) - (x.readiness ?? 0) || x.name.localeCompare(y.name));
 
@@ -65,7 +66,11 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${p
         <a class="card" href={`/catalog/${i.slug}`}>
           <div class="ctop">
             <span class={`k k-${i.kind}`}>{i.kind}</span>
-            {i.readiness != null && <span class="score mono">{i.readiness}</span>}
+            <span class="rt">
+              {i.tier === 'field-ready' && <span class="tierbadge t-field-ready">Field-Ready</span>}
+              {i.tier === 'certified' && <span class="tierbadge t-certified">Certified</span>}
+              {i.readiness != null && <span class="score mono">{i.readiness}</span>}
+            </span>
           </div>
           <strong>{i.name}</strong>
           <p>{i.description}</p>
@@ -102,6 +107,10 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${p
     padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
   .k-skill { color: var(--accent-text); }
   .k-agent { color: var(--ink); }
+  .rt { display: inline-flex; align-items: center; gap: 7px; }
+  .tierbadge { font-family: var(--font-mono); font-size: 10px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  .t-certified { color: var(--accent-text); border-color: var(--accent); }
+  .t-field-ready { color: #2f8f5d; border-color: #2f8f5d; }
   .score { font-size: 12.5px; color: var(--muted); }
   .card strong { font-family: var(--font-display); font-size: 16px; letter-spacing: -.01em; }
   .card p { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 7px;
