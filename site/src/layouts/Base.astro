@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 interface Props { title: string; description?: string; image?: string; }
 const {
   title,
@@ -43,6 +44,7 @@ const ogImage = new URL(image, Astro.site).href;
     </script>
   </head>
   <body>
+    <Nav />
     <slot />
   </body>
 </html>

@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import { resolveRepoRoot } from '../lib/catalog';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { marked } from 'marked';
+
+const root = await resolveRepoRoot();
+let md = '';
+try {
+  md = await readFile(join(root, 'scoring', 'methodology.md'), 'utf8');
+} catch {
+  md = '# The Equipt Standard\n\nMethodology coming soon.';
+}
+const m = md.match(/^\s*#\s+(.+?)\s*\r?\n/);
+const title = m ? m[1].trim() : 'The Equipt Standard';
+const body = m ? md.slice(m[0].length) : md;
+const html = await marked.parse(body);
+---
+<Base title="The Equipt Standard — Equipt" description="How Equipt rates skills & agents: a Readiness score across Craft, Fit, Guard, Proof, and Upkeep, with a Guard safety gate and Provisional/Certified/Field-Ready tiers.">
+  <main class="standard wrap">
+    <a href="/catalog" class="kicker back">← Catalog</a>
+    <p class="kicker eyebrow">Verified marketplace</p>
+    <h1>{title}</h1>
+    <article class="prose" set:html={html} />
+  </main>
+  <Footer />
+</Base>
+<style>
+  .standard { padding: 40px 22px 72px; max-width: 760px; }
+  .back { display: inline-block; margin-bottom: 22px; }
+  .eyebrow { color: var(--accent-text); margin-bottom: 10px; }
+  h1 { font-family: var(--font-display); font-size: clamp(34px, 6vw, 52px); letter-spacing: -.03em; line-height: 1.02; margin-bottom: 10px; }
+  .prose { margin-top: 24px; line-height: 1.7; }
+  .prose :global(h2) { font-family: var(--font-display); font-size: 24px; margin: 30px 0 10px; letter-spacing: -.01em; }
+  .prose :global(h3) { font-family: var(--font-display); font-size: 18px; margin: 22px 0 8px; }
+  .prose :global(table) { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  .prose :global(th), .prose :global(td) { border: 1px solid var(--hair); padding: 9px 10px; text-align: left; vertical-align: top; }
+  .prose :global(th) { background: var(--paper); font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .prose :global(code) { font-family: var(--font-mono); font-size: .9em; background: var(--paper); border: 1px solid var(--hair); border-radius: 5px; padding: 1px 5px; }
+  .prose :global(strong) { color: var(--ink); }
+  .prose :global(ul) { padding-left: 22px; }
+  .prose :global(a) { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+</style>

@@ -1,0 +1,123 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Footer from '../../../components/Footer.astro';
+import { loadAssets, resolveRepoRoot } from '../../../lib/catalog';
+import { loadScoreIndex } from '../../../lib/scores';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+export async function getStaticPaths() {
+  const root = await resolveRepoRoot();
+  const cfg = JSON.parse(await readFile(join(root, 'plugins.config.json'), 'utf8')) as {
+    plugins: Record<string, { description: string }>;
+  };
+  const assets = await loadAssets(root);
+  const scores = await loadScoreIndex(root);
+
+  return Object.entries(cfg.plugins).map(([name, c]) => {
+    const items = assets
+      .filter((a) => a.plugin === name)
+      .map((a) => ({
+        slug: a.slug,
+        name: a.name,
+        kind: a.kind,
+        description: a.description,
+        readiness: scores.get(a.slug)?.readiness ?? null,
+      }))
+      .sort((x, y) => (y.readiness ?? 0) - (x.readiness ?? 0) || x.name.localeCompare(y.name));
+
+    const skills = items.filter((i) => i.kind === 'skill').length;
+    const scored = items.filter((i) => i.readiness != null) as Array<{ readiness: number }>;
+    const avg = scored.length ? Math.round(scored.reduce((s, i) => s + i.readiness, 0) / scored.length) : null;
+
+    return {
+      params: { plugin: name },
+      props: { plugin: name, description: c.description, items, skills, agents: items.length - skills, avg },
+    };
+  });
+}
+
+const { plugin, description, items, skills, agents, avg } = Astro.props;
+const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${plugin}`;
+---
+<Base title={`${plugin} — Equipt`} description={description}>
+  <main class="plugin wrap">
+    <a href="/catalog" class="kicker back">← Catalog</a>
+
+    <header class="phead">
+      <h1>{plugin}</h1>
+      <p class="desc">{description}</p>
+      <div class="stats">
+        <span><b>{skills}</b> skills</span>
+        <span><b>{agents}</b> agents</span>
+        {avg != null && <span><b>{avg}</b> avg readiness</span>}
+      </div>
+      <div class="install">
+        <div class="cmd">
+          <pre data-copy><code>{installCmd}</code></pre>
+          <button class="copy" type="button" aria-label="Copy install command">Copy</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      {items.map((i) => (
+        <a class="card" href={`/catalog/${i.slug}`}>
+          <div class="ctop">
+            <span class={`k k-${i.kind}`}>{i.kind}</span>
+            {i.readiness != null && <span class="score mono">{i.readiness}</span>}
+          </div>
+          <strong>{i.name}</strong>
+          <p>{i.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Base>
+<style>
+  .plugin { padding: 36px 22px 72px; max-width: 1120px; }
+  .back { display: inline-block; margin-bottom: 22px; }
+  .phead { border-bottom: 1px solid var(--hair); padding-bottom: 28px; margin-bottom: 28px; }
+  h1 { font-family: var(--font-display); font-size: clamp(34px, 6vw, 56px); letter-spacing: -.03em; }
+  .desc { font-size: 18px; line-height: 1.55; color: var(--muted); max-width: 64ch; margin-top: 10px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 18px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+  .stats b { font-family: var(--font-display); color: var(--ink); font-size: 16px; }
+
+  .install { margin-top: 22px; max-width: 480px; }
+  .cmd { position: relative; }
+  .cmd pre { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 84px 14px 16px;
+    overflow: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--ink); white-space: pre; }
+  .copy { position: absolute; top: 10px; right: 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em;
+    padding: 6px 11px; border-radius: 7px; border: 1px solid var(--hair); background: var(--page); color: var(--muted); cursor: pointer;
+    transition: border-color .15s, color .15s; }
+  .copy:hover { border-color: var(--accent); color: var(--accent-text); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 13px; }
+  .card { display: block; border: 1px solid var(--hair); border-radius: 13px; padding: 17px 18px; background: var(--paper);
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 26px -20px var(--accent-soft); }
+  .ctop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em;
+    padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
+  .k-skill { color: var(--accent-text); }
+  .k-agent { color: var(--ink); }
+  .score { font-size: 12.5px; color: var(--muted); }
+  .card strong { font-family: var(--font-display); font-size: 16px; letter-spacing: -.01em; }
+  .card p { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 7px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+</style>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const pre = btn.parentElement?.querySelector('pre[data-copy]');
+      if (!pre) return;
+      try {
+        await navigator.clipboard.writeText(pre.textContent ?? '');
+        const prev = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = prev; }, 1400);
+      } catch {}
+    });
+  });
+</script>

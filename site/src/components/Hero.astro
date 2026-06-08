@@ -1,23 +1,24 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
-interface Props { chips: string[]; total: number; }
-const { chips, total } = Astro.props;
+interface Props { total: number; }
+const { total } = Astro.props;
+const ICONS: Record<string, string> = {
+  claude: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 1.5v3M8 11.5v3M1.5 8h3M11.5 8h3M3.4 3.4l2.1 2.1M10.5 10.5l2.1 2.1M12.6 3.4l-2.1 2.1M5.5 10.5l-2.1 2.1"/></svg>',
+  cursor: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M3 2.5l9.5 4-4 1.4-1.4 4z"/></svg>',
+  codex: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1.8" y="3" width="12.4" height="10" rx="2"/><path d="M4.6 6.6l1.9 1.5-1.9 1.5M8.4 9.8h2.8"/></svg>',
+  antigravity: '<svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M8 1.6c.4 2.9 1.5 4 4.4 4.4-2.9.4-4 1.5-4.4 4.4-.4-2.9-1.5-4-4.4-4.4C6.5 5.6 7.6 4.5 8 1.6z"/></svg>',
+};
 const surfaces = [
-  { label: 'Claude Code', live: true }, { label: 'claude.ai', live: true }, { label: 'Claude desktop', live: true },
-  { label: 'Cursor — soon', live: false }, { label: 'Codex — soon', live: false }, { label: 'Antigravity — soon', live: false },
+  { label: 'Claude Code', live: true, icon: 'claude' },
+  { label: 'claude.ai', live: true, icon: 'claude' },
+  { label: 'Claude desktop', live: true, icon: 'claude' },
+  { label: 'Cursor — soon', live: false, icon: 'cursor' },
+  { label: 'Codex — soon', live: false, icon: 'codex' },
+  { label: 'Antigravity — soon', live: false, icon: 'antigravity' },
 ];
 ---
 <header class="hero">
   <div class="grid-layer" data-hero-grid aria-hidden="true"></div>
   <div class="wrap">
-    <nav class="topline" aria-label="Primary">
-      <a class="wordmark" href="/">equip<b>t</b></a>
-      <div class="nav">
-        <a class="link-underline" href="/catalog">Catalog</a><a class="link-underline" href="/#plugins">Plugins</a><a class="link-underline" href="/#install">Install</a>
-        <a class="link-underline" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>GitHub</a>
-        <ThemeToggle />
-      </div>
-    </nav>
     <p class="kicker">{total} skills &amp; agents · one library · every AI assistant</p>
     <h1 class="big">Equip<br />your <span class="pop">AI.</span></h1>
     <p class="serif">Skills &amp; agents, <i>beautifully</i> organized.</p>
@@ -28,20 +29,16 @@ const surfaces = [
         <a class="b2" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>Star on GitHub</a>
       </div>
     </div>
-    <div class="chips">
-      {chips.map((c) => <span class="chip"><b aria-hidden="true">#</b> {c}</span>)}
-      <span class="chip">+{total - chips.length} more</span>
-    </div>
     <div class="surf">
       <span class="kicker surf-label">Works in</span>
-      {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}>{s.label}</span>)}
+      {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}><span class="ico" aria-hidden="true" set:html={ICONS[s.icon]} />{s.label}</span>)}
     </div>
   </div>
 </header>
 <style>
   .hero { position: relative; isolation: isolate; overflow: hidden;
     background: var(--paper); border-bottom: 1px solid var(--hair);
-    padding: 22px 0 60px; }
+    padding: 64px 0 72px; }
   /* Signature moment: the brutalist grid is its own layer so it can parallax on scroll */
   .grid-layer { position: absolute; inset: -10% 0 -20% 0; z-index: -1; pointer-events: none;
     background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
@@ -50,12 +47,6 @@ const surfaces = [
   /* a faint warm vignette so the headline anchors the grid */
   .grid-layer::after { content: ''; position: absolute; inset: 0;
     background: radial-gradient(120% 90% at 12% 8%, transparent 40%, var(--paper) 100%); }
-
-  .topline { display: flex; justify-content: space-between; align-items: center; }
-  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
-  .wordmark b { color: var(--accent); }
-  .nav { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
-  .nav a { color: var(--ink); }
 
   .kicker { margin-top: 0; }
   .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(56px, 11vw, 116px);
@@ -75,17 +66,13 @@ const surfaces = [
   .b2 { border: 1px solid var(--ink); }
   .b2:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-text); }
 
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
-  .chip { font-family: var(--font-mono); font-size: 12px; color: var(--muted); background: var(--paper);
-    border: 1px solid var(--hair); padding: 8px 11px; border-radius: 8px;
-    transition: border-color .18s ease, color .18s ease, transform .18s ease; }
-  .chip:hover { border-color: var(--accent); transform: translateY(-1px); }
-  .chip b { color: var(--accent-text); }
-
-  .surf { display: flex; gap: 8px; margin-top: 32px; flex-wrap: wrap; align-items: center; }
+  .surf { display: flex; gap: 8px; margin-top: 40px; flex-wrap: wrap; align-items: center; }
   .surf-label { margin-right: 6px; }
-  .pill { font-size: 12px; font-weight: 500; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--hair); color: var(--muted); }
+  .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500;
+    padding: 7px 13px 7px 11px; border-radius: 999px; border: 1px solid var(--hair); color: var(--muted); }
+  .pill .ico { display: inline-flex; color: var(--accent); }
   .pill.soon { border-style: dashed; opacity: .72; }
+  .pill.soon .ico { color: var(--muted); }
 </style>
 <script>
   // Signature: lightweight parallax seam on the hero grid. rAF-throttled, reduced-motion safe.
