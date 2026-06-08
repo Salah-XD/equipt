@@ -4,7 +4,7 @@
     "name": "youtube-ad-script",
     "kind": "skill"
   },
-  "standardVersion": "1.1.0",
+  "standardVersion": "1.1.1",
   "readiness": 96,
   "tier": "provisional",
   "unsafe": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 85,
+      "score": 89,
       "signals": [
-        "has code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "2 example block(s)",
+        "has usage / how-to",
+        "16 section(s)"
       ]
     },
     "upkeep": {

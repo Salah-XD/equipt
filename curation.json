@@ -2,7 +2,7 @@
   "equipt-engineering/code-reviewer": { "tier": "field-ready", "reviewer": "Salah-XD", "note": "starter pick — strong review rubric, examples, least-privilege tools", "reviewedAt": "2026-06-08" },
   "equipt-marketing/seo-audit": { "tier": "field-ready", "reviewer": "Salah-XD", "note": "starter pick — clear, actionable, well-structured", "reviewedAt": "2026-06-08" },
   "equipt-content/blog-post-writer": { "tier": "field-ready", "reviewer": "Salah-XD", "note": "starter pick — thorough with examples", "reviewedAt": "2026-06-08" },
-  "equipt-business/customer-support-responder": { "tier": "field-ready", "reviewer": "Salah-XD", "note": "starter pick — well-scoped, safe", "reviewedAt": "2026-06-08" },
+  "equipt-business/customer-support-responder": { "tier": "certified", "reviewer": "Salah-XD", "note": "starter pick — well-scoped, safe", "reviewedAt": "2026-06-08" },
   "equipt-data/saas-metrics-dashboard": { "tier": "field-ready", "reviewer": "Salah-XD", "note": "starter pick — concrete, example-rich", "reviewedAt": "2026-06-08" },
   "equipt-marketing/cold-outreach-writer": { "tier": "certified", "reviewer": "Salah-XD", "note": "starter pick", "reviewedAt": "2026-06-08" },
   "equipt-content/email-copywriter": { "tier": "certified", "reviewer": "Salah-XD", "note": "starter pick", "reviewedAt": "2026-06-08" },

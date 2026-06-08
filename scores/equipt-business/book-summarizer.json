@@ -4,8 +4,8 @@
     "name": "book-summarizer",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 97,
+  "standardVersion": "1.1.1",
+  "readiness": 95,
   "tier": "certified",
   "unsafe": false,
   "partial": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 85,
+      "score": 77,
       "signals": [
-        "has code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "1 example block(s)",
+        "has usage / how-to",
+        "16 section(s)"
       ]
     },
     "upkeep": {

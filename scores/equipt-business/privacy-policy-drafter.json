@@ -4,8 +4,8 @@
     "name": "privacy-policy-drafter",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 91,
+  "standardVersion": "1.1.1",
+  "readiness": 90,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 55,
+      "score": 52,
       "signals": [
-        "has code/example blocks",
-        "no usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "1 example block(s)",
+        "no usage / how-to section",
+        "11 section(s)"
       ]
     },
     "upkeep": {

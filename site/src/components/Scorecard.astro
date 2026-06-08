@@ -1,6 +1,6 @@
 ---
 import type { Scorecard } from '../lib/scores';
-import { AXIS_LABELS, AXIS_BLURB, AXIS_TIP, READINESS_TIP, tierLabel } from '../lib/scores';
+import { AXIS_LABELS, AXIS_BLURB, AXIS_TIP, READINESS_TIP, TIER_TIP, tierLabel } from '../lib/scores';
 
 interface Props { card: Scorecard }
 const { card } = Astro.props;
@@ -9,7 +9,7 @@ const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
 <section class="scorecard" aria-label="Equipt Standard scorecard">
   <header class="sc-head">
     <a class="sc-kicker" href="/standard">Equipt Standard</a>
-    <span class={`tier tier-${card.tier}`}>{tierLabel(card.tier)}</span>
+    <span class={`tier tier-${card.tier} has-tip`} tabindex="0">{tierLabel(card.tier)}<span class="tip tip-right" role="tooltip">{TIER_TIP[card.tier]}</span></span>
   </header>
 
   <div class="readiness">

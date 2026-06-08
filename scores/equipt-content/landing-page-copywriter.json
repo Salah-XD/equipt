@@ -4,12 +4,12 @@
     "name": "landing-page-copywriter",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 91,
+  "standardVersion": "1.1.1",
+  "readiness": 95,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
-  "eligibleTier": "certified",
+  "eligibleTier": "field-ready",
   "axes": {
     "craft": {
       "score": 100,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 55,
+      "score": 77,
       "signals": [
-        "has code/example blocks",
-        "no usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "1 example block(s)",
+        "has usage / how-to",
+        "8 section(s)"
       ]
     },
     "upkeep": {

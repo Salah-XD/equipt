@@ -92,6 +92,13 @@ export const AXIS_TIP: Record<string, string> = {
 export const READINESS_TIP =
   'Readiness is a weighted blend of the axes (Craft .30, Guard .30, Proof .20, Upkeep .20), capped by the Guard safety gate. Fit joins the blend in v1.1.';
 
+/** What each tier means — surfaced as a tooltip so "Readiness 93 · Provisional" isn't confusing. */
+export const TIER_TIP: Record<string, string> = {
+  provisional: 'Machine-scored on the Equipt Standard — not yet human-reviewed.',
+  certified: 'Human-reviewed · Readiness ≥ 70. A maintainer has vetted this asset.',
+  'field-ready': 'Human-reviewed, top tier · Readiness ≥ 85 with strong Guard & Proof.',
+};
+
 /** Human label for a tier slug. */
 export function tierLabel(tier: string): string {
   if (tier === 'field-ready') return 'Field-Ready';

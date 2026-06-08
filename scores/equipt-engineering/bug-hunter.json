@@ -4,8 +4,8 @@
     "name": "bug-hunter",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 94,
+  "standardVersion": "1.1.1",
+  "readiness": 92,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 85,
+      "score": 77,
       "signals": [
-        "has code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "1 example block(s)",
+        "has usage / how-to",
+        "10 section(s)"
       ]
     },
     "upkeep": {

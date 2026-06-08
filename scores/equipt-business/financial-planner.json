@@ -4,7 +4,7 @@
     "name": "financial-planner",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
+  "standardVersion": "1.1.1",
   "readiness": 82,
   "tier": "provisional",
   "unsafe": false,
@@ -32,9 +32,9 @@
     "proof": {
       "score": 45,
       "signals": [
-        "no code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "no example blocks",
+        "has usage / how-to",
+        "8 section(s)"
       ]
     },
     "upkeep": {

@@ -4,8 +4,8 @@
     "name": "lifecycle-marketing-strategist",
     "kind": "agent"
   },
-  "standardVersion": "1.1.0",
-  "readiness": 97,
+  "standardVersion": "1.1.1",
+  "readiness": 93,
   "tier": "provisional",
   "unsafe": false,
   "partial": false,
@@ -30,11 +30,11 @@
       "gated": false
     },
     "proof": {
-      "score": 85,
+      "score": 64,
       "signals": [
-        "has code/example blocks",
-        "has usage/how-to section",
-        "no adoption data (neutral baseline)"
+        "2 example block(s)",
+        "no usage / how-to section",
+        "14 section(s)"
       ]
     },
     "upkeep": {
