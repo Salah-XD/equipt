@@ -4,12 +4,12 @@
     "name": "client-crm",
     "kind": "skill"
   },
-  "standardVersion": "1.0.0",
+  "standardVersion": "1.1.0",
   "readiness": 96,
   "tier": "provisional",
   "unsafe": false,
-  "partial": true,
-  "eligibleTier": null,
+  "partial": false,
+  "eligibleTier": "field-ready",
   "axes": {
     "craft": {
       "score": 100,

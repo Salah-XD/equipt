@@ -4,12 +4,12 @@
     "name": "relationship-letter-writer",
     "kind": "agent"
   },
-  "standardVersion": "1.0.0",
-  "readiness": 92,
+  "standardVersion": "1.1.0",
+  "readiness": 91,
   "tier": "provisional",
   "unsafe": false,
-  "partial": true,
-  "eligibleTier": null,
+  "partial": false,
+  "eligibleTier": "certified",
   "axes": {
     "craft": {
       "score": 100,

@@ -4,12 +4,12 @@
     "name": "one-on-one-template",
     "kind": "skill"
   },
-  "standardVersion": "1.0.0",
+  "standardVersion": "1.1.0",
   "readiness": 90,
   "tier": "provisional",
   "unsafe": false,
-  "partial": true,
-  "eligibleTier": null,
+  "partial": false,
+  "eligibleTier": "certified",
   "axes": {
     "craft": {
       "score": 100,

@@ -31,7 +31,7 @@ const order = ['craft', 'fit', 'guard', 'proof', 'upkeep'] as const;
             <span class={`ax-score${scored ? '' : ' pending'}`}>{scored ? a!.score : '—'}</span>
           </div>
           <div class="bar"><span style={`width:${scored ? a!.score : 0}%`} class={scored ? '' : 'is-pending'}></span></div>
-          <span class="ax-blurb">{scored ? AXIS_BLURB[k] : 'eval pending'}</span>
+          <span class="ax-blurb">{scored ? AXIS_BLURB[k] : 'coming in v1.1'}</span>
         </li>
       );
     })}

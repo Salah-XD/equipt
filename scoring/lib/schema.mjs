@@ -1,5 +1,5 @@
 // scoring/lib/schema.mjs
-export const STANDARD_VERSION = '1.0.0';
+export const STANDARD_VERSION = '1.1.0';
 const TIERS = ['provisional', 'certified', 'field-ready'];
 const AXES = ['craft', 'fit', 'guard', 'proof', 'upkeep'];
 

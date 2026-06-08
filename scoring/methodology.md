@@ -1,24 +1,26 @@
-# The Equipt Standard — Methodology (v1.0.0)
+# The Equipt Standard — Methodology (v1.1.0)
 
 Equipt rates how *ready* a skill or agent is to equip into your AI. The headline
-is **Readiness (0–100)**, a weighted blend of five axes, capped by a safety gate.
+is **Readiness (0–100)**, a weighted blend of four axes (a fifth, **Fit**, is
+deferred to v1.1), capped by a safety gate.
 
 ## Axes
 
 | Axis | What it measures | v1 method |
 |---|---|---|
 | **Craft** | How well it is built | Static: frontmatter completeness, description quality, body substance, structure, examples |
-| **Fit** | Triggers at the right time, not the wrong time | *Not scored in v1* (LLM eval — see roadmap). Emitted as `null`. |
+| **Fit** | Triggers at the right time, not the wrong time | *Deferred to v1.1* (needs an LLM eval). Shown on cards as “coming”. |
 | **Guard** | Safety to run | Static scan: secret-exfiltration / destructive hard-fails, network/shell/eval risk, tool-scope (least privilege) |
 | **Proof** | Evidence it works | Static: examples/usage sections, adoption inputs (low weight) |
 | **Upkeep** | Alive & current | Git recency + current-spec frontmatter compatibility |
 
 ## Readiness
 
-`Readiness = 0.25·Craft + 0.20·Fit + 0.25·Guard + 0.15·Proof + 0.15·Upkeep`
+`Readiness = 0.30·Craft + 0.30·Guard + 0.20·Proof + 0.20·Upkeep`
 
-When an axis is unscored (e.g. Fit in v1), its weight is redistributed across the
-scored axes and the card is marked `partial: true`.
+**Fit** is excluded from the v1 weighting (it needs an LLM eval) and lands in
+v1.1. If a *scored* axis is ever missing, its weight is redistributed across the
+rest and the card is marked `partial: true`.
 
 ## Guard gate
 
@@ -40,7 +42,7 @@ honours it when the asset still meets the numeric threshold.
 ## Versioning
 
 Changing any weight, threshold, or hard-fail rule bumps `standardVersion`
-(currently `1.0.0`) so historical scorecards remain interpretable.
+(currently `1.1.0`) so historical scorecards remain interpretable.
 
 ## Roadmap
 

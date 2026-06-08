@@ -1,5 +1,5 @@
 {
-  "standardVersion": "1.0.0",
+  "standardVersion": "1.1.0",
   "count": 607,
   "assets": [
     {
@@ -7,18 +7,18 @@
       "name": "book-summarizer",
       "kind": "agent",
       "readiness": 97,
-      "tier": "provisional",
+      "tier": "certified",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "customer-support-responder",
       "kind": "agent",
       "readiness": 97,
-      "tier": "provisional",
+      "tier": "field-ready",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -27,7 +27,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -36,7 +36,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -45,7 +45,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -54,7 +54,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -63,7 +63,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -72,7 +72,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -81,7 +81,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -90,7 +90,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -99,7 +99,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -108,7 +108,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -117,7 +117,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -126,7 +126,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -135,7 +135,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -144,7 +144,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -153,7 +153,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -162,7 +162,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -171,16 +171,16 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
       "name": "blog-post-writer",
       "kind": "agent",
       "readiness": 97,
-      "tier": "provisional",
+      "tier": "field-ready",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -189,16 +189,16 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
       "name": "email-copywriter",
       "kind": "agent",
       "readiness": 97,
-      "tier": "provisional",
+      "tier": "certified",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -207,7 +207,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -216,7 +216,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -225,7 +225,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -234,7 +234,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -243,16 +243,16 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "seo-audit",
       "kind": "skill",
       "readiness": 97,
-      "tier": "provisional",
+      "tier": "field-ready",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -261,7 +261,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -270,16 +270,16 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "cold-outreach-writer",
       "kind": "agent",
       "readiness": 97,
-      "tier": "provisional",
+      "tier": "certified",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -288,7 +288,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -297,7 +297,7 @@
       "readiness": 97,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -306,7 +306,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -315,7 +315,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -324,7 +324,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -333,7 +333,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -342,7 +342,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -351,7 +351,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -360,7 +360,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -369,7 +369,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -378,7 +378,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -387,7 +387,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -396,7 +396,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -405,7 +405,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -414,7 +414,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -423,7 +423,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -432,7 +432,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -441,7 +441,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -450,7 +450,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -459,7 +459,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -468,7 +468,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -477,7 +477,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -486,7 +486,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -495,7 +495,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -504,7 +504,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -513,7 +513,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -522,7 +522,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -531,7 +531,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -540,7 +540,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -549,7 +549,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -558,7 +558,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -567,7 +567,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -576,7 +576,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -585,7 +585,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -594,7 +594,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -603,7 +603,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -612,7 +612,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -621,7 +621,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -630,7 +630,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -639,7 +639,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -648,7 +648,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -657,7 +657,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -666,7 +666,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -675,7 +675,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -684,7 +684,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -693,7 +693,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -702,7 +702,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -711,7 +711,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -720,7 +720,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -729,7 +729,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -738,7 +738,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -747,7 +747,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -756,7 +756,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -765,7 +765,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -774,7 +774,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -783,7 +783,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -792,7 +792,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -801,7 +801,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -810,7 +810,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -819,7 +819,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -828,7 +828,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -837,7 +837,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -846,7 +846,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -855,7 +855,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -864,7 +864,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -873,7 +873,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -882,7 +882,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -891,7 +891,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -900,7 +900,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -909,7 +909,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -918,7 +918,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -927,7 +927,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -936,7 +936,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -945,7 +945,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -954,7 +954,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -963,7 +963,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -972,7 +972,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -981,7 +981,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -990,7 +990,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -999,7 +999,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1008,7 +1008,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1017,7 +1017,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1026,7 +1026,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1035,7 +1035,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1044,7 +1044,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1053,7 +1053,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1062,7 +1062,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1071,7 +1071,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1080,7 +1080,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1089,7 +1089,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1098,7 +1098,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1107,7 +1107,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1116,7 +1116,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1125,7 +1125,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1134,7 +1134,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1143,7 +1143,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1152,7 +1152,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1161,7 +1161,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1170,7 +1170,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1179,7 +1179,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1188,7 +1188,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1197,7 +1197,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1206,7 +1206,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1215,7 +1215,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1224,7 +1224,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1233,7 +1233,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1242,7 +1242,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1251,7 +1251,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1260,7 +1260,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1269,7 +1269,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1278,7 +1278,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1287,7 +1287,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1296,7 +1296,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1305,7 +1305,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1314,7 +1314,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1323,7 +1323,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -1332,7 +1332,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1341,7 +1341,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1350,7 +1350,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1359,7 +1359,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1368,7 +1368,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1377,7 +1377,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1386,7 +1386,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1395,7 +1395,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1404,7 +1404,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1413,7 +1413,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1422,7 +1422,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1431,7 +1431,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1440,7 +1440,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1449,7 +1449,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1458,7 +1458,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1467,7 +1467,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1476,7 +1476,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1485,7 +1485,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1494,7 +1494,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1503,7 +1503,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1512,7 +1512,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1521,7 +1521,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1530,7 +1530,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1539,7 +1539,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1548,7 +1548,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1557,7 +1557,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1566,7 +1566,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1575,7 +1575,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1584,7 +1584,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1593,7 +1593,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1602,7 +1602,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1611,7 +1611,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1620,7 +1620,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1629,7 +1629,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1638,7 +1638,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1647,7 +1647,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1656,7 +1656,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1665,7 +1665,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1674,7 +1674,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1683,7 +1683,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1692,7 +1692,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1701,7 +1701,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1710,7 +1710,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1719,7 +1719,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1728,7 +1728,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1737,7 +1737,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1746,7 +1746,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1755,7 +1755,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -1764,7 +1764,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -1773,7 +1773,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -1782,7 +1782,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -1791,25 +1791,25 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
       "name": "prompt-library",
       "kind": "skill",
       "readiness": 96,
-      "tier": "provisional",
+      "tier": "certified",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
       "name": "saas-metrics-dashboard",
       "kind": "skill",
       "readiness": 96,
-      "tier": "provisional",
+      "tier": "field-ready",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -1818,7 +1818,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -1827,7 +1827,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -1836,16 +1836,16 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
       "name": "ai-use-case-finder",
       "kind": "skill",
       "readiness": 96,
-      "tier": "provisional",
+      "tier": "certified",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -1854,16 +1854,16 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
       "name": "code-reviewer",
       "kind": "agent",
       "readiness": 96,
-      "tier": "provisional",
+      "tier": "field-ready",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -1872,7 +1872,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1881,7 +1881,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1890,7 +1890,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1899,7 +1899,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1908,7 +1908,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1917,7 +1917,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1926,7 +1926,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1935,7 +1935,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1944,7 +1944,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1953,7 +1953,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1962,7 +1962,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1971,7 +1971,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1980,7 +1980,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1989,7 +1989,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -1998,7 +1998,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2007,7 +2007,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2016,7 +2016,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2025,7 +2025,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2034,7 +2034,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2043,7 +2043,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2052,7 +2052,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2061,7 +2061,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2070,7 +2070,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2079,7 +2079,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2088,7 +2088,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2097,7 +2097,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2106,7 +2106,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2115,7 +2115,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2124,7 +2124,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2133,7 +2133,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2142,7 +2142,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2151,7 +2151,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2160,7 +2160,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2169,7 +2169,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2178,7 +2178,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2187,7 +2187,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2196,7 +2196,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2205,7 +2205,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2214,7 +2214,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2223,7 +2223,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2232,7 +2232,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2241,7 +2241,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2250,7 +2250,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2259,7 +2259,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2268,7 +2268,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2277,7 +2277,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2286,7 +2286,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2295,7 +2295,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2304,7 +2304,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2313,7 +2313,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2322,7 +2322,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2331,7 +2331,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2340,7 +2340,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2349,7 +2349,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2358,7 +2358,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2367,7 +2367,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2376,7 +2376,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2385,7 +2385,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2394,7 +2394,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2403,7 +2403,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2412,7 +2412,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2421,7 +2421,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2430,7 +2430,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2439,7 +2439,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2448,7 +2448,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2457,7 +2457,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2466,7 +2466,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2475,7 +2475,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2484,7 +2484,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2493,7 +2493,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2502,7 +2502,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2511,7 +2511,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2520,7 +2520,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2529,7 +2529,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2538,7 +2538,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2547,7 +2547,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2556,7 +2556,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2565,7 +2565,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2574,7 +2574,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2583,7 +2583,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2592,7 +2592,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2601,7 +2601,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2610,7 +2610,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2619,7 +2619,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2628,7 +2628,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2637,7 +2637,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2646,7 +2646,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2655,7 +2655,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2664,7 +2664,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2673,7 +2673,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2682,7 +2682,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2691,7 +2691,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2700,7 +2700,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2709,7 +2709,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2718,7 +2718,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2727,7 +2727,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2736,7 +2736,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2745,7 +2745,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2754,7 +2754,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2763,7 +2763,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2772,7 +2772,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2781,7 +2781,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2790,7 +2790,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2799,7 +2799,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2808,7 +2808,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2817,7 +2817,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2826,7 +2826,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2835,7 +2835,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2844,7 +2844,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2853,7 +2853,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2862,7 +2862,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2871,7 +2871,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2880,7 +2880,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2889,7 +2889,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2898,7 +2898,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2907,7 +2907,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2916,7 +2916,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2925,7 +2925,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2934,7 +2934,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2943,7 +2943,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2952,7 +2952,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2961,7 +2961,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2970,7 +2970,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2979,7 +2979,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2988,7 +2988,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -2997,7 +2997,7 @@
       "readiness": 96,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3006,7 +3006,7 @@
       "readiness": 94,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -3015,7 +3015,7 @@
       "readiness": 94,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3024,7 +3024,7 @@
       "readiness": 94,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3033,7 +3033,7 @@
       "readiness": 94,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3042,7 +3042,7 @@
       "readiness": 94,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3051,7 +3051,7 @@
       "readiness": 94,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3060,7 +3060,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3069,7 +3069,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3078,7 +3078,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3087,7 +3087,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3096,7 +3096,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3105,7 +3105,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3114,7 +3114,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3123,7 +3123,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3132,7 +3132,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3141,7 +3141,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3150,7 +3150,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3159,7 +3159,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3168,7 +3168,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3177,7 +3177,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3186,7 +3186,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3195,7 +3195,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3204,7 +3204,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3213,7 +3213,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3222,7 +3222,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3231,7 +3231,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3240,7 +3240,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3249,7 +3249,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3258,7 +3258,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3267,7 +3267,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3276,7 +3276,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3285,7 +3285,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3294,7 +3294,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3303,7 +3303,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3312,7 +3312,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3321,7 +3321,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3330,7 +3330,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3339,7 +3339,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3348,7 +3348,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3357,7 +3357,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3366,7 +3366,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3375,7 +3375,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3384,7 +3384,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3393,7 +3393,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3402,7 +3402,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3411,7 +3411,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3420,7 +3420,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3429,7 +3429,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3438,7 +3438,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3447,7 +3447,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3456,7 +3456,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3465,7 +3465,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3474,7 +3474,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3483,7 +3483,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3492,7 +3492,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -3501,7 +3501,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -3510,7 +3510,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -3519,7 +3519,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -3528,7 +3528,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3537,7 +3537,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3546,7 +3546,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3555,7 +3555,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3564,7 +3564,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3573,7 +3573,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -3582,7 +3582,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3591,7 +3591,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3600,7 +3600,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3609,7 +3609,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3618,7 +3618,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3627,7 +3627,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3636,7 +3636,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3645,7 +3645,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3654,7 +3654,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3663,7 +3663,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3672,7 +3672,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3681,7 +3681,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3690,7 +3690,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3699,7 +3699,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3708,7 +3708,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3717,7 +3717,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3726,7 +3726,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3735,7 +3735,7 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -3744,223 +3744,223 @@
       "readiness": 93,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "burnout-recovery-coach",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "cease-and-desist-drafter",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "competitor-analyst",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "decision-journal",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "delegation-coach",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "employment-contract-reviewer",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "interview-prepper",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "licensing-agreement-reviewer",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "negotiation-coach",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "note-organizer",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "one-on-one-prepper",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "pricing-strategist",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "privacy-policy-drafter",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "project-status-reporter",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "relationship-letter-writer",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "side-project-coach",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "tos-drafter",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "travel-planner",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
       "name": "weekly-review-coach",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
       "name": "landing-page-copywriter",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
       "name": "newsletter-writer",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
       "name": "press-release-writer",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
       "name": "analytics-narrator",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "content-calendar-planner",
       "kind": "agent",
-      "readiness": 92,
+      "readiness": 91,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3969,16 +3969,16 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
-      "name": "cash-flow-forecast",
+      "name": "api-documentation",
       "kind": "skill",
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3987,7 +3987,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -3996,7 +3996,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4005,7 +4005,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4014,7 +4014,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4023,7 +4023,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4032,7 +4032,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4041,7 +4041,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4050,7 +4050,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4059,7 +4059,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4068,16 +4068,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-business",
-      "name": "privacy-policy",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4086,7 +4077,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4095,7 +4086,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4104,7 +4095,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4113,7 +4104,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4122,7 +4113,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4131,7 +4122,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4140,7 +4131,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4149,7 +4140,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4158,16 +4149,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-business",
-      "name": "terms-of-service",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4176,7 +4158,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4185,7 +4167,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4194,34 +4176,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-business",
-      "name": "zomato-swiggy-listing-optimizer",
-      "kind": "agent",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-content",
-      "name": "book-outline",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-content",
-      "name": "brand-story",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -4230,34 +4185,16 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
-      "name": "hook-generator",
-      "kind": "skill",
+      "name": "technical-docs-writer",
+      "kind": "agent",
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-content",
-      "name": "podcast-launch",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-content",
-      "name": "speech-writer",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4266,16 +4203,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-data",
-      "name": "kpi-dashboard",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4284,7 +4212,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4293,7 +4221,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4302,7 +4230,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -4311,7 +4239,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -4320,7 +4248,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -4329,7 +4257,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4338,7 +4266,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4347,7 +4275,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4356,16 +4284,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "business-plan",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4374,25 +4293,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "churn-analysis",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "crisis-comms",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4401,7 +4302,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4410,7 +4311,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4419,7 +4320,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4428,7 +4329,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4437,7 +4338,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4446,7 +4347,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4455,25 +4356,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "loyalty-program",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "market-research",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4482,43 +4365,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "media-kit",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "objection-handler",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "pr-pitch",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "referral-program",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4527,16 +4374,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "sales-script",
-      "kind": "skill",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4545,7 +4383,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4554,7 +4392,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4563,7 +4401,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4572,7 +4410,7 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4581,52 +4419,214 @@
       "readiness": 90,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "cash-flow-forecast",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "privacy-policy",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "terms-of-service",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "zomato-swiggy-listing-optimizer",
+      "kind": "agent",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "book-outline",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "brand-story",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "hook-generator",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "podcast-launch",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-content",
+      "name": "speech-writer",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-data",
+      "name": "kpi-dashboard",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "business-plan",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "churn-analysis",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "crisis-comms",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "loyalty-program",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "market-research",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "media-kit",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "objection-handler",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "pr-pitch",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "referral-program",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "sales-script",
+      "kind": "skill",
+      "readiness": 89,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "welcome-sequence",
       "kind": "skill",
-      "readiness": 90,
+      "readiness": 89,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "funnel-architect",
       "kind": "agent",
-      "readiness": 90,
+      "readiness": 89,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "retention-strategist",
       "kind": "agent",
-      "readiness": 90,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-business",
-      "name": "api-documentation",
-      "kind": "skill",
       "readiness": 89,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-content",
-      "name": "technical-docs-writer",
-      "kind": "agent",
-      "readiness": 89,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4635,7 +4635,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4644,7 +4644,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4653,7 +4653,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4662,7 +4662,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4671,7 +4671,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4680,7 +4680,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4689,7 +4689,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4698,7 +4698,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4707,7 +4707,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4716,7 +4716,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4725,7 +4725,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4734,7 +4734,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4743,7 +4743,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4752,7 +4752,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4761,7 +4761,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4770,7 +4770,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4779,7 +4779,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4788,7 +4788,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -4797,7 +4797,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -4806,7 +4806,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -4815,7 +4815,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4824,7 +4824,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4833,7 +4833,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4842,7 +4842,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4851,7 +4851,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4860,7 +4860,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4869,7 +4869,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4878,7 +4878,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4887,7 +4887,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4896,7 +4896,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4905,7 +4905,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4914,7 +4914,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -4923,7 +4923,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4932,7 +4932,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4941,7 +4941,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4950,7 +4950,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4959,7 +4959,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4968,7 +4968,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4977,7 +4977,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4986,7 +4986,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -4995,7 +4995,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5004,7 +5004,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5013,7 +5013,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5022,7 +5022,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5031,7 +5031,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5040,7 +5040,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5049,7 +5049,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5058,7 +5058,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5067,7 +5067,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5076,7 +5076,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5085,7 +5085,7 @@
       "readiness": 88,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5094,7 +5094,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5103,7 +5103,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5112,7 +5112,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5121,16 +5121,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-business",
-      "name": "launch-checklist",
-      "kind": "skill",
-      "readiness": 87,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5139,7 +5130,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5148,7 +5139,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5157,7 +5148,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5166,16 +5157,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-business",
-      "name": "shipping-policy",
-      "kind": "skill",
-      "readiness": 87,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5184,7 +5166,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -5193,7 +5175,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -5202,7 +5184,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -5211,7 +5193,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -5220,7 +5202,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-engineering",
@@ -5229,16 +5211,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "brand-photography-brief",
-      "kind": "skill",
-      "readiness": 87,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5247,25 +5220,7 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "product-comparison",
-      "kind": "skill",
-      "readiness": 87,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
-    },
-    {
-      "plugin": "equipt-marketing",
-      "name": "product-photography-brief",
-      "kind": "skill",
-      "readiness": 87,
-      "tier": "provisional",
-      "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5274,25 +5229,70 @@
       "readiness": 87,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "launch-checklist",
+      "kind": "skill",
+      "readiness": 86,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-business",
+      "name": "shipping-policy",
+      "kind": "skill",
+      "readiness": 86,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "brand-photography-brief",
+      "kind": "skill",
+      "readiness": 86,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-comparison",
+      "kind": "skill",
+      "readiness": 86,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
+    },
+    {
+      "plugin": "equipt-marketing",
+      "name": "product-photography-brief",
+      "kind": "skill",
+      "readiness": 86,
+      "tier": "provisional",
+      "unsafe": false,
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "seasonal-campaign",
       "kind": "skill",
-      "readiness": 87,
+      "readiness": 86,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
       "name": "thank-you-campaign",
       "kind": "skill",
-      "readiness": 87,
+      "readiness": 86,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -5301,7 +5301,7 @@
       "readiness": 85,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5310,7 +5310,7 @@
       "readiness": 82,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5319,7 +5319,7 @@
       "readiness": 82,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-content",
@@ -5328,7 +5328,7 @@
       "readiness": 81,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5337,7 +5337,7 @@
       "readiness": 80,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -5346,7 +5346,7 @@
       "readiness": 80,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -5355,7 +5355,7 @@
       "readiness": 80,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -5364,7 +5364,7 @@
       "readiness": 77,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5373,7 +5373,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5382,7 +5382,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5391,7 +5391,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5400,7 +5400,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5409,7 +5409,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-business",
@@ -5418,7 +5418,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
@@ -5427,7 +5427,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5436,7 +5436,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5445,7 +5445,7 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-marketing",
@@ -5454,16 +5454,16 @@
       "readiness": 76,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     },
     {
       "plugin": "equipt-data",
       "name": "dashboard-designer",
       "kind": "agent",
-      "readiness": 75,
+      "readiness": 74,
       "tier": "provisional",
       "unsafe": false,
-      "partial": true
+      "partial": false
     }
   ]
 }

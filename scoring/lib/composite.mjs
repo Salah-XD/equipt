@@ -1,5 +1,7 @@
 // scoring/lib/composite.mjs
-export const WEIGHTS = { craft: 0.25, fit: 0.20, guard: 0.25, proof: 0.15, upkeep: 0.15 };
+// v1 is 4-axis: Fit is deferred to v1.1 (it needs an LLM eval), so it is excluded
+// from the weighting — a null Fit no longer marks a card partial. Weights sum to 1.
+export const WEIGHTS = { craft: 0.30, guard: 0.30, proof: 0.20, upkeep: 0.20 };
 export const GUARD_GATE = 40; // guard below this caps readiness + flags unsafe
 export const TIER_THRESHOLDS = { certified: 70, fieldReady: 85 };
 
