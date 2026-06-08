@@ -38,7 +38,8 @@ const surfaces = asset.kind === 'skill'
   ? 'Claude Code · claude.ai · Claude desktop'
   : 'Claude Code';
 const sourceUrl = `https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${asset.kind === 'skill' ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`;
-const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
+const cliCmd = `npx @equipt/cli add ${asset.name}`;
+const ccCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
 ---
 <Base title={`${displayTitle} — Equipt`} description={asset.description}>
   <main class="detail wrap">
@@ -57,12 +58,25 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${a
         <div class="install">
           <span class="kicker">Install</span>
           <div class="cmd">
-            <pre data-copy><code>{installCmd}</code></pre>
+            <pre data-copy><code>{cliCmd}</code></pre>
             <button class="copy" type="button" aria-label="Copy install command">Copy</button>
           </div>
+          <details class="alt">
+            <summary>or install the plugin in Claude Code</summary>
+            <div class="cmd">
+              <pre data-copy><code>{ccCmd}</code></pre>
+              <button class="copy" type="button" aria-label="Copy Claude Code install">Copy</button>
+            </div>
+          </details>
         </div>
 
-        <article class="prose" set:html={bodyHtml} />
+        <div class="bodywrap">
+          <div class="body" data-clamp>
+            <article class="prose" set:html={bodyHtml} />
+            <div class="fade" aria-hidden="true"></div>
+          </div>
+          <button class="more" type="button" aria-expanded="false">Show full skill</button>
+        </div>
 
         <p class="src"><a href={sourceUrl}>View source on GitHub →</a></p>
 
@@ -126,7 +140,7 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${a
     transition: border-color .15s, color .15s; }
   .copy:hover { border-color: var(--accent); color: var(--accent-text); }
 
-  .prose { margin-top: 30px; line-height: 1.7; }
+  .prose { line-height: 1.7; }
   .prose :global(h1), .prose :global(h2), .prose :global(h3) { font-family: var(--font-display); margin: 24px 0 10px; letter-spacing: -.01em; }
   .prose :global(h2) { font-size: 22px; }
   .prose :global(pre) { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px; overflow: auto; font-family: var(--font-mono); font-size: 13px; }
@@ -136,6 +150,27 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${a
   .prose :global(a) { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
   .prose :global(ul), .prose :global(ol) { padding-left: 22px; }
   .prose :global(blockquote) { border-left: 3px solid var(--accent); padding-left: 14px; color: var(--muted); margin: 14px 0; }
+
+  .alt { margin-top: 10px; }
+  .alt summary { font-family: var(--font-mono); font-size: 12px; color: var(--muted); cursor: pointer; list-style: none; padding: 4px 0; width: fit-content; }
+  .alt summary::-webkit-details-marker { display: none; }
+  .alt summary::before { content: '+ '; }
+  .alt[open] summary::before { content: '– '; }
+  .alt summary:hover { color: var(--accent-text); }
+  .alt .cmd { margin-top: 8px; }
+
+  /* Body is clamped behind "Show full skill" — lead with description + install. */
+  .bodywrap { margin-top: 32px; }
+  .body { position: relative; max-height: 380px; overflow: hidden; }
+  .body.is-open { max-height: none; }
+  .fade { position: absolute; left: 0; right: 0; bottom: 0; height: 96px; pointer-events: none;
+    background: linear-gradient(transparent, var(--page)); }
+  .body.is-open .fade { display: none; }
+  .more { margin-top: 14px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+    padding: 9px 16px; border-radius: 8px; border: 1px solid var(--hair); background: var(--paper); color: var(--ink); cursor: pointer;
+    transition: border-color .15s ease, color .15s ease; }
+  .more:hover { border-color: var(--accent); color: var(--accent-text); }
+  .more[hidden] { display: none; }
 
   .src { margin-top: 30px; }
   .src a { color: var(--accent-text); }
@@ -176,6 +211,25 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${a
         btn.textContent = 'Copied';
         setTimeout(() => { btn.textContent = prev; }, 1400);
       } catch {}
+    });
+  });
+
+  // Clamp the skill body behind "Show full skill"; skip clamping for short bodies.
+  document.querySelectorAll<HTMLElement>('.bodywrap').forEach((wrap) => {
+    const body = wrap.querySelector<HTMLElement>('.body');
+    const btn = wrap.querySelector<HTMLButtonElement>('.more');
+    const fade = wrap.querySelector<HTMLElement>('.fade');
+    if (!body || !btn) return;
+    if (body.scrollHeight <= 388) {
+      body.style.maxHeight = 'none';
+      if (fade) fade.style.display = 'none';
+      btn.hidden = true;
+      return;
+    }
+    btn.addEventListener('click', () => {
+      const open = body.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Show less' : 'Show full skill';
     });
   });
 </script>
