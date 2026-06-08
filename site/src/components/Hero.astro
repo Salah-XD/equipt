@@ -18,50 +18,77 @@ const surfaces = [
 ---
 <header class="hero">
   <div class="grid-layer" data-hero-grid aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="kicker">{total} verified skills &amp; agents · for founders &amp; operators</p>
-    <h1 class="big">Equip<br />your <span class="pop">AI.</span></h1>
-    <p class="serif">Marketing, sales, ops &amp; content — <i>handled</i>.</p>
-    <button class="herosearch" type="button" data-open-palette aria-label="Search skills and agents">
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-      <span class="hs-ph">Search 607 skills &amp; agents…</span>
-      <kbd class="hs-k mono">⌘K</kbd>
-    </button>
-    <div class="lower">
+  <div class="wrap herowrap">
+    <div class="hcontent">
+      <p class="kicker">{total} verified skills &amp; agents · for founders &amp; operators</p>
+      <h1 class="big">Equip<br />your <span class="pop">AI.</span></h1>
+      <p class="serif">Marketing, sales, ops &amp; content — <i>handled</i>.</p>
+      <button class="herosearch" type="button" data-open-palette aria-label="Search skills and agents">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <span class="hs-ph">Search 607 skills &amp; agents…</span>
+        <kbd class="hs-k mono">⌘K</kbd>
+      </button>
       <p class="sub">A curated, <b>verified</b> library of AI skills &amp; agents for the work of running a business — marketing, sales, ops, finance, content. Add them to claude.ai in minutes, no code.</p>
       <div class="cta">
         <a class="b1" href="/catalog">Browse skills</a>
         <a class="b2" href="/#install">How to add to claude.ai</a>
       </div>
+      <div class="surf">
+        <span class="kicker surf-label">Works in</span>
+        {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}><span class="ico" aria-hidden="true" set:html={ICONS[s.icon]} />{s.label}</span>)}
+      </div>
     </div>
-    <div class="surf">
-      <span class="kicker surf-label">Works in</span>
-      {surfaces.map((s) => <span class={`pill${s.live ? '' : ' soon'}`}><span class="ico" aria-hidden="true" set:html={ICONS[s.icon]} />{s.label}</span>)}
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-stack">
+        <div class="art-card art-back"></div>
+        <div class="art-card art-front">
+          <div class="ac-top"><span class="ac-k">AGENT</span><span class="ac-tier">Field-Ready · 98</span></div>
+          <strong class="ac-name">cold-outreach-writer</strong>
+          <p class="ac-desc">Cold DMs, emails &amp; call scripts that actually get replies — real personalization, not “I came across your profile.”</p>
+          <div class="ac-axes">
+            <span><i style="width:94%"></i></span>
+            <span><i style="width:88%"></i></span>
+            <span><i style="width:97%"></i></span>
+          </div>
+          <span class="ac-pl">equipt-marketing</span>
+        </div>
+        <div class="seal">
+          <span class="seal-disc"></span>
+          <svg class="seal-ring" viewBox="0 0 120 120">
+            <defs><path id="sealring" d="M60,16 a44,44 0 1,1 -0.01,0" fill="none"/></defs>
+            <text><textPath href="#sealring" startOffset="0">THE&#160;EQUIPT&#160;STANDARD&#160;·&#160;VERIFIED&#160;·&#160;</textPath></text>
+          </svg>
+          <span class="seal-core">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-12"/></svg>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
 <style>
   .hero { position: relative; isolation: isolate; overflow: hidden;
     background: var(--paper); border-bottom: 1px solid var(--hair);
-    padding: 64px 0 72px; }
+    padding: 56px 0 64px; }
   /* Signature moment: the brutalist grid is its own layer so it can parallax on scroll */
   .grid-layer { position: absolute; inset: -10% 0 -20% 0; z-index: -1; pointer-events: none;
     background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
     background-size: 54px 54px;
     will-change: transform; }
-  /* a faint warm vignette so the headline anchors the grid */
   .grid-layer::after { content: ''; position: absolute; inset: 0;
     background: radial-gradient(120% 90% at 12% 8%, transparent 40%, var(--paper) 100%); }
 
+  .herowrap { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 28px; align-items: center; }
   .kicker { margin-top: 0; }
-  .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(56px, 11vw, 116px);
-    line-height: .85; letter-spacing: -.045em; margin-top: 38px; }
+  .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(52px, 8.2vw, 104px);
+    line-height: .85; letter-spacing: -.045em; margin-top: 30px; }
   .big .pop { color: var(--accent); }
-  .serif { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); line-height: 1.04;
+  .serif { font-family: var(--font-serif); font-size: clamp(26px, 3.4vw, 38px); line-height: 1.04;
     letter-spacing: .02em; margin-top: 16px; }
   .serif i { color: var(--accent); }
 
-  .herosearch { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 470px; margin-top: 30px;
+  .herosearch { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 460px; margin-top: 28px;
     background: var(--page); border: 1px solid var(--hair); border-radius: 12px; padding: 13px 15px; cursor: text;
     color: var(--muted); font-size: 15px; transition: border-color .18s ease; }
   .herosearch:hover { border-color: var(--accent); }
@@ -69,9 +96,9 @@ const surfaces = [
   .hs-ph { flex: 1; text-align: left; }
   .hs-k { margin-left: auto; font-size: 11px; color: var(--muted); border: 1px solid var(--hair); border-radius: 6px; padding: 3px 7px; }
 
-  .lower { display: flex; justify-content: space-between; align-items: flex-end; gap: 34px; flex-wrap: wrap; margin-top: 34px; }
-  .sub { max-width: 446px; font-size: 16px; line-height: 1.6; color: var(--muted); }
-  .cta { display: flex; gap: 10px; }
+  .sub { max-width: 460px; font-size: 16px; line-height: 1.6; color: var(--muted); margin-top: 26px; }
+  .sub b { color: var(--ink); }
+  .cta { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
   .b1, .b2 { font-weight: 600; font-size: 13px; letter-spacing: .005em; padding: 14px 20px; border-radius: 10px;
     transition: transform .18s cubic-bezier(.22,1,.36,1), background-color .18s ease, color .18s ease, box-shadow .18s ease; }
   .b1 { background: var(--ink); color: var(--paper); box-shadow: 0 1px 0 var(--hair); }
@@ -79,22 +106,51 @@ const surfaces = [
   .b2 { border: 1px solid var(--ink); }
   .b2:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-text); }
 
-  .cmdcopy { display: inline-flex; align-items: center; gap: 8px; margin-top: 30px;
-    font-family: var(--font-mono); font-size: 13px; color: var(--ink);
-    background: var(--page); border: 1px solid var(--hair); border-radius: 10px; padding: 11px 15px; cursor: pointer;
-    transition: border-color .18s ease; }
-  .cmdcopy:hover { border-color: var(--accent); }
-  .cmdcopy .dollar { color: var(--accent); }
-  .cmdcopy .copyhint { margin-left: 4px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
-  .cmdcopy:hover .copyhint { color: var(--accent-text); }
-
-  .surf { display: flex; gap: 8px; margin-top: 40px; flex-wrap: wrap; align-items: center; }
+  .surf { display: flex; gap: 8px; margin-top: 34px; flex-wrap: wrap; align-items: center; }
   .surf-label { margin-right: 6px; }
   .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500;
     padding: 7px 13px 7px 11px; border-radius: 999px; border: 1px solid var(--hair); color: var(--muted); }
   .pill .ico { display: inline-flex; color: var(--accent); }
   .pill.soon { border-style: dashed; opacity: .72; }
   .pill.soon .ico { color: var(--muted); }
+
+  /* ---- Hero art: a tilted "certified" asset card with a rotating Equipt Standard stamp ---- */
+  .hero-art { display: grid; place-items: center; min-height: 380px; }
+  .art-stack { position: relative; width: min(340px, 100%); animation: hfloat 7s ease-in-out infinite; }
+  .art-card { border: 1px solid var(--hair); border-radius: 16px; background: var(--paper); }
+  .art-front { position: relative; z-index: 2; padding: 22px 22px 20px; transform: rotate(-4deg);
+    box-shadow: 0 30px 60px -28px rgba(0,0,0,.4), 0 2px 0 var(--hair); }
+  .art-back { position: absolute; inset: 0; z-index: 1; transform: rotate(5deg) translate(14px, 12px);
+    background: var(--page); opacity: .8; }
+  .ac-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .ac-k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+    padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
+  .ac-tier { font-family: var(--font-mono); font-size: 11px; color: #2f8f5d; border: 1px solid #2f8f5d; border-radius: 999px; padding: 3px 10px; }
+  .ac-name { display: block; font-family: var(--font-display); font-size: 21px; letter-spacing: -.02em; }
+  .ac-desc { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 9px 0 14px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .ac-axes { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+  .ac-axes span { height: 4px; background: var(--grid); border-radius: 999px; overflow: hidden; }
+  .ac-axes i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+  .ac-pl { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+  .seal { position: absolute; top: -34px; right: -26px; z-index: 3; width: 110px; height: 110px; }
+  .seal-disc { position: absolute; inset: 7px; border-radius: 50%; background: var(--paper); border: 1.5px dashed var(--hair); }
+  .seal-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: sealspin 22s linear infinite; }
+  .seal-ring text { font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; fill: var(--accent-text); font-weight: 600; }
+  .seal-core { position: absolute; inset: 0; margin: auto; width: 46px; height: 46px; border-radius: 50%;
+    background: var(--accent); color: var(--paper); display: grid; place-items: center;
+    box-shadow: 0 6px 18px -6px var(--accent-soft); }
+  :root[data-theme='dark'] .ac-tier { color: #8fb89a; border-color: color-mix(in srgb, #8fb89a 45%, var(--hair)); }
+
+  @keyframes hfloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes sealspin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .art-stack, .seal-ring { animation: none; } }
+
+  @media (max-width: 920px) {
+    .herowrap { grid-template-columns: 1fr; }
+    .hero-art { display: none; }
+  }
 </style>
 <script>
   // Signature: lightweight parallax seam on the hero grid. rAF-throttled, reduced-motion safe.
@@ -108,16 +164,5 @@ const surfaces = [
     addEventListener('scroll', () => {
       if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
-  }
-
-  const cmd = document.querySelector<HTMLButtonElement>('.cmdcopy');
-  if (cmd) {
-    cmd.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(cmd.dataset.cmd ?? '');
-        const hint = cmd.querySelector('.copyhint');
-        if (hint) { const prev = hint.textContent; hint.textContent = 'copied'; setTimeout(() => { hint.textContent = prev; }, 1400); }
-      } catch {}
-    });
   }
 </script>
