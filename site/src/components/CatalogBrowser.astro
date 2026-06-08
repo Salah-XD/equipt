@@ -4,13 +4,29 @@ import { toIndex } from '../lib/search';
 import { loadScoreIndex } from '../lib/scores';
 const entries = toIndex(await loadAssets(), await loadScoreIndex());
 const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
+
+const filters = [
+  { name: 'plugin', label: 'Filter by plugin', options: [{ v: '', t: 'All plugins' }, ...plugins.map((p) => ({ v: p, t: p }))] },
+  { name: 'kind', label: 'Filter by kind', options: [{ v: '', t: 'Skills & agents' }, { v: 'skill', t: 'Skills' }, { v: 'agent', t: 'Agents' }] },
+  { name: 'tier', label: 'Filter by tier', options: [{ v: '', t: 'All tiers' }, { v: 'field-ready', t: 'Field-Ready' }, { v: 'certified', t: 'Certified' }, { v: 'provisional', t: 'Provisional' }] },
+  { name: 'sort', label: 'Sort by', options: [{ v: 'readiness', t: 'Highest readiness' }, { v: 'relevance', t: 'Best match' }, { v: 'az', t: 'A–Z' }] },
+];
 ---
 <div class="controls">
   <input id="q" type="search" placeholder="Search 607 skills & agents…" aria-label="Search" />
-  <select id="plugin" aria-label="Filter by plugin"><option value="">All plugins</option>{plugins.map((p) => <option value={p}>{p}</option>)}</select>
-  <select id="kind" aria-label="Filter by kind"><option value="">Skills & agents</option><option value="skill">Skills</option><option value="agent">Agents</option></select>
-  <select id="tier" aria-label="Filter by tier"><option value="">All tiers</option><option value="field-ready">Field-Ready</option><option value="certified">Certified</option><option value="provisional">Provisional</option></select>
-  <select id="sort" aria-label="Sort by"><option value="readiness">Highest readiness</option><option value="relevance">Best match</option><option value="az">A–Z</option></select>
+  {filters.map((f) => (
+    <div class="dd" data-dd data-name={f.name} data-value={f.options[0].v}>
+      <button class="dd-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label={f.label}>
+        <span class="dd-val">{f.options[0].t}</span>
+        <svg class="dd-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="dd-menu" role="listbox" tabindex="-1" aria-label={f.label} data-lenis-prevent>
+        {f.options.map((o, i) => (
+          <li class="dd-opt" id={`${f.name}-opt-${i}`} role="option" data-value={o.v} aria-selected={i === 0 ? 'true' : 'false'}>{o.t}</li>
+        ))}
+      </ul>
+    </div>
+  ))}
   <span id="count" class="mono"></span>
 </div>
 <ul id="results" class="results"></ul>
@@ -20,15 +36,77 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   const data = JSON.parse(document.getElementById('catalog-data')!.textContent!);
   const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
   const results = document.getElementById('results')!, count = document.getElementById('count')!;
-  // Fuzzy text match (typo-tolerant); facets stay exact.
   const fuse = new Fuse(data, { keys: [{ name: 'name', weight: 3 }, 'description'], threshold: 0.32, ignoreLocation: true });
 
+  // ---- Accessible custom dropdowns ----
+  const dds = Array.from(document.querySelectorAll<HTMLElement>('[data-dd]'));
+  const ddVal = (name: string) => (document.querySelector(`[data-dd][data-name="${name}"]`) as HTMLElement)?.dataset.value ?? '';
+  function closeAll(except?: HTMLElement) {
+    dds.forEach((d) => { if (d !== except) { d.classList.remove('open'); d.querySelector('.dd-btn')!.setAttribute('aria-expanded', 'false'); } });
+  }
+  function initDD(dd: HTMLElement) {
+    const btn = dd.querySelector<HTMLButtonElement>('.dd-btn')!;
+    const menu = dd.querySelector<HTMLUListElement>('.dd-menu')!;
+    const valEl = dd.querySelector<HTMLElement>('.dd-val')!;
+    const opts = Array.from(dd.querySelectorAll<HTMLElement>('.dd-opt'));
+    let active = Math.max(0, opts.findIndex((o) => o.getAttribute('aria-selected') === 'true'));
+    const setActive = (i: number) => {
+      active = (i + opts.length) % opts.length;
+      opts.forEach((o, j) => o.classList.toggle('hi', j === active));
+      menu.setAttribute('aria-activedescendant', opts[active].id);
+      opts[active].scrollIntoView({ block: 'nearest' });
+    };
+    const open = () => { closeAll(dd); dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); setActive(active); menu.focus(); };
+    const close = () => { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); };
+    const choose = (i: number) => {
+      const o = opts[i];
+      dd.dataset.value = o.dataset.value ?? '';
+      valEl.textContent = o.textContent;
+      opts.forEach((x) => x.setAttribute('aria-selected', 'false'));
+      o.setAttribute('aria-selected', 'true');
+      active = i; close(); btn.focus(); render();
+    };
+    btn.addEventListener('click', () => (dd.classList.contains('open') ? close() : open()));
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+    menu.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setActive(active + 1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(active - 1); }
+      else if (e.key === 'Home') { e.preventDefault(); setActive(0); }
+      else if (e.key === 'End') { e.preventDefault(); setActive(opts.length - 1); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(active); }
+      else if (e.key === 'Escape') { e.preventDefault(); close(); btn.focus(); }
+      else if (e.key === 'Tab') { close(); }
+    });
+    opts.forEach((o, i) => {
+      o.addEventListener('click', () => choose(i));
+      o.addEventListener('mousemove', () => setActive(i));
+    });
+  }
+  dds.forEach(initDD);
+  document.addEventListener('click', (e) => { if (!(e.target as HTMLElement).closest('[data-dd]')) closeAll(); });
+
+  function resetFilters() {
+    $('q').value = '';
+    ['plugin', 'kind', 'tier'].forEach((name) => {
+      const dd = document.querySelector(`[data-dd][data-name="${name}"]`) as HTMLElement;
+      const first = dd.querySelector<HTMLElement>('.dd-opt')!;
+      dd.dataset.value = first.dataset.value ?? '';
+      dd.querySelector<HTMLElement>('.dd-val')!.textContent = first.textContent;
+      dd.querySelectorAll('.dd-opt').forEach((o) => o.setAttribute('aria-selected', 'false'));
+      first.setAttribute('aria-selected', 'true');
+    });
+    render();
+  }
+
+  // ---- Filtering / rendering ----
   function current() {
     const q = $('q').value.trim();
     let base = q ? fuse.search(q).map((r) => r.item as any) : data.slice();
-    const plugin = $('plugin').value, kind = $('kind').value, tier = $('tier').value;
+    const plugin = ddVal('plugin'), kind = ddVal('kind'), tier = ddVal('tier');
     base = base.filter((e: any) => (!plugin || e.plugin === plugin) && (!kind || e.kind === kind) && (!tier || e.tier === tier));
-    const sort = $('sort').value;
+    const sort = ddVal('sort');
     if (sort === 'az') base.sort((a: any, b: any) => a.name.localeCompare(b.name));
     else if (sort === 'readiness') base.sort((a: any, b: any) => (b.readiness ?? 0) - (a.readiness ?? 0) || a.name.localeCompare(b.name));
     return base;
@@ -44,10 +122,7 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
     count.textContent = out.length + ' result' + (out.length === 1 ? '' : 's');
     if (!out.length) {
       results.innerHTML = '<li class="empty">No matches. <button type="button" id="clear">Clear filters</button></li>';
-      document.getElementById('clear')!.addEventListener('click', () => {
-        ['q', 'plugin', 'kind', 'tier'].forEach((id) => { $(id).value = ''; });
-        render();
-      });
+      document.getElementById('clear')!.addEventListener('click', resetFilters);
       return;
     }
     results.innerHTML = out.map((e: any) =>
@@ -60,8 +135,7 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
       + `</a></li>`).join('');
   }
 
-  ['q', 'plugin', 'kind', 'tier', 'sort'].forEach((id) => $(id).addEventListener('input', render));
-  // Prefill from ?q= so the WebSite SearchAction (and shared links) actually filter.
+  $('q').addEventListener('input', render);
   const q0 = new URLSearchParams(location.search).get('q');
   if (q0) $('q').value = q0;
   render();
@@ -69,8 +143,25 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
 <style>
   .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 22px; }
   #q { flex: 1; min-width: 240px; padding: 12px 14px; border: 1px solid var(--hair); border-radius: 10px; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
-  select { padding: 12px; border: 1px solid var(--hair); border-radius: 10px; background: var(--paper); color: var(--ink); }
   #count { color: var(--muted); font-size: 13px; }
+
+  .dd { position: relative; }
+  .dd-btn { display: inline-flex; align-items: center; gap: 9px; padding: 12px 14px; border: 1px solid var(--hair); border-radius: 10px;
+    background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 14px; cursor: pointer; white-space: nowrap;
+    transition: border-color .15s ease; }
+  .dd-btn:hover { border-color: var(--accent); }
+  .dd.open .dd-btn { border-color: var(--accent); }
+  .dd-chev { color: var(--muted); transition: transform .18s ease; flex: none; }
+  .dd.open .dd-chev { transform: rotate(180deg); }
+  .dd-menu { position: absolute; top: calc(100% + 6px); left: 0; min-width: 100%; z-index: 50;
+    list-style: none; margin: 0; padding: 5px; max-height: 288px; overflow-y: auto;
+    background: var(--paper); border: 1px solid var(--hair); border-radius: 12px; box-shadow: 0 20px 44px -24px rgba(0,0,0,.45);
+    display: none; outline: none; }
+  .dd.open .dd-menu { display: block; }
+  .dd-opt { display: flex; align-items: center; padding: 9px 11px; border-radius: 8px; font-size: 14px; color: var(--ink); cursor: pointer; white-space: nowrap; }
+  .dd-opt.hi { background: var(--page); }
+  .dd-opt[aria-selected='true'] { color: var(--accent-text); font-weight: 500; }
+  .dd-opt[aria-selected='true']::after { content: '✓'; margin-left: auto; padding-left: 16px; color: var(--accent); }
 </style>
 <style is:global>
   /* Result cards are injected by client JS (innerHTML), so Astro's scoped styles
@@ -95,4 +186,5 @@ const plugins = [...new Set(entries.map((e) => e.plugin))].sort();
   #results .pl { font-size: 11px; color: var(--muted); margin-top: auto; }
   #results .empty { grid-column: 1 / -1; padding: 34px; text-align: center; color: var(--muted); font-size: 14px; }
   #results .empty button { margin-left: 4px; font-family: var(--font-mono); font-size: 13px; color: var(--accent-text); background: none; border: none; cursor: pointer; text-decoration: underline; }
+  :root[data-theme='dark'] #results .t-field-ready { color: #8fb89a; border-color: color-mix(in srgb, #8fb89a 45%, var(--hair)); }
 </style>
