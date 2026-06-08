@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import { loadAssets } from '../lib/catalog';
+import { loadScoreIndex } from '../lib/scores';
+
+const assets = await loadAssets();
+const scores = await loadScoreIndex();
+const TECH = ['equipt-engineering', 'equipt-data'];
+const featured = assets
+  .filter((a) => TECH.includes(a.plugin))
+  .map((a) => ({ ...a, readiness: scores.get(a.slug)?.readiness ?? null }))
+  // Lead with the actual subagents (not the policy skills), then by readiness.
+  .sort((x, y) =>
+    (x.kind === 'agent' ? 0 : 1) - (y.kind === 'agent' ? 0 : 1)
+    || (y.readiness ?? 0) - (x.readiness ?? 0))
+  .slice(0, 6);
+const engCount = assets.filter((a) => a.plugin === 'equipt-engineering').length;
+const dataCount = assets.filter((a) => a.plugin === 'equipt-data').length;
+const repo = 'https://github.com/Salah-XD/equipt';
+---
+<Base
+  title="Equipt for developers — skills, agents & SDK starters"
+  description="Install 600+ verified skills & agents into Claude Code with one command — or fork a starter and build your own agent on the Anthropic SDK."
+>
+  <main class="dev">
+    <header class="dhero wrap">
+      <div class="grid-layer" aria-hidden="true"></div>
+      <p class="kicker">For developers</p>
+      <h1>Ship with <span class="pop">Equipt</span>.</h1>
+      <p class="lede">Install 600+ verified skills &amp; agents into Claude Code with one command — or fork a starter and build your own agent on the Anthropic SDK.</p>
+      <div class="cta">
+        <button class="cmd mono" type="button" data-copy-cmd="npx @equipt/cli init" aria-label="Copy: npx @equipt/cli init">
+          <span class="d" aria-hidden="true">$</span> npx @equipt/cli init <span class="hint" aria-hidden="true">copy</span>
+        </button>
+        <a class="ghost" href="/catalog/equipt-engineering">Browse engineering →</a>
+      </div>
+    </header>
+
+    <section class="wrap block">
+      <p class="kicker">Install</p>
+      <h2 class="serif">Into Claude Code, in one command.</h2>
+      <p class="muted">The Equipt CLI drops skills &amp; agents straight into your project's <code>.claude/</code>.</p>
+      <pre class="code"><code>npx @equipt/cli init                     <span class="cm"># scaffold .claude/ + a manifest</span>
+npx @equipt/cli add equipt-engineering   <span class="cm"># a whole plugin</span>
+npx @equipt/cli add code-reviewer        <span class="cm"># a single skill or agent</span>
+npx @equipt/cli list                     <span class="cm"># browse the catalog (with Readiness)</span></code></pre>
+      <details class="alt">
+        <summary>or use the Claude Code plugin marketplace</summary>
+        <pre class="code"><code>/plugin marketplace add Salah-XD/equipt
+/plugin install equipt-engineering</code></pre>
+      </details>
+    </section>
+
+    <section class="wrap block">
+      <p class="kicker">For your codebase</p>
+      <h2 class="serif">Subagents that do real engineering work.</h2>
+      <div class="twocol">
+        <a class="pcard" href="/catalog/equipt-engineering">
+          <h3>equipt-engineering <span class="ct mono">{engCount}</span></h3>
+          <p>Subagents for code review, debugging, testing, refactoring, security audits, and API &amp; schema design.</p>
+          <span class="go mono">Explore →</span>
+        </a>
+        <a class="pcard" href="/catalog/equipt-data">
+          <h3>equipt-data <span class="ct mono">{dataCount}</span></h3>
+          <p>SQL, dashboards, and analytics-narrative skills &amp; agents for working with your data.</p>
+          <span class="go mono">Explore →</span>
+        </a>
+      </div>
+      <div class="fgrid">
+        {featured.map((a) => (
+          <a class="fcard" href={`/catalog/${a.slug}`}>
+            <div class="ftop"><span class={`k k-${a.kind}`}>{a.kind}</span>{a.readiness != null && <span class="score mono">{a.readiness}</span>}</div>
+            <strong>{a.name}</strong>
+            <p>{a.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="wrap block sdk">
+      <p class="kicker">SDK starters</p>
+      <h2 class="serif">Build your own agent.</h2>
+      <p class="lede2">Need something custom? Fork a self-contained starter built on the <a class="link-underline" href="https://docs.anthropic.com/en/api">Anthropic SDK</a>, change the prompt, and deploy. No marketplace required.</p>
+      <a class="starter" href={`${repo}/tree/main/sdk-starters/customer-research-agent`}>
+        <div class="stop"><span class="k k-agent">SDK starter</span><span class="mono arrow">GitHub ↗</span></div>
+        <strong>customer-research-agent</strong>
+        <p>Give it a company name or URL → a structured research brief (snapshot, positioning, traction, sentiment, the three questions to ask). Anthropic SDK + web search. Fork it, edit <code>prompts.ts</code>, ship it.</p>
+      </a>
+    </section>
+
+    <section class="wrap block standard">
+      <p class="muted">Every skill &amp; agent is scored on <a class="link-underline" href="/standard">the Equipt Standard</a> before it ships — a Readiness score, a static safety gate, and Certified / Field-Ready tiers — so you install vetted tools, not a dump of prompts.</p>
+    </section>
+  </main>
+  <Footer />
+</Base>
+<style>
+  .dev { padding-bottom: 64px; }
+  .wrap { max-width: 1040px; }
+  .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .pop { color: var(--accent); }
+
+  /* Hero */
+  .dhero { position: relative; isolation: isolate; overflow: hidden; padding: 70px 22px 52px;
+    border-bottom: 1px solid var(--hair); }
+  .grid-layer { position: absolute; inset: -20% 0 -20% 0; z-index: -1; pointer-events: none;
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 54px 54px;
+    -webkit-mask-image: radial-gradient(120% 90% at 10% 0%, #000 30%, transparent 78%);
+    mask-image: radial-gradient(120% 90% at 10% 0%, #000 30%, transparent 78%); }
+  .dhero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(44px, 8vw, 84px);
+    line-height: .92; letter-spacing: -.04em; margin: 16px 0 0; }
+  .lede { font-size: 18px; line-height: 1.55; color: var(--muted); max-width: 56ch; margin-top: 18px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 30px; }
+  .cmd { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 14px; color: var(--ink);
+    background: var(--page); border: 1px solid var(--hair); border-radius: 10px; padding: 13px 17px; cursor: pointer;
+    transition: border-color .15s ease; }
+  .cmd:hover, .cmd.copied { border-color: var(--accent); }
+  .cmd .d { color: var(--accent); }
+  .cmd .hint { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-left: 4px; }
+  .cmd.copied .hint { color: var(--accent-text); }
+  .ghost { font-weight: 600; font-size: 13px; padding: 13px 18px; border-radius: 10px; border: 1px solid var(--ink); color: var(--ink);
+    transition: transform .15s ease, border-color .15s ease, color .15s ease; }
+  .ghost:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent-text); }
+
+  /* Blocks */
+  .block { padding: 48px 22px 0; }
+  .block h2 { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 38px); letter-spacing: -.01em; margin: 8px 0 0; line-height: 1.05; }
+  .muted { color: var(--muted); font-size: 15px; line-height: 1.6; margin-top: 12px; max-width: 62ch; }
+  code { font-family: var(--font-mono); font-size: .88em; background: var(--page); border: 1px solid var(--hair);
+    border-radius: 5px; padding: 1px 5px; }
+
+  .code { background: var(--paper); border: 1px solid var(--hair); border-radius: 12px; padding: 18px 18px;
+    overflow: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; color: var(--ink); margin-top: 18px; white-space: pre; }
+  .code code { background: none; border: none; padding: 0; font-size: 13px; }
+  .code .cm { color: var(--muted); }
+  .alt { margin-top: 12px; }
+  .alt summary { font-family: var(--font-mono); font-size: 12px; color: var(--muted); cursor: pointer; list-style: none; width: fit-content; padding: 4px 0; }
+  .alt summary::-webkit-details-marker { display: none; }
+  .alt summary::before { content: '+ '; }
+  .alt[open] summary::before { content: '– '; }
+  .alt summary:hover { color: var(--accent-text); }
+
+  /* Plugin cards */
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+  .pcard { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 14px; padding: 22px; background: var(--paper);
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .pcard:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 14px 30px -22px var(--accent-soft); }
+  .pcard h3 { font-family: var(--font-display); font-size: 18px; display: flex; align-items: baseline; gap: 9px; }
+  .pcard .ct { font-size: 12px; color: var(--accent-text); }
+  .pcard p { color: var(--muted); font-size: 13.5px; line-height: 1.55; margin: 9px 0 14px; }
+  .pcard .go { margin-top: auto; font-size: 12px; color: var(--accent-text); }
+
+  /* Featured technical assets */
+  .fgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 14px; }
+  .fcard { display: block; border: 1px solid var(--hair); border-radius: 12px; padding: 15px 16px; background: var(--paper);
+    transition: border-color .15s ease, transform .15s ease; }
+  .fcard:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .ftop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
+  .k-skill { color: var(--accent-text); }
+  .k-agent { color: var(--ink); }
+  .score { font-size: 12.5px; color: var(--muted); font-family: var(--font-mono); }
+  .fcard strong { font-family: var(--font-display); font-size: 15.5px; letter-spacing: -.01em; }
+  .fcard p { color: var(--muted); font-size: 12.5px; line-height: 1.5; margin-top: 6px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* SDK starter */
+  .sdk .lede2 { font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 58ch; margin-top: 12px; }
+  .starter { display: block; border: 1px solid var(--hair); border-radius: 16px; padding: 24px; background: var(--paper); margin-top: 20px; max-width: 640px;
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .starter:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 16px 34px -24px var(--accent-soft); }
+  .stop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .stop .arrow { font-size: 12px; color: var(--accent-text); }
+  .starter strong { font-family: var(--font-display); font-size: 20px; letter-spacing: -.01em; }
+  .starter p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 9px; }
+
+  .standard { padding-top: 40px; }
+
+  @media (max-width: 720px) { .twocol { grid-template-columns: 1fr; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-cmd]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copyCmd ?? '');
+        btn.classList.add('copied');
+        const hint = btn.querySelector('.hint');
+        const prev = hint?.textContent;
+        if (hint) hint.textContent = 'copied';
+        setTimeout(() => { btn.classList.remove('copied'); if (hint) hint.textContent = prev ?? 'copy'; }, 1400);
+      } catch {}
+    });
+  });
+</script>
