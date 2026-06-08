@@ -5,3 +5,7 @@ site/node_modules/
 site/dist/
 site/.astro/
 .vercel/
+
+# Internal planning/audit docs — keep local, never publish
+docs/superpowers/
+docs/audit-*.md
