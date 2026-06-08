@@ -3,10 +3,25 @@
   "version": "0.1.0",
   "description": "Install curated Equipt skills & agents into your project.",
   "type": "module",
-  "bin": { "equipt": "./bin/equipt.mjs" },
-  "engines": { "node": ">=22" },
-  "files": ["bin", "src", "README.md"],
-  "scripts": { "test": "node --test \"test/**/*.test.mjs\"" },
-  "dependencies": { "tar": "^7.4.3" },
+  "bin": {
+    "equipt": "./bin/equipt.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test \"test/**/*.test.mjs\""
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.5.1",
+    "commander": "^15.0.0",
+    "picocolors": "^1.1.1",
+    "tar": "^7.4.3"
+  },
   "license": "MIT"
 }
