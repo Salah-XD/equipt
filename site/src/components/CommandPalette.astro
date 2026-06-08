@@ -2,7 +2,7 @@
 ---
 <div class="cmdk" data-cmdk hidden>
   <div class="cmdk-backdrop" data-cmdk-close></div>
-  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Search skills and agents">
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Search skills and agents" data-lenis-prevent>
     <div class="cmdk-bar">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
       <input class="cmdk-input" type="search" placeholder="Search 607 skills & agents…" aria-label="Search skills and agents" autocomplete="off" spellcheck="false" />
@@ -15,7 +15,7 @@
   /* Container chrome — these elements live in the template, so scoped styles reach them. */
   .cmdk { position: fixed; inset: 0; z-index: 200; display: flex; align-items: flex-start; justify-content: center; }
   .cmdk[hidden] { display: none; }
-  .cmdk-backdrop { position: absolute; inset: 0; background: color-mix(in srgb, var(--ink) 45%, transparent); backdrop-filter: blur(2px); }
+  .cmdk-backdrop { position: absolute; inset: 0; background: rgba(13, 10, 6, .55); backdrop-filter: blur(3px); }
   .cmdk-panel { position: relative; margin-top: 12vh; width: min(620px, 92vw); max-height: 70vh; display: flex; flex-direction: column;
     background: var(--paper); border: 1px solid var(--hair); border-radius: 14px; box-shadow: 0 30px 80px -30px rgba(0,0,0,.5); overflow: hidden; }
   .cmdk-bar { display: flex; align-items: center; gap: 11px; padding: 15px 17px; border-bottom: 1px solid var(--hair); color: var(--muted); }
