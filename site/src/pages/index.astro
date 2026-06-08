@@ -6,6 +6,8 @@ import FeaturedAssets from '../components/FeaturedAssets.astro';
 import TrustSection from '../components/TrustSection.astro';
 import PluginGrid from '../components/PluginGrid.astro';
 import InstallTabs from '../components/InstallTabs.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import ByRole from '../components/ByRole.astro';
 import CatalogTeaser from '../components/CatalogTeaser.astro';
 import Footer from '../components/Footer.astro';
 import Motion from '../components/Motion.astro';
@@ -37,8 +39,10 @@ const jsonld = {
   <main id="main">
     <Hero total={assets.length} />
     <div data-reveal><ProofBar total={assets.length} /></div>
+    <div data-reveal><HowItWorks /></div>
     <div data-reveal><FeaturedAssets /></div>
     <div data-reveal><TrustSection /></div>
+    <div data-reveal><ByRole /></div>
     <div data-reveal><PluginGrid /></div>
     <div data-reveal><InstallTabs /></div>
     <div data-reveal><CatalogTeaser total={assets.length} /></div>
