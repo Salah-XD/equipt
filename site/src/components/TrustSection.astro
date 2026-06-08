@@ -1,0 +1,46 @@
+---
+import Scorecard from './Scorecard.astro';
+import { loadScorecard } from '../lib/scores';
+
+// A real Field-Ready showcase for the live demo scorecard.
+const card =
+  (await loadScorecard('equipt-engineering', 'code-reviewer')) ??
+  (await loadScorecard('equipt-marketing', 'seo-audit'));
+---
+<section class="trust" id="standard-preview"><div class="wrap row">
+  <div class="copy">
+    <p class="kicker">The Equipt Standard</p>
+    <h2 class="serif">Every asset is <i>scored</i> before it ships.</h2>
+    <p class="lead">
+      Not a dump of prompts — a curated, <b>verified</b> library. Each skill &amp; agent earns a
+      <b>Readiness</b> score across five axes, capped by a safety gate, with tiers you can trust.
+    </p>
+    <ul class="axes">
+      <li><b>Craft</b> — how well it’s built</li>
+      <li><b>Fit</b> — triggers at the right time</li>
+      <li><b>Guard</b> — safe to run</li>
+      <li><b>Proof</b> — evidence it works</li>
+      <li><b>Upkeep</b> — alive &amp; current</li>
+    </ul>
+    <a class="more link-underline" href="/standard">How scoring works →</a>
+  </div>
+  <div class="demo">
+    {card && <Scorecard card={card} />}
+  </div>
+</div></section>
+<style>
+  .trust { padding: 88px 0; border-top: 1px solid var(--hair); }
+  .row { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: center; }
+  .serif { font-family: var(--font-serif); font-size: clamp(30px, 4.5vw, 40px); letter-spacing: -.01em; margin-top: 6px; }
+  .serif i { color: var(--accent); }
+  .lead { font-size: 17px; line-height: 1.6; color: var(--muted); margin-top: 14px; max-width: 50ch; }
+  .lead b { color: var(--ink); }
+  .axes { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-top: 20px; font-size: 14.5px; color: var(--muted); }
+  .axes b { color: var(--ink); font-family: var(--font-display); font-weight: 700; }
+  .more { display: inline-block; margin-top: 22px; color: var(--accent-text); font-weight: 500; }
+  .demo { min-width: 0; }
+  @media (max-width: 820px) {
+    .row { grid-template-columns: 1fr; gap: 30px; }
+    .demo { max-width: 360px; }
+  }
+</style>

@@ -22,6 +22,11 @@ const surfaces = [
     <p class="kicker">{total} skills &amp; agents · one library · every AI assistant</p>
     <h1 class="big">Equip<br />your <span class="pop">AI.</span></h1>
     <p class="serif">Skills &amp; agents, <i>beautifully</i> organized.</p>
+    <button class="herosearch" type="button" data-open-palette aria-label="Search skills and agents">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      <span class="hs-ph">Search 607 skills &amp; agents…</span>
+      <kbd class="hs-k mono">⌘K</kbd>
+    </button>
     <div class="lower">
       <p class="sub">One curated library — install into Claude Code, claude.ai, Cursor, Codex &amp; more. Searchable, free, open-source.</p>
       <div class="cta">
@@ -59,6 +64,14 @@ const surfaces = [
   .serif { font-family: var(--font-serif); font-size: clamp(26px, 4vw, 40px); line-height: 1.04;
     letter-spacing: -.01em; margin-top: 16px; }
   .serif i { color: var(--accent); }
+
+  .herosearch { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 470px; margin-top: 30px;
+    background: var(--page); border: 1px solid var(--hair); border-radius: 12px; padding: 13px 15px; cursor: text;
+    color: var(--muted); font-size: 15px; transition: border-color .18s ease; }
+  .herosearch:hover { border-color: var(--accent); }
+  .herosearch svg { color: var(--muted); flex: none; }
+  .hs-ph { flex: 1; text-align: left; }
+  .hs-k { margin-left: auto; font-size: 11px; color: var(--muted); border: 1px solid var(--hair); border-radius: 6px; padding: 3px 7px; }
 
   .lower { display: flex; justify-content: space-between; align-items: flex-end; gap: 34px; flex-wrap: wrap; margin-top: 34px; }
   .sub { max-width: 446px; font-size: 16px; line-height: 1.6; color: var(--muted); }
