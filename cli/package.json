@@ -1,0 +1,12 @@
+{
+  "name": "@equipt/cli",
+  "version": "0.1.0",
+  "description": "Install curated Equipt skills & agents into your project.",
+  "type": "module",
+  "bin": { "equipt": "./bin/equipt.mjs" },
+  "engines": { "node": ">=22" },
+  "files": ["bin", "src", "README.md"],
+  "scripts": { "test": "node --test \"test/**/*.test.mjs\"" },
+  "dependencies": { "tar": "^7.4.3" },
+  "license": "MIT"
+}

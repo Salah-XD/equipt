@@ -1,0 +1,4 @@
+{ "standardVersion": "1.1.0", "count": 2, "assets": [
+  { "plugin": "demo-plugin", "name": "demo-skill", "kind": "skill", "readiness": 90, "tier": "certified", "unsafe": false, "partial": false },
+  { "plugin": "demo-plugin", "name": "demo-agent", "kind": "agent", "readiness": 85, "tier": "provisional", "unsafe": false, "partial": false }
+] }

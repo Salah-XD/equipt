@@ -1,0 +1,1 @@
+{ "plugins": { "demo-plugin": { "description": "Demo plugin for tests." } } }
