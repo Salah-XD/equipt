@@ -1,0 +1,49 @@
+{
+  "asset": {
+    "plugin": "equipt-business",
+    "name": "cease-and-desist",
+    "kind": "skill"
+  },
+  "standardVersion": "1.0.0",
+  "readiness": 96,
+  "tier": "provisional",
+  "unsafe": false,
+  "partial": true,
+  "eligibleTier": null,
+  "axes": {
+    "craft": {
+      "score": 100,
+      "signals": [
+        "description length ok",
+        "description has trigger cue",
+        "substantive body",
+        "has headings",
+        "includes examples"
+      ]
+    },
+    "fit": null,
+    "guard": {
+      "score": 95,
+      "signals": [
+        "broad tool access: Write"
+      ],
+      "gated": false
+    },
+    "proof": {
+      "score": 85,
+      "signals": [
+        "has code/example blocks",
+        "has usage/how-to section",
+        "no adoption data (neutral baseline)"
+      ]
+    },
+    "upkeep": {
+      "score": 100,
+      "signals": [
+        "updated 0d ago",
+        "spec-compatible frontmatter"
+      ]
+    }
+  },
+  "curation": null
+}
