@@ -1,19 +1,25 @@
 ---
 ---
 <button id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" class="theme-toggle">
-  <span class="dot" aria-hidden="true"></span>
+  <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4.1"/>
+    <path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/>
+  </svg>
+  <svg class="i-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/>
+  </svg>
 </button>
 <style>
-  .theme-toggle { width: 46px; height: 24px; border-radius: 999px; background: var(--hair);
-    border: 1px solid var(--hair); position: relative; cursor: pointer; flex: none;
-    transition: border-color .18s ease, background-color .18s ease; }
-  .theme-toggle:hover { border-color: var(--accent); }
-  .dot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: var(--accent);
-    top: 2px; left: 2px; transition: left .22s cubic-bezier(.22,1,.36,1); }
-  :root[data-theme='dark'] .dot { left: 24px; }
-  @media (prefers-reduced-motion: reduce) {
-    .dot, .theme-toggle { transition: none; }
-  }
+  .theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+    padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; flex: none;
+    transition: color .18s ease, transform .18s ease; }
+  .theme-toggle:hover { color: var(--accent); transform: rotate(-12deg); }
+  /* Light mode shows a moon (tap → dark); dark mode shows a sun (tap → light). */
+  .i-sun { display: none; }
+  .i-moon { display: block; }
+  :root[data-theme='dark'] .i-sun { display: block; }
+  :root[data-theme='dark'] .i-moon { display: none; }
+  @media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } .theme-toggle:hover { transform: none; } }
 </style>
 <script>
   import { resolveTheme, nextTheme, type Theme } from '../lib/theme';
@@ -23,7 +29,6 @@
     btn.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
   }
   function apply(t: Theme) { root.setAttribute('data-theme', t); localStorage.setItem('equipt-theme', t); syncPressed(); }
-  // reflect the theme chosen by the inline boot script
   syncPressed();
   btn.addEventListener('click', () => {
     const current = (root.getAttribute('data-theme') as Theme) ?? resolveTheme(localStorage.getItem('equipt-theme'), matchMedia('(prefers-color-scheme: dark)').matches);

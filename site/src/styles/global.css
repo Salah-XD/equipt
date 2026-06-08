@@ -22,6 +22,14 @@ a { color: inherit; text-decoration: none; }
   background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 8px;
   font-weight: 600; font-size: 14px; transition: top .15s ease; }
 .skip:focus { top: 8px; }
+
+/* Custom scrollbar — warm + subtle, matches the editorial system */
+html { scrollbar-color: var(--hair) transparent; scrollbar-width: thin; }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--hair); border-radius: 10px; border: 3px solid var(--page); background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--accent) 55%, var(--hair)); background-clip: padding-box; }
+::-webkit-scrollbar-corner { background: transparent; }
 .mono { font-family: var(--font-mono); }
 
 /* Refined editorial label — slightly tighter, optical alignment */
