@@ -1,0 +1,64 @@
+---
+import { loadAssets } from '../lib/catalog';
+import { loadScoreIndex, tierLabel } from '../lib/scores';
+
+const assets = await loadAssets();
+const scores = await loadScoreIndex();
+
+// Showcase the curated picks (Field-Ready / Certified) — real assets that also
+// prove the Equipt Standard. Field-Ready first, then Certified, then by readiness.
+const tierRank: Record<string, number> = { 'field-ready': 0, certified: 1, provisional: 2 };
+const featured = assets
+  .map((a) => {
+    const s = scores.get(a.slug);
+    return { ...a, readiness: s?.readiness ?? null, tier: s?.tier ?? null };
+  })
+  .filter((a) => a.tier && a.tier !== 'provisional')
+  .sort((x, y) => (tierRank[x.tier!] - tierRank[y.tier!]) || ((y.readiness ?? 0) - (x.readiness ?? 0)))
+  .slice(0, 8);
+---
+<section class="featured"><div class="wrap">
+  <div class="head">
+    <div>
+      <p class="kicker">Verified picks</p>
+      <h2 class="serif">Real skills &amp; agents, <i>scored</i> before they ship.</h2>
+    </div>
+    <a class="seeall link-underline" href="/catalog">Browse all 607 →</a>
+  </div>
+  <div class="grid">
+    {featured.map((a) => (
+      <a class="card" href={`/catalog/${a.slug}`}>
+        <div class="ctop">
+          <span class={`k k-${a.kind}`}>{a.kind}</span>
+          {a.tier && <span class={`tier tier-${a.tier}`}>{tierLabel(a.tier)}{a.readiness != null ? ` · ${a.readiness}` : ''}</span>}
+        </div>
+        <strong>{a.name}</strong>
+        <p>{a.description}</p>
+        <span class="pl mono">{a.plugin}</span>
+      </a>
+    ))}
+  </div>
+</div></section>
+<style>
+  .featured { padding: 88px 0; border-top: 1px solid var(--hair); }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; flex-wrap: wrap; margin-bottom: 26px; }
+  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 36px); letter-spacing: -.01em; margin-top: 6px; }
+  .serif i { color: var(--accent); }
+  .seeall { font-size: 14px; color: var(--accent-text); white-space: nowrap; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 13px; }
+  .card { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 13px; padding: 17px 18px; background: var(--paper);
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 26px -20px var(--accent-soft); }
+  .ctop { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 11px; }
+  .k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--hair); }
+  .k-skill { color: var(--accent-text); }
+  .k-agent { color: var(--ink); }
+  .tier { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .02em; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  .tier-certified { color: var(--accent-text); border-color: var(--accent); }
+  .tier-field-ready { color: #2f8f5d; border-color: #2f8f5d; }
+  .card strong { font-family: var(--font-display); font-size: 16px; letter-spacing: -.01em; }
+  .card p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 7px 0 12px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .pl { font-size: 11px; color: var(--muted); margin-top: auto; }
+</style>

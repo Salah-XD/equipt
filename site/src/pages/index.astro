@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import ProofBar from '../components/ProofBar.astro';
+import FeaturedAssets from '../components/FeaturedAssets.astro';
+import TrustSection from '../components/TrustSection.astro';
 import PluginGrid from '../components/PluginGrid.astro';
 import InstallTabs from '../components/InstallTabs.astro';
 import CatalogTeaser from '../components/CatalogTeaser.astro';
@@ -13,6 +15,8 @@ const assets = await loadAssets();
 <Base title="Equipt — skills & agents for every AI assistant">
   <Hero total={assets.length} />
   <div data-reveal><ProofBar total={assets.length} /></div>
+  <div data-reveal><FeaturedAssets /></div>
+  <div data-reveal><TrustSection /></div>
   <div data-reveal><PluginGrid /></div>
   <div data-reveal><InstallTabs /></div>
   <div data-reveal><CatalogTeaser total={assets.length} /></div>
