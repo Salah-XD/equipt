@@ -12,5 +12,3 @@ npx @equipt/cli list                     # browse the catalog (with Readiness + 
 Run in a terminal, `init` opens an interactive plugin picker, and `add` asks before overwriting an existing file. In non-interactive contexts (CI, pipes) it stays quiet — `init` just scaffolds and `add` skips conflicts unless you pass `--force`.
 
 Flags: `--global` (target `~/.claude`), `--force` (overwrite without asking), `--from <path>` (use a local Equipt checkout), `--plugin <name>` (scope `list`), `--yes` (non-interactive `init`).
-
-> While the Equipt repo is private, the GitHub source is unavailable — pass `--from <path-to-equipt-checkout>` to install from a local clone.
