@@ -16,31 +16,101 @@ async function findConfig(): Promise<string> {
   throw new Error('plugins.config.json not found walking up from ' + process.cwd());
 }
 const cfg = JSON.parse(await readFile(await findConfig(), 'utf8'));
-const plugins = Object.entries(cfg.plugins).map(([name, c]: [string, any]) => ({
-  name, description: c.description,
-  count: assets.filter((a) => a.plugin === name).length,
-}));
+const items = Object.entries(cfg.plugins)
+  .map(([name, c]: [string, any]) => {
+    const short = name.replace(/^equipt-/, '');
+    const inPlugin = assets.filter((a) => a.plugin === name);
+    return {
+      name,
+      label: short.charAt(0).toUpperCase() + short.slice(1),
+      description: c.description,
+      count: inPlugin.length,
+      skills: inPlugin.filter((a) => a.kind === 'skill').length,
+      agents: inPlugin.filter((a) => a.kind === 'agent').length,
+    };
+  })
+  .sort((a, b) => b.count - a.count);
+const max = Math.max(...items.map((i) => i.count));
+const total = items.reduce((s, i) => s + i.count, 0);
 ---
 <section id="plugins" class="plugins"><div class="wrap">
-  <h2 class="kicker">Five plugins</h2>
-  <div class="grid">
-    {plugins.map((p) => (
-      <a class="card" href={`/catalog/${p.name}`}>
-        <div class="head"><h3>{p.name}</h3><span class="mono">{p.count}</span></div>
-        <p>{p.description}</p>
-      </a>
-    ))}
+  <div class="phead">
+    <h2 class="kicker">Five plugins</h2>
+    <span class="mono total">{total} assets · curated into five</span>
   </div>
+
+  <ol class="ledger">
+    {items.map((p, i) => (
+      <li>
+        <a class="row" href={`/catalog/${p.name}`} style={`--w:${Math.round((p.count / max) * 100)}%`}>
+          <span class="idx mono">{String(i + 1).padStart(2, '0')}</span>
+          <span class="main">
+            <span class="line">
+              <span class="label">{p.label}</span>
+              <span class="slug mono">{p.name}</span>
+            </span>
+            <span class="desc">{p.description}</span>
+          </span>
+          <span class="aside">
+            <span class="meter"><i></i></span>
+            <span class="metricrow">
+              <span class="count"><b>{p.count}</b><span class="split mono">{p.skills} skills · {p.agents} agents</span></span>
+              <svg class="arrow" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ol>
 </div></section>
 <style>
   .plugins { padding: 96px 0; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 26px; }
-  .card { position: relative; border: 1px solid var(--hair); border-radius: 14px; padding: 22px; background: var(--paper);
-    transition: transform .2s cubic-bezier(.22,1,.36,1), border-color .2s ease, box-shadow .2s ease; }
-  .card:hover, .card:focus-visible { transform: translateY(-3px); border-color: var(--accent);
-    box-shadow: 0 14px 30px -20px var(--accent-soft); }
-  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .head h3 { font-family: var(--font-display); font-size: 20px; letter-spacing: -.02em; }
-  .head .mono { color: var(--accent-text); font-size: 13px; }
-  .card p { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+  .phead { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 10px; }
+  .total { color: var(--muted); font-size: 12px; }
+
+  /* ---- Editorial ledger: a ranked directory of the five plugins, with share-of-library meters ---- */
+  .ledger { list-style: none; border-top: 1px solid var(--hair); }
+  .ledger li { border-bottom: 1px solid var(--hair); }
+  .row { display: grid; grid-template-columns: 54px minmax(0, 1fr) 210px; align-items: center; gap: 24px;
+    padding: 26px 14px 26px 8px; position: relative; transition: background-color .2s ease; }
+  .row::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--accent);
+    transform: scaleY(0); transform-origin: center; transition: transform .24s cubic-bezier(.22,1,.36,1); }
+  .row:hover, .row:focus-visible { background: var(--accent-soft); }
+  .row:hover::before, .row:focus-visible::before { transform: scaleY(1); }
+
+  .idx { align-self: start; padding-top: 6px; font-size: 15px; color: var(--muted); transition: color .2s ease; }
+  .row:hover .idx, .row:focus-visible .idx { color: var(--accent-text); }
+
+  .main { min-width: 0; }
+  .line { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .label { font-family: var(--font-display); font-size: clamp(23px, 2.7vw, 31px); letter-spacing: -.025em; line-height: 1;
+    transition: color .2s ease; }
+  .row:hover .label, .row:focus-visible .label { color: var(--accent-text); }
+  .slug { font-size: 12px; color: var(--muted); }
+  .desc { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 62ch;
+    overflow: hidden; text-overflow: ellipsis; }
+
+  .aside { display: flex; flex-direction: column; gap: 11px; }
+  .meter { height: 5px; border-radius: 999px; background: var(--grid); overflow: hidden; }
+  .meter i { display: block; height: 100%; width: var(--w); border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 34%, var(--hair)); transition: background-color .2s ease, box-shadow .2s ease; }
+  .row:hover .meter i, .row:focus-visible .meter i { background: var(--accent); box-shadow: 0 0 10px -1px var(--accent-soft); }
+  .metricrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .count { display: flex; flex-direction: column; gap: 1px; }
+  .count b { font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -.01em; transition: color .2s ease; }
+  .row:hover .count b, .row:focus-visible .count b { color: var(--accent-text); }
+  .split { font-size: 10.5px; color: var(--muted); letter-spacing: .01em; }
+  .arrow { color: var(--muted); flex: none; transition: transform .2s ease, color .2s ease; }
+  .row:hover .arrow, .row:focus-visible .arrow { color: var(--accent); transform: translateX(4px); }
+
+  @media (max-width: 680px) {
+    .row { grid-template-columns: 36px 1fr; gap: 12px 14px; padding: 22px 6px; }
+    .idx { padding-top: 3px; font-size: 13px; }
+    .label { font-size: 23px; }
+    .desc { max-width: none; }
+    .aside { grid-column: 2 / -1; flex-direction: row; align-items: center; gap: 16px; margin-top: 2px; }
+    .meter { flex: 1; }
+    .metricrow { flex: none; gap: 12px; }
+    .count { flex-direction: row; align-items: baseline; gap: 7px; }
+  }
 </style>

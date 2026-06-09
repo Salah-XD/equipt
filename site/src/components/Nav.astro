@@ -3,15 +3,17 @@ import ThemeToggle from './ThemeToggle.astro';
 ---
 <header class="site-nav">
   <div class="wrap row">
-    <a class="wordmark" href="/">equip<b>t</b></a>
+    <a class="wordmark" href="/"><img class="wmark" src="/icon-64.png" alt="" width="26" height="26" /><span>equip<b>t</b></span></a>
     <nav id="navlinks" class="links" aria-label="Primary">
       <a class="link-underline" href="/catalog">Catalog</a>
       <a class="link-underline" href="/#plugins">Plugins</a>
       <a class="link-underline" href="/#install">Install</a>
       <a class="link-underline" href="/developers">Developers</a>
-      <a class="link-underline" href="https://github.com/Salah-XD/equipt"><span aria-hidden="true">★ </span>GitHub</a>
     </nav>
     <div class="navctl">
+      <a class="navgh" href="https://github.com/Salah-XD/equipt" target="_blank" rel="noopener" aria-label="Equipt on GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.2 3.44 9.6 8.21 11.16.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.37-1.34-1.74-1.34-1.74-1.09-.73.08-.72.08-.72 1.21.08 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.57-2.67-.3-5.47-1.31-5.47-5.84 0-1.29.47-2.34 1.24-3.17-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.21.96-.26 1.98-.39 3-.4 1.02.01 2.04.14 3 .4 2.28-1.53 3.29-1.21 3.29-1.21.66 1.64.24 2.86.12 3.16.77.83 1.24 1.88 1.24 3.17 0 4.54-2.81 5.54-5.49 5.83.43.36.81 1.09.81 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.83.56C20.57 21.88 24 17.49 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+      </a>
       <button class="navsearch" type="button" data-open-palette aria-label="Search skills & agents">
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
         <kbd class="mono">⌘ K</kbd>
@@ -25,14 +27,18 @@ import ThemeToggle from './ThemeToggle.astro';
   </div>
 </header>
 <style>
-  .site-nav { position: relative; background: var(--paper); border-bottom: 1px solid var(--hair); }
+  .site-nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--hair); }
   .row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px 0; }
-  .wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
+  .wordmark { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
+  .wordmark .wmark { width: 26px; height: 26px; border-radius: 7px; display: block; }
   .wordmark b { color: var(--accent); }
   .links { display: flex; gap: 22px; align-items: center; font-weight: 500; font-size: 14px; color: var(--ink); }
   .links a { color: var(--ink); }
 
   .navctl { display: flex; align-items: center; gap: 12px; }
+  .navgh { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; color: var(--ink);
+    border-radius: 8px; transition: color .15s ease, transform .15s ease; }
+  .navgh:hover { color: var(--accent); transform: translateY(-1px); }
   .navsearch { display: inline-flex; align-items: center; gap: 7px; height: 34px; font-family: var(--font-mono); font-size: 12px; color: var(--muted);
     background: var(--page); border: 1px solid var(--hair); border-radius: 8px; padding: 0 11px; cursor: pointer;
     transition: border-color .15s ease, color .15s ease; }

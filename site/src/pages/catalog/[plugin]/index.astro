@@ -39,24 +39,54 @@ export async function getStaticPaths() {
 }
 
 const { plugin, description, items, skills, agents, avg } = Astro.props;
-const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${plugin}`;
+const short = plugin.replace(/^equipt-/, '');
+const label = short.charAt(0).toUpperCase() + short.slice(1);
+const bundle = `${plugin}-skills.zip`;
+const ccLines = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${plugin}`;
+const cliLines = `npx @equipt/cli init\nnpx @equipt/cli add ${plugin}`;
 ---
-<Base title={`${plugin} — Equipt`} description={description}>
+<Base title={`${label} skills & agents — Equipt`} description={description}>
   <main id="main" class="plugin wrap">
     <a href="/catalog" class="kicker back">← Catalog</a>
 
     <header class="phead">
-      <h1>{plugin}</h1>
+      <p class="eyebrow mono">Plugin · {plugin}</p>
+      <h1>{label}</h1>
       <p class="desc">{description}</p>
       <div class="stats">
         <span><b>{skills}</b> skills</span>
         <span><b>{agents}</b> agents</span>
         {avg != null && <span><b>{avg}</b> avg readiness</span>}
       </div>
+
       <div class="install">
-        <div class="cmd">
-          <pre data-copy><code>{installCmd}</code></pre>
-          <button class="copy" type="button" aria-label="Copy install command">Copy</button>
+        <span class="kicker">Add the {label} pack</span>
+        <div class="itabs" role="tablist" aria-label="Install instructions">
+          <button class="itab on" type="button" data-itab="web" role="tab" aria-selected="true">claude.ai / desktop</button>
+          <button class="itab" type="button" data-itab="cc" role="tab" aria-selected="false">Claude Code</button>
+          <button class="itab" type="button" data-itab="cli" role="tab" aria-selected="false">Equipt CLI</button>
+        </div>
+        <div class="ipanel" data-ipanel="web" role="tabpanel">
+          <ol>
+            <li>Download <b>{bundle}</b> ({skills} skills) from the latest <a href="https://github.com/Salah-XD/equipt/releases">Release</a> and unzip it.</li>
+            <li>In <b>claude.ai</b> or <b>Claude desktop</b> → <b>Settings → Capabilities → Skills</b>, upload the skill folders you want.</li>
+            <li>They’re live in your chats — no code, no setup.</li>
+          </ol>
+          {agents > 0 && <p class="hint">The {agents} agents in this pack run in <b>Claude Code</b> — see the next tab.</p>}
+        </div>
+        <div class="ipanel" data-ipanel="cc" role="tabpanel" hidden>
+          <div class="cmd">
+            <pre data-copy><code>{ccLines}</code></pre>
+            <button class="copy" type="button" aria-label="Copy Claude Code install">Copy</button>
+          </div>
+          <p class="hint">Installs all {skills + agents} — skills &amp; agents.</p>
+        </div>
+        <div class="ipanel" data-ipanel="cli" role="tabpanel" hidden>
+          <div class="cmd">
+            <pre data-copy><code>{cliLines}</code></pre>
+            <button class="copy" type="button" aria-label="Copy Equipt CLI install">Copy</button>
+          </div>
+          <p class="hint">For your own Claude Code project.</p>
         </div>
       </div>
     </header>
@@ -84,12 +114,25 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${p
   .plugin { padding: 36px 22px 72px; max-width: 1120px; }
   .back { display: inline-block; margin-bottom: 22px; }
   .phead { border-bottom: 1px solid var(--hair); padding-bottom: 28px; margin-bottom: 28px; }
+  .eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
   h1 { font-family: var(--font-display); font-size: clamp(34px, 6vw, 56px); letter-spacing: -.03em; }
   .desc { font-size: 18px; line-height: 1.55; color: var(--muted); max-width: 64ch; margin-top: 10px; }
   .stats { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 18px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
   .stats b { font-family: var(--font-display); color: var(--ink); font-size: 16px; }
 
-  .install { margin-top: 22px; max-width: 480px; }
+  .install { margin-top: 26px; max-width: 560px; }
+  .install .kicker { display: block; margin-bottom: 10px; }
+  .itabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 13px; }
+  .itab { font-family: var(--font-mono); font-size: 11.5px; padding: 6px 11px; border: 1px solid var(--hair); border-radius: 7px;
+    background: transparent; color: var(--muted); cursor: pointer; transition: color .15s ease, border-color .15s ease, background-color .15s ease; }
+  .itab:hover { color: var(--ink); border-color: var(--accent); }
+  .itab.on { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+  .ipanel[hidden] { display: none; }
+  .ipanel ol { margin: 0; padding-left: 19px; font-size: 13.5px; line-height: 1.75; color: var(--ink); }
+  .ipanel ol b { font-weight: 600; }
+  .ipanel ol a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .hint { margin-top: 9px; color: var(--muted); font-size: 12px; }
+  .hint b { color: var(--ink); font-weight: 600; }
   .cmd { position: relative; }
   .cmd pre { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 84px 14px 16px;
     overflow: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--ink); white-space: pre; }
@@ -117,6 +160,15 @@ const installCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${p
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 </style>
 <script>
+  const itabs = document.querySelectorAll<HTMLButtonElement>('.itab');
+  const ipanels = document.querySelectorAll<HTMLElement>('.ipanel');
+  itabs.forEach((tab) => tab.addEventListener('click', () => {
+    itabs.forEach((t) => { t.classList.remove('on'); t.setAttribute('aria-selected', 'false'); });
+    tab.classList.add('on');
+    tab.setAttribute('aria-selected', 'true');
+    ipanels.forEach((p) => (p.hidden = p.dataset.ipanel !== tab.dataset.itab));
+  }));
+
   document.querySelectorAll<HTMLButtonElement>('.copy').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const pre = btn.parentElement?.querySelector('pre[data-copy]');

@@ -1,7 +1,7 @@
 ---
 ---
 <footer class="footer"><div class="wrap row">
-  <span class="wordmark">equip<b>t</b></span>
+  <span class="wordmark"><img class="wmark" src="/icon-64.png" alt="" width="22" height="22" /><span>equip<b>t</b></span></span>
   <div class="links">
     <a class="link-underline" href="https://github.com/Salah-XD/equipt">GitHub</a>
     <a class="link-underline" href="https://github.com/Salah-XD/equipt/blob/main/LICENSE">MIT</a>
@@ -12,7 +12,8 @@
 <style>
   .footer { border-top: 1px solid var(--hair); padding: 30px 0; background: var(--paper); }
   .row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-  .wordmark { font-family: var(--font-display); font-weight: 700; }
+  .wordmark { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 700; }
+  .wordmark .wmark { width: 22px; height: 22px; border-radius: 6px; display: block; }
   .wordmark b { color: var(--accent); }
   .links { display: flex; gap: 18px; align-items: center; font-size: 14px; color: var(--muted); }
 </style>

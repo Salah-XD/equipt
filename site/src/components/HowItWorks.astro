@@ -8,26 +8,74 @@ const steps = [
 <section class="how"><div class="wrap">
   <p class="kicker">How it works</p>
   <h2 class="serif">From “I need to…” to <i>done</i>, in three steps.</h2>
-  <ol class="steps">
-    {steps.map((s) => (
-      <li class="step">
-        <span class="num mono">{s.n}</span>
-        <h3>{s.t}</h3>
-        <p>{s.d}</p>
-      </li>
-    ))}
-  </ol>
+
+  <div class="flow">
+    <div class="rail" aria-hidden="true"><span class="beam"></span></div>
+    <ol class="tracks">
+      {steps.map((s, i) => (
+        <li class="track" style={`--i:${i}`}>
+          <span class="node mono">{s.n}</span>
+          <div class="txt">
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
 </div></section>
 <style>
-  .how { padding: 88px 0; border-top: 1px solid var(--hair); }
-  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 38px); letter-spacing: .02em; margin: 6px 0 38px; }
+  .how { padding: 96px 0; border-top: 1px solid var(--hair); }
+  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 38px); letter-spacing: .02em; margin: 6px 0 52px; }
   .serif i { color: var(--accent); }
-  .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .step { border: 1px solid var(--hair); border-radius: 14px; padding: 24px 22px; background: var(--paper);
-    transition: border-color .15s ease, transform .15s ease; }
-  .step:hover { border-color: var(--accent); transform: translateY(-3px); }
-  .num { display: inline-block; font-size: 13px; color: var(--accent-text); border: 1px solid var(--hair); border-radius: 8px; padding: 4px 10px; margin-bottom: 16px; }
-  .step h3 { font-family: var(--font-display); font-size: 19px; letter-spacing: -.01em; }
-  .step p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 9px; }
-  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+
+  /* ---- Signal line: a beam of light travels the rail through each node ---- */
+  .flow { position: relative; }
+  .rail { position: absolute; top: 21px; left: 0; right: 0; height: 2px; border-radius: 2px; z-index: 0;
+    background: var(--hair); overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent) center/100% 100% no-repeat;
+            mask: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent) center/100% 100% no-repeat; }
+  .beam { position: absolute; top: 0; bottom: 0; left: -30%; width: 30%;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    animation: beam 3.6s linear infinite; }
+  @keyframes beam { from { transform: translateX(0); } to { transform: translateX(433%); } }
+
+  .tracks { list-style: none; position: relative; z-index: 1;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .track { display: flex; flex-direction: column; align-items: flex-start; }
+  .node { position: relative; width: 44px; height: 44px; border-radius: 50%; flex: none;
+    display: grid; place-items: center; font-size: 13px; color: var(--accent-text);
+    background: var(--paper); border: 1px solid var(--hair); margin-bottom: 22px; }
+  /* pulsing ring, staggered so it fires as the beam reaches each node */
+  .node::after { content: ''; position: absolute; inset: -1px; border-radius: 50%; border: 1px solid transparent;
+    animation: nodepulse 3.6s ease-in-out infinite; animation-delay: calc(.4s + var(--i) * .92s); }
+  @keyframes nodepulse {
+    0%, 100% { box-shadow: 0 0 0 0 transparent; border-color: transparent; }
+    7%       { box-shadow: 0 0 0 5px var(--accent-soft); border-color: var(--accent); }
+    22%      { box-shadow: 0 0 0 0 transparent; border-color: transparent; }
+  }
+  .track h3 { font-family: var(--font-display); font-size: 19px; letter-spacing: -.01em; }
+  .track p { color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 9px; max-width: 33ch; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .beam { display: none; }
+    .rail { background: linear-gradient(90deg, var(--hair), color-mix(in srgb, var(--accent) 55%, var(--hair)), var(--hair)); }
+    .node::after { animation: none; }
+  }
+
+  /* Mobile: the rail stands up into a vertical timeline, beam flows downward */
+  @media (max-width: 760px) {
+    .serif { margin-bottom: 40px; }
+    .rail { top: 0; bottom: 0; left: 21px; right: auto; width: 2px; height: auto;
+      -webkit-mask: linear-gradient(180deg, transparent, #000 5%, #000 95%, transparent) center/100% 100% no-repeat;
+              mask: linear-gradient(180deg, transparent, #000 5%, #000 95%, transparent) center/100% 100% no-repeat; }
+    .beam { top: -30%; left: 0; right: 0; width: auto; height: 30%;
+      background: linear-gradient(180deg, transparent, var(--accent), transparent);
+      animation: beamv 3.6s linear infinite; }
+    @keyframes beamv { from { transform: translateY(0); } to { transform: translateY(433%); } }
+    .tracks { grid-template-columns: 1fr; gap: 34px; }
+    .track { flex-direction: row; align-items: flex-start; gap: 18px; }
+    .node { margin-bottom: 0; }
+    .track p { max-width: none; }
+  }
 </style>

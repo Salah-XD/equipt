@@ -1,0 +1,241 @@
+---
+// "Find your starting point" — a fully client-side recommender. It fetches the
+// static /catalog-index.json (already built for the command palette) and ranks
+// real, verified assets by the visitor's role + company type. No backend, no
+// tracking: every tap stays in the browser.
+const roles = [
+  { id: 'founder',   label: 'Founder',          plugins: ['equipt-business'],                       kw: ['pitch', 'investor', 'fundrais', 'pricing', 'hiring', 'strategy', 'business plan', 'finance', 'model', 'sop', 'roadmap', 'okrs'] },
+  { id: 'marketing', label: 'Marketing',        plugins: ['equipt-marketing'],                      kw: ['ad', 'seo', 'social', 'email', 'funnel', 'landing', 'brand', 'campaign', 'content calendar', 'growth', 'copy'] },
+  { id: 'sales',     label: 'Sales',            plugins: ['equipt-marketing', 'equipt-business'],   kw: ['cold', 'outreach', 'email', 'call script', 'follow-up', 'proposal', 'objection', 'deal', 'pipeline', 'negotiat', 'crm'] },
+  { id: 'ops',       label: 'Ops & finance',    plugins: ['equipt-business'],                       kw: ['operation', 'sop', 'process', 'finance', 'invoice', 'budget', 'hr', 'hiring', 'legal', 'contract', 'vendor', 'payroll'] },
+  { id: 'support',   label: 'Customer support', plugins: ['equipt-business'],                       kw: ['support', 'refund', 'onboarding', 'retention', 'help', 'ticket', 'complaint', 'win-back', 'churn', 'faq'] },
+  { id: 'content',   label: 'Content',          plugins: ['equipt-content'],                        kw: ['blog', 'newsletter', 'script', 'course', 'copy', 'caption', 'repurpose', 'video', 'youtube', 'about page'] },
+  { id: 'data',      label: 'Data',             plugins: ['equipt-data'],                           kw: ['dashboard', 'sql', 'metric', 'analytics', 'report', 'kpi', 'cohort', 'funnel'] },
+  { id: 'dev',       label: 'Developer',        plugins: ['equipt-engineering'],                    kw: ['code', 'debug', 'test', 'refactor', 'security', 'api', 'schema', 'review', 'migration'] },
+];
+const companies = [
+  { id: 'saas',   label: 'SaaS',            kw: ['saas', 'churn', 'mrr', 'subscription', 'trial', 'onboarding', 'product', 'retention'] },
+  { id: 'ecom',   label: 'E-commerce',      kw: ['product', 'listing', 'shopify', 'ecommerce', 'e-commerce', 'store', 'cart', 'dtc', 'amazon', 'order', 'catalog'] },
+  { id: 'agency', label: 'Agency',          kw: ['client', 'proposal', 'pitch', 'retainer', 'deliverable', 'brief', 'scope'] },
+  { id: 'local',  label: 'Local / service', kw: ['local', 'appointment', 'review', 'booking', 'restaurant', 'service', 'menu', 'listing'] },
+];
+const plabel: Record<string, string> = {
+  'equipt-business': 'Business', 'equipt-marketing': 'Marketing', 'equipt-content': 'Content',
+  'equipt-data': 'Data', 'equipt-engineering': 'Engineering',
+};
+---
+<section class="finder" data-finder><div class="wrap">
+  <p class="kicker">Find your starting point</p>
+  <h2 class="serif">Tell us what you do. <i>We’ll pick the skills.</i></h2>
+  <p class="lead">Two taps and you get a shortlist of <b>verified</b> skills &amp; agents, matched to your work — no sign-up, and <b>nothing you tap is tracked, stored, or sent anywhere</b>.</p>
+
+  <div class="fgrid">
+    <div class="console">
+      <fieldset class="q">
+        <legend>1 · Your work</legend>
+        <div class="chips" data-q="role">
+          {roles.map((r) => (
+            <button class="fchip" type="button" data-val={r.id} aria-pressed="false">{r.label}</button>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset class="q" data-step2>
+        <legend>2 · Your company <span class="opt">— optional</span></legend>
+        <div class="chips" data-q="company">
+          {companies.map((c) => (
+            <button class="fchip" type="button" data-val={c.id} aria-pressed="false">{c.label}</button>
+          ))}
+        </div>
+      </fieldset>
+
+      <span class="privacy">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        Private by design — runs entirely in your browser.
+      </span>
+
+      <button class="reset" type="button" hidden>↺ Start over</button>
+    </div>
+
+    <div class="results" aria-live="polite" aria-label="Recommended skills and agents"></div>
+  </div>
+</div></section>
+
+<script type="application/json" id="finder-cfg" set:html={JSON.stringify({ roles, companies, plabel })} />
+<script>
+  type Entry = { name: string; description: string; plugin: string; kind: 'skill' | 'agent'; slug: string; readiness?: number; tier?: string };
+  type Role = { id: string; label: string; plugins: string[]; kw: string[] };
+  type Company = { id: string; label: string; kw: string[] };
+
+  const root = document.querySelector<HTMLElement>('[data-finder]');
+  if (root) {
+    const cfg = JSON.parse(document.getElementById('finder-cfg')!.textContent!);
+    const ROLES: Role[] = cfg.roles;
+    const COMPANIES: Company[] = cfg.companies;
+    const PLABEL: Record<string, string> = cfg.plabel;
+
+    const results = root.querySelector<HTMLElement>('.results')!;
+    const roleChips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-q="role"] .fchip'));
+    const compChips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-q="company"] .fchip'));
+    const step2 = root.querySelector<HTMLElement>('[data-step2]')!;
+    const reset = root.querySelector<HTMLButtonElement>('.reset')!;
+
+    let data: Entry[] = [];
+    let role: string | null = null;
+    let company: string | null = null;
+
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
+
+    async function ensure() {
+      if (data.length) return;
+      try { data = await (await fetch('/catalog-index.json')).json(); } catch {}
+    }
+
+    function relevant(e: Entry, r: Role) {
+      if (r.plugins.includes(e.plugin)) return true;
+      const n = e.name.toLowerCase(), d = (e.description || '').toLowerCase();
+      return r.kw.some((k) => n.includes(k) || d.includes(k));
+    }
+    function scoreOf(e: Entry, r: Role, c: Company | null) {
+      const n = e.name.toLowerCase(), d = (e.description || '').toLowerCase();
+      let s = r.plugins.includes(e.plugin) ? 50 : 0;
+      for (const k of r.kw) { if (n.includes(k)) s += 9; else if (d.includes(k)) s += 4; }
+      if (c) for (const k of c.kw) { if (n.includes(k)) s += 6; else if (d.includes(k)) s += 2.5; }
+      s += (e.readiness || 0) * 0.25;
+      if (e.tier === 'field-ready') s += 12; else if (e.tier === 'certified') s += 6;
+      return s;
+    }
+
+    function emptyHTML() {
+      return `<div class="res-empty">
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/><path d="M11 8v6M8 11h6"/></svg>
+        <p>Pick your work on the left — your shortlist of verified picks appears here, instantly.</p>
+      </div>`;
+    }
+    function cardHTML(e: Entry, i: number) {
+      const tier = e.tier === 'field-ready' ? '<span class="fc-tier t-field-ready">Field-Ready</span>'
+        : e.tier === 'certified' ? '<span class="fc-tier t-certified">Certified</span>' : '';
+      const score = e.readiness != null ? `<span class="fc-score">${e.readiness}</span>` : '';
+      return `<a class="fcard" style="--i:${i}" href="/catalog/${e.slug}">
+        <span class="fc-top"><span class="fc-k k-${e.kind}">${e.kind}</span><span class="fc-rt">${tier}${score}</span></span>
+        <strong class="fc-name">${esc(e.name)}</strong>
+        <span class="fc-desc">${esc(e.description || '')}</span>
+      </a>`;
+    }
+    function render() {
+      if (!role) { results.innerHTML = emptyHTML(); return; }
+      const r = ROLES.find((x) => x.id === role)!;
+      const c = company ? COMPANIES.find((x) => x.id === company)! : null;
+      const list = data
+        .filter((e) => relevant(e, r))
+        .map((e) => ({ e, s: scoreOf(e, r, c) }))
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 6)
+        .map((x) => x.e);
+      const plugin = r.plugins[0];
+      const count = data.filter((e) => e.plugin === plugin).length;
+      results.innerHTML = `
+        <div class="res-head">
+          <span class="res-count"><b>${list.length}</b> verified ${list.length === 1 ? 'pick' : 'picks'} for ${esc(r.label)}</span>
+          <a class="res-all" href="/catalog/${plugin}">All ${count} in ${esc(PLABEL[plugin] || plugin)} →</a>
+        </div>
+        <div class="fcards">${list.map(cardHTML).join('')}</div>`;
+    }
+
+    roleChips.forEach((ch) => ch.addEventListener('click', async () => {
+      role = ch.dataset.val!;
+      roleChips.forEach((x) => { const on = x === ch; x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); });
+      step2.classList.add('ready');
+      reset.hidden = false;
+      await ensure();
+      render();
+    }));
+    compChips.forEach((ch) => ch.addEventListener('click', async () => {
+      if (!role) return;
+      const same = company === ch.dataset.val;
+      company = same ? null : ch.dataset.val!;
+      compChips.forEach((x) => { const on = !same && x === ch; x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); });
+      await ensure();
+      render();
+    }));
+    reset.addEventListener('click', () => {
+      role = null; company = null;
+      [...roleChips, ...compChips].forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+      step2.classList.remove('ready');
+      reset.hidden = true;
+      render();
+    });
+
+    render();
+  }
+</script>
+
+<style>
+  .finder { padding: 96px 0; border-top: 1px solid var(--hair); }
+  .serif { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 38px); letter-spacing: .02em; margin: 6px 0 12px; }
+  .serif i { color: var(--accent); }
+  .lead { color: var(--muted); font-size: 15.5px; line-height: 1.6; max-width: 64ch; margin-bottom: 32px; }
+  .lead b { color: var(--ink); font-weight: 600; }
+
+  .fgrid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 30px; align-items: start; }
+
+  .console { display: flex; flex-direction: column; gap: 24px; }
+  .q { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .q legend { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; padding: 0; }
+  .q .opt { color: var(--muted); opacity: .85; }
+  .q[data-step2] { transition: opacity .2s ease; }
+  .q[data-step2]:not(.ready) { opacity: .4; pointer-events: none; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fchip { font-size: 13px; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--hair); background: var(--paper); color: var(--ink);
+    cursor: pointer; transition: border-color .15s ease, color .15s ease, background-color .15s ease, transform .12s ease; }
+  .fchip:hover { border-color: var(--accent); color: var(--accent-text); transform: translateY(-1px); }
+  .fchip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .fchip.on:hover { color: var(--paper); }
+
+  .privacy { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; color: var(--muted); }
+  .privacy svg { color: var(--accent); flex: none; }
+  .reset { align-self: flex-start; font-family: var(--font-mono); font-size: 12px; color: var(--muted); background: none; border: 0; cursor: pointer; padding: 2px 0; }
+  .reset:hover { color: var(--accent-text); }
+  .reset[hidden] { display: none; }
+
+  .results { border: 1px solid var(--hair); border-radius: 16px; background: var(--page); padding: 16px; min-height: 332px; }
+
+  @media (max-width: 820px) { .fgrid { grid-template-columns: 1fr; gap: 24px; } }
+</style>
+<style is:global>
+  /* Result rows are injected via innerHTML, so scoped styles can't reach them.
+     Global, but namespaced under .finder .results so nothing leaks out. */
+  .finder .results .res-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    gap: 14px; min-height: 300px; padding: 24px; color: var(--muted); }
+  .finder .results .res-empty svg { color: var(--hair); }
+  .finder .results .res-empty p { max-width: 32ch; font-size: 14px; line-height: 1.55; }
+
+  .finder .results .res-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    padding: 6px 8px 14px; border-bottom: 1px solid var(--hair); margin-bottom: 12px; }
+  .finder .results .res-count { font-size: 13.5px; color: var(--muted); }
+  .finder .results .res-count b { font-family: var(--font-display); color: var(--ink); font-size: 16px; margin-right: 2px; }
+  .finder .results .res-all { font-family: var(--font-mono); font-size: 12px; color: var(--accent-text); white-space: nowrap; }
+  .finder .results .res-all:hover { text-decoration: underline; }
+
+  .finder .results .fcards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .finder .results .fcard { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 12px; padding: 14px; background: var(--paper);
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+    animation: fpop .28s cubic-bezier(.22,1,.36,1) both; animation-delay: calc(var(--i, 0) * 45ms); }
+  .finder .results .fcard:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 26px -20px var(--accent-soft); }
+  .finder .results .fc-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 9px; }
+  .finder .results .fc-k { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 5px; border: 1px solid var(--hair); }
+  .finder .results .k-skill { color: var(--accent-text); }
+  .finder .results .k-agent { color: var(--ink); }
+  .finder .results .fc-rt { display: inline-flex; align-items: center; gap: 6px; }
+  .finder .results .fc-tier { font-family: var(--font-mono); font-size: 9.5px; padding: 2px 6px; border-radius: 999px; border: 1px solid var(--hair); white-space: nowrap; }
+  .finder .results .t-field-ready { color: #2f8f5d; border-color: #2f8f5d; }
+  .finder .results .t-certified { color: var(--accent-text); border-color: var(--accent); }
+  .finder .results .fc-score { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .finder .results .fc-name { font-family: var(--font-display); font-size: 15px; letter-spacing: -.01em; }
+  .finder .results .fc-desc { color: var(--muted); font-size: 12.5px; line-height: 1.45; margin-top: 6px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  @keyframes fpop { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+  :root[data-theme='dark'] .finder .results .t-field-ready { color: #8fb89a; border-color: color-mix(in srgb, #8fb89a 45%, var(--hair)); }
+  @media (prefers-reduced-motion: reduce) { .finder .results .fcard { animation: none; } }
+  @media (max-width: 460px) { .finder .results .fcards { grid-template-columns: 1fr; } }
+</style>

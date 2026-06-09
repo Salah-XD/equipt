@@ -35,12 +35,16 @@ const displayTitle = titleMatch ? titleMatch[1].trim() : asset.name;
 const body = titleMatch ? asset.body.slice(titleMatch[0].length) : asset.body;
 const bodyHtml = await marked.parse(body);
 
-const surfaces = asset.kind === 'skill'
-  ? 'Claude Code · claude.ai · Claude desktop'
-  : 'Claude Code';
-const sourceUrl = `https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${asset.kind === 'skill' ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`;
-const cliCmd = `npx @equipt/cli add ${asset.name}`;
-const ccCmd = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
+const isSkill = asset.kind === 'skill';
+const short = asset.plugin.replace(/^equipt-/, '');
+const pluginLabel = short.charAt(0).toUpperCase() + short.slice(1);
+const surfaces = isSkill
+  ? 'claude.ai · Claude desktop · Claude Code'
+  : 'Claude Code · claude.ai (as a Project)';
+const sourceUrl = `https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${isSkill ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`;
+const bundle = `${asset.plugin}-skills.zip`;
+const ccLines = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
+const cliLines = `npx @equipt/cli init\nnpx @equipt/cli add ${asset.name}`;
 
 const site = (Astro.site?.href ?? 'https://equipt-agent.vercel.app/').replace(/\/$/, '');
 const url = `${site}/catalog/${asset.plugin}/${asset.name}`;
@@ -74,25 +78,53 @@ const jsonld = {
       <article class="main">
         <div class="meta">
           <span class={`k k-${asset.kind}`}>{asset.kind}</span>
-          <a class="pl mono" href={`/catalog/${asset.plugin}`}>{asset.plugin}</a>
+          <a class="pl" href={`/catalog/${asset.plugin}`}>{pluginLabel}</a>
         </div>
         <h1>{displayTitle}</h1>
         <p class="slug mono">{asset.name}</p>
         <p class="desc">{asset.description}</p>
 
         <div class="install">
-          <span class="kicker">Install</span>
-          <div class="cmd">
-            <pre data-copy><code>{cliCmd}</code></pre>
-            <button class="copy" type="button" aria-label="Copy install command">Copy</button>
+          <span class="kicker">Add this {asset.kind}</span>
+          <div class="itabs" role="tablist" aria-label="Install instructions">
+            <button class="itab on" type="button" data-itab="web" role="tab" aria-selected="true">{isSkill ? 'claude.ai / desktop' : 'claude.ai — no code'}</button>
+            <button class="itab" type="button" data-itab="cc" role="tab" aria-selected="false">Claude Code</button>
+            <button class="itab" type="button" data-itab="cli" role="tab" aria-selected="false">Equipt CLI</button>
           </div>
-          <details class="alt">
-            <summary>or install the plugin in Claude Code</summary>
+
+          <div class="ipanel" data-ipanel="web" role="tabpanel">
+            {isSkill ? (
+              <ol>
+                <li>Download <b>{bundle}</b> from the latest <a href="https://github.com/Salah-XD/equipt/releases">Release</a> and unzip it.</li>
+                <li>In <b>claude.ai</b> or <b>Claude desktop</b> → <b>Settings → Capabilities → Skills</b>, upload the <b>{asset.name}</b> folder.</li>
+                <li>It’s live in your chats — no code, no setup.</li>
+              </ol>
+            ) : (
+              <ol>
+                <li>In <b>claude.ai</b> (or Claude desktop), create a <b>Project</b>.</li>
+                <li>Copy this agent’s instructions — open <b>“Show full agent”</b> below, or <a href={sourceUrl}>view the source</a> — and paste them into the project’s <b>custom instructions</b>.</li>
+                <li>Every chat in that project now works like <b>{displayTitle}</b> — no code.</li>
+              </ol>
+            )}
+          </div>
+
+          <div class="ipanel" data-ipanel="cc" role="tabpanel" hidden>
             <div class="cmd">
-              <pre data-copy><code>{ccCmd}</code></pre>
+              <pre data-copy><code>{ccLines}</code></pre>
               <button class="copy" type="button" aria-label="Copy Claude Code install">Copy</button>
             </div>
-          </details>
+            <p class="hint">{isSkill
+              ? `Installs the whole ${asset.plugin} plugin — this skill included.`
+              : `Runs as a native subagent. Installs the whole ${asset.plugin} plugin.`}</p>
+          </div>
+
+          <div class="ipanel" data-ipanel="cli" role="tabpanel" hidden>
+            <div class="cmd">
+              <pre data-copy><code>{cliLines}</code></pre>
+              <button class="copy" type="button" aria-label="Copy Equipt CLI install">Copy</button>
+            </div>
+            <p class="hint">Adds just this {asset.kind} to your Claude Code project.</p>
+          </div>
         </div>
 
         <div class="bodywrap">
@@ -100,7 +132,7 @@ const jsonld = {
             <article class="prose" set:html={bodyHtml} />
             <div class="fade" aria-hidden="true"></div>
           </div>
-          <button class="more" type="button" aria-expanded="false">Show full skill</button>
+          <button class="more" type="button" aria-expanded="false">Show full {asset.kind}</button>
         </div>
 
         <p class="src"><a href={sourceUrl}>View source on GitHub →</a></p>
@@ -126,7 +158,7 @@ const jsonld = {
           ? <Scorecard card={card} />
           : <div class="noscore">Not yet scored.</div>}
         <dl class="metabox">
-          <div><dt>Plugin</dt><dd><a href={`/catalog/${asset.plugin}`}>{asset.plugin}</a></dd></div>
+          <div><dt>Plugin</dt><dd><a href={`/catalog/${asset.plugin}`}>{pluginLabel}</a></dd></div>
           <div><dt>Kind</dt><dd>{asset.kind}</dd></div>
           <div><dt>Works in</dt><dd>{surfaces}</dd></div>
           {card && <div><dt>Tier</dt><dd>{tierLabel(card.tier)}</dd></div>}
@@ -179,13 +211,17 @@ const jsonld = {
   .prose :global(ul), .prose :global(ol) { padding-left: 22px; }
   .prose :global(blockquote) { border-left: 3px solid var(--accent); padding-left: 14px; color: var(--muted); margin: 14px 0; }
 
-  .alt { margin-top: 10px; }
-  .alt summary { font-family: var(--font-mono); font-size: 12px; color: var(--muted); cursor: pointer; list-style: none; padding: 4px 0; width: fit-content; }
-  .alt summary::-webkit-details-marker { display: none; }
-  .alt summary::before { content: '+ '; }
-  .alt[open] summary::before { content: '– '; }
-  .alt summary:hover { color: var(--accent-text); }
-  .alt .cmd { margin-top: 8px; }
+  .itabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0 13px; }
+  .itab { font-family: var(--font-mono); font-size: 11.5px; padding: 6px 11px; border: 1px solid var(--hair); border-radius: 7px;
+    background: transparent; color: var(--muted); cursor: pointer; transition: color .15s ease, border-color .15s ease, background-color .15s ease; }
+  .itab:hover { color: var(--ink); border-color: var(--accent); }
+  .itab.on { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+  .ipanel[hidden] { display: none; }
+  .ipanel ol { margin: 0; padding-left: 19px; font-size: 13.5px; line-height: 1.75; color: var(--ink); }
+  .ipanel ol b { font-weight: 600; }
+  .ipanel ol a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .ipanel .hint { margin-top: 9px; color: var(--muted); font-size: 12px; }
+  .ipanel .hint b { color: var(--ink); font-weight: 600; }
 
   /* Body is clamped behind "Show full skill" — lead with description + install. */
   .bodywrap { margin-top: 32px; }
@@ -229,6 +265,16 @@ const jsonld = {
   }
 </style>
 <script>
+  // Install path tabs (claude.ai default for skills, Claude Code for agents).
+  const itabs = document.querySelectorAll<HTMLButtonElement>('.itab');
+  const ipanels = document.querySelectorAll<HTMLElement>('.ipanel');
+  itabs.forEach((tab) => tab.addEventListener('click', () => {
+    itabs.forEach((t) => { t.classList.remove('on'); t.setAttribute('aria-selected', 'false'); });
+    tab.classList.add('on');
+    tab.setAttribute('aria-selected', 'true');
+    ipanels.forEach((p) => (p.hidden = p.dataset.ipanel !== tab.dataset.itab));
+  }));
+
   document.querySelectorAll<HTMLButtonElement>('.copy').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const pre = btn.parentElement?.querySelector('pre[data-copy]');
@@ -254,10 +300,11 @@ const jsonld = {
       btn.hidden = true;
       return;
     }
+    const moreLabel = btn.textContent ?? 'Show full';
     btn.addEventListener('click', () => {
       const open = body.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? 'Show less' : 'Show full skill';
+      btn.textContent = open ? 'Show less' : moreLabel;
     });
   });
 </script>
