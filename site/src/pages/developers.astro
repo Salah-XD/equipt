@@ -20,15 +20,15 @@ const dataCount = assets.filter((a) => a.plugin === 'equipt-data').length;
 const repo = 'https://github.com/Salah-XD/equipt';
 ---
 <Base
-  title="Equipt for developers — skills, agents & SDK starters"
-  description="Install 600+ verified skills & agents into Claude Code with one command — or fork a starter and build your own agent on the Anthropic SDK."
+  title="Equipt for developers — skills, agents & a reference agent"
+  description="Install 600+ verified skills & agents into Claude Code with one command — or fork a complete reference agent built on the Anthropic SDK."
 >
   <main id="main" class="dev">
     <header class="dhero wrap">
       <div class="grid-layer" aria-hidden="true"></div>
       <p class="kicker">For developers</p>
       <h1>Ship with <span class="pop">Equipt</span>.</h1>
-      <p class="lede">Install 600+ verified skills &amp; agents into Claude Code with one command — or fork a starter and build your own agent on the Anthropic SDK.</p>
+      <p class="lede">Install 600+ verified skills &amp; agents into Claude Code with one command — or fork a complete reference agent built on the Anthropic SDK.</p>
       <div class="cta">
         <button class="cmd mono" type="button" data-copy-cmd="npx @equipt/cli init" aria-label="Copy: npx @equipt/cli init">
           <span class="d" aria-hidden="true">$</span> npx @equipt/cli init <span class="hint" aria-hidden="true">copy</span>
@@ -79,13 +79,13 @@ npx @equipt/cli list                     <span class="cm"># browse the catalog (
     </section>
 
     <section class="wrap block sdk">
-      <p class="kicker">SDK starters</p>
-      <h2 class="serif">Build your own agent.</h2>
-      <p class="lede2">Need something custom? Fork a self-contained starter built on the <a class="link-underline" href="https://docs.anthropic.com/en/api">Anthropic SDK</a>, change the prompt, and deploy. No marketplace required.</p>
+      <p class="kicker">Go fully custom</p>
+      <h2 class="serif">Or build an agent from scratch.</h2>
+      <p class="lede2">When a skill or subagent isn’t enough, fork a complete, self-contained agent built on the <a class="link-underline" href="https://docs.anthropic.com/en/api">Anthropic SDK</a> — read it top to bottom, swap the prompt, ship. A worked example you can learn from, not a blank template.</p>
       <a class="starter" href={`${repo}/tree/main/sdk-starters/customer-research-agent`}>
-        <div class="stop"><span class="k k-agent">SDK starter</span><span class="mono arrow">GitHub ↗</span></div>
+        <div class="stop"><span class="k k-agent">Reference build</span><span class="mono arrow">GitHub ↗</span></div>
         <strong>customer-research-agent</strong>
-        <p>Give it a company name or URL → a structured research brief (snapshot, positioning, traction, sentiment, the three questions to ask). Anthropic SDK + web search. Fork it, edit <code>prompts.ts</code>, ship it.</p>
+        <p>The one to read first: a company name or URL goes in → a structured research brief comes out (snapshot, positioning, traction, sentiment, the three questions to ask). Built on the Anthropic SDK with the built-in web-search tool — read it end to end, fork it, make it your own.</p>
       </a>
     </section>
 
