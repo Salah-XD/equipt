@@ -10,9 +10,10 @@
     <button class="tab" data-tab="soon" role="tab" aria-selected="false" id="tab-soon" aria-controls="panel-soon">Cursor / Codex / Antigravity</button>
   </div>
   <div class="panel" data-panel="web" id="panel-web" role="tabpanel" aria-labelledby="tab-web">
-    <ol><li>Download a category bundle (e.g. <b>marketing</b>) from the latest <a class="link-underline" href="https://github.com/Salah-XD/equipt/releases">Release</a>.</li>
-    <li>In <b>claude.ai</b> or <b>Claude desktop</b> → <b>Settings → Capabilities → Skills</b>, upload the skill folder.</li>
-    <li>It’s live in your chats — no code, no setup.</li></ol>
+    <ol><li><b>A whole category, no code:</b> download a plugin zip — e.g. <code>equipt-marketing.zip</code> — from the latest <a class="link-underline" href="https://github.com/Salah-XD/equipt/releases">Release</a>, then in <b>claude.ai</b> / <b>desktop</b>: <b>Customize → Personal plugins (+) → Create plugin → Upload plugin</b>. Every skill in it goes live at once.</li>
+    <li><b>Just one skill:</b> grab that skill’s <b>.zip</b> and use <b>Customize → Skills (+) → Create skill → Upload a skill</b> instead.</li>
+    <li>Live in your chats — no code, no setup.</li></ol>
+    <p class="soon">Plugins need a paid plan (Pro / Max / Team); single-skill uploads work on Free too. A plugin installs its agents too — they activate in Cowork & Claude Code. Power users can wire the whole marketplace into Claude Code — see the next tab.</p>
   </div>
   <pre class="panel" data-panel="cc" id="panel-cc" role="tabpanel" aria-labelledby="tab-cc" hidden>/plugin marketplace add Salah-XD/equipt
 /plugin install equipt-marketing</pre>
@@ -37,6 +38,8 @@ npx @equipt/cli add equipt-marketing   # or a single skill: add cold-outreach-wr
   .panel ol { padding-left: 18px; font-family: var(--font-body); }
   .panel a { color: var(--accent-text); }
   .soon { color: var(--muted); font-family: var(--font-body); }
+  .panel .note { display: block; margin-top: 3px; color: var(--muted); font-size: 12.5px; }
+  .panel code { font-family: var(--font-mono); font-size: .92em; }
 </style>
 <script>
   const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');

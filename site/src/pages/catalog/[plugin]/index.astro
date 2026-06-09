@@ -42,6 +42,8 @@ const { plugin, description, items, skills, agents, avg } = Astro.props;
 const short = plugin.replace(/^equipt-/, '');
 const label = short.charAt(0).toUpperCase() + short.slice(1);
 const bundle = `${plugin}-skills.zip`;
+const pluginZip = `${plugin}.zip`;
+const pluginZipUrl = `https://github.com/Salah-XD/equipt/releases/latest/download/${pluginZip}`;
 const ccLines = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${plugin}`;
 const cliLines = `npx @equipt/cli init\nnpx @equipt/cli add ${plugin}`;
 ---
@@ -67,19 +69,24 @@ const cliLines = `npx @equipt/cli init\nnpx @equipt/cli add ${plugin}`;
           <button class="itab" type="button" data-itab="cli" role="tab" aria-selected="false">Equipt CLI</button>
         </div>
         <div class="ipanel" data-ipanel="web" role="tabpanel">
-          <ol>
-            <li>Download <b>{bundle}</b> ({skills} skills) from the latest <a href="https://github.com/Salah-XD/equipt/releases">Release</a> and unzip it.</li>
-            <li>In <b>claude.ai</b> or <b>Claude desktop</b> → <b>Settings → Capabilities → Skills</b>, upload the skill folders you want.</li>
-            <li>They’re live in your chats — no code, no setup.</li>
+          <ol class="steps">
+            <li>The whole {label} plugin — all {skills} skills, packaged and ready to upload.
+              <a class="dl" href={pluginZipUrl} download>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+                {pluginZip}
+              </a>
+            </li>
+            <li>In <b>claude.ai</b> or <b>Claude desktop</b>: <b>Customize → Personal plugins (+) → Create plugin → Upload plugin</b>, and select the zip.</li>
+            <li>Every {label} skill is live in your chats — no code, all at once.</li>
           </ol>
-          {agents > 0 && <p class="hint">The {agents} agents in this pack run in <b>Claude Code</b> — see the next tab.</p>}
+          <p class="hint">Plugins need a <b>paid plan</b> (Pro / Max / Team).{agents > 0 ? ` Bonus: its ${agents} agents install too — they activate in Cowork & Claude Code (greyed out in normal chat).` : ''} Just want one skill? Open it below and use its <b>Upload skill</b> zip (works on Free too).</p>
         </div>
         <div class="ipanel" data-ipanel="cc" role="tabpanel" hidden>
           <div class="cmd">
             <pre data-copy><code>{ccLines}</code></pre>
             <button class="copy" type="button" aria-label="Copy Claude Code install">Copy</button>
           </div>
-          <p class="hint">Installs all {skills + agents} — skills &amp; agents.</p>
+          <p class="hint">Installs all {skills + agents} — skills &amp; agents. Prefer files? Download <a href="https://github.com/Salah-XD/equipt/releases"><b>{bundle}</b></a> and unzip into <code>~/.claude/</code> — it expands to <code>~/.claude/skills/</code>.</p>
         </div>
         <div class="ipanel" data-ipanel="cli" role="tabpanel" hidden>
           <div class="cmd">
@@ -128,11 +135,32 @@ const cliLines = `npx @equipt/cli init\nnpx @equipt/cli add ${plugin}`;
   .itab:hover { color: var(--ink); border-color: var(--accent); }
   .itab.on { color: var(--paper); background: var(--ink); border-color: var(--ink); }
   .ipanel[hidden] { display: none; }
-  .ipanel ol { margin: 0; padding-left: 19px; font-size: 13.5px; line-height: 1.75; color: var(--ink); }
-  .ipanel ol b { font-weight: 600; }
-  .ipanel ol a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  /* Install steps as a vertical roadmap — numbered nodes threaded on a rail. */
+  .steps { list-style: none; margin: 2px 0 0; padding: 0; position: relative; counter-reset: step;
+    font-size: 13.5px; line-height: 1.7; color: var(--ink); }
+  /* connector from each node down to the next — anchored per-step so it never overshoots the last node */
+  .steps li:not(:last-child)::after { content: ''; position: absolute; left: 12px; top: 24.5px; bottom: -1px; width: 2px;
+    background: color-mix(in srgb, var(--accent) 24%, var(--hair)); }
+  .steps li { position: relative; counter-increment: step; padding: 0 0 20px 40px; }
+  .steps li:last-child { padding-bottom: 0; }
+  /* top centers the 26px node on the first text line (line-height 1.7 × 13.5px = 22.95px) */
+  .steps li::before { content: counter(step); position: absolute; left: 0; top: -1.5px; z-index: 1;
+    width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: 12px; color: var(--accent-text);
+    background: var(--paper); border: 1px solid var(--hair); }
+  .steps li:last-child::before { content: '✓'; color: var(--paper); background: var(--accent); border-color: var(--accent); }
+  .steps b { font-weight: 600; }
+  .steps a:not(.dl) { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .steps .dl { display: flex; width: fit-content; align-items: center; gap: 7px; margin-top: 10px; font-family: var(--font-mono);
+    font-size: 12.5px; padding: 9px 14px; border-radius: 9px; color: var(--paper); background: var(--ink);
+    border: 1px solid var(--ink); text-decoration: none; font-weight: 600;
+    transition: background-color .16s ease, border-color .16s ease, transform .16s ease; }
+  .steps .dl:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); transform: translateY(-1px); }
+  .steps .dl svg { width: 13px; height: 13px; }
   .hint { margin-top: 9px; color: var(--muted); font-size: 12px; }
   .hint b { color: var(--ink); font-weight: 600; }
+  .hint a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .hint code { font-family: var(--font-mono); font-size: .92em; }
   .cmd { position: relative; }
   .cmd pre { background: var(--paper); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 84px 14px 16px;
     overflow: auto; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--ink); white-space: pre; }

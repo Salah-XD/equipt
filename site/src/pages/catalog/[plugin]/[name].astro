@@ -42,7 +42,8 @@ const surfaces = isSkill
   ? 'claude.ai · Claude desktop · Claude Code'
   : 'Claude Code · claude.ai (as a Project)';
 const sourceUrl = `https://github.com/Salah-XD/equipt/blob/main/plugins/${asset.plugin}/${isSkill ? `skills/${asset.name}/SKILL.md` : `agents/${asset.name}.md`}`;
-const bundle = `${asset.plugin}-skills.zip`;
+const skillZip = `${asset.name}.zip`;
+const skillZipUrl = `https://github.com/Salah-XD/equipt/releases/latest/download/${skillZip}`;
 const ccLines = `/plugin marketplace add Salah-XD/equipt\n/plugin install ${asset.plugin}`;
 const cliLines = `npx @equipt/cli init\nnpx @equipt/cli add ${asset.name}`;
 
@@ -94,13 +95,18 @@ const jsonld = {
 
           <div class="ipanel" data-ipanel="web" role="tabpanel">
             {isSkill ? (
-              <ol>
-                <li>Download <b>{bundle}</b> from the latest <a href="https://github.com/Salah-XD/equipt/releases">Release</a> and unzip it.</li>
-                <li>In <b>claude.ai</b> or <b>Claude desktop</b> → <b>Settings → Capabilities → Skills</b>, upload the <b>{asset.name}</b> folder.</li>
-                <li>It’s live in your chats — no code, no setup.</li>
+              <ol class="steps">
+                <li>This skill, packaged and ready to upload.
+                  <a class="dl" href={skillZipUrl} download>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+                    {skillZip}
+                  </a>
+                </li>
+                <li>In <b>claude.ai</b> or <b>Claude desktop</b>: <b>Customize → Skills (+) → Create skill → Upload a skill</b>, select the zip and toggle it on. <span class="aside">Greyed out? Enable code execution under <b>Settings → Capabilities</b>.</span></li>
+                <li>It’s live in your chats — no code, no setup. <span class="aside">Want every {pluginLabel} skill at once? Add the whole plugin from the <a href={`/catalog/${asset.plugin}`}>{pluginLabel} page</a> (Customize → Personal plugins → Create plugin → Upload plugin).</span></li>
               </ol>
             ) : (
-              <ol>
+              <ol class="steps">
                 <li>In <b>claude.ai</b> (or Claude desktop), create a <b>Project</b>.</li>
                 <li>Copy this agent’s instructions — open <b>“Show full agent”</b> below, or <a href={sourceUrl}>view the source</a> — and paste them into the project’s <b>custom instructions</b>.</li>
                 <li>Every chat in that project now works like <b>{displayTitle}</b> — no code.</li>
@@ -217,9 +223,30 @@ const jsonld = {
   .itab:hover { color: var(--ink); border-color: var(--accent); }
   .itab.on { color: var(--paper); background: var(--ink); border-color: var(--ink); }
   .ipanel[hidden] { display: none; }
-  .ipanel ol { margin: 0; padding-left: 19px; font-size: 13.5px; line-height: 1.75; color: var(--ink); }
-  .ipanel ol b { font-weight: 600; }
-  .ipanel ol a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  /* Install steps as a vertical roadmap — numbered nodes threaded on a rail. */
+  .steps { list-style: none; margin: 2px 0 0; padding: 0; position: relative; counter-reset: step;
+    font-size: 13.5px; line-height: 1.7; color: var(--ink); }
+  /* connector from each node down to the next — anchored per-step so it never overshoots the last node */
+  .steps li:not(:last-child)::after { content: ''; position: absolute; left: 12px; top: 24.5px; bottom: -1px; width: 2px;
+    background: color-mix(in srgb, var(--accent) 24%, var(--hair)); }
+  .steps li { position: relative; counter-increment: step; padding: 0 0 20px 40px; }
+  .steps li:last-child { padding-bottom: 0; }
+  /* top centers the 26px node on the first text line (line-height 1.7 × 13.5px = 22.95px) */
+  .steps li::before { content: counter(step); position: absolute; left: 0; top: -1.5px; z-index: 1;
+    width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: 12px; color: var(--accent-text);
+    background: var(--paper); border: 1px solid var(--hair); }
+  .steps li:last-child::before { content: '✓'; color: var(--paper); background: var(--accent); border-color: var(--accent); }
+  .steps b { font-weight: 600; }
+  .steps a:not(.dl) { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+  .steps .dl { display: flex; width: fit-content; align-items: center; gap: 7px; margin-top: 10px; font-family: var(--font-mono);
+    font-size: 12.5px; padding: 9px 14px; border-radius: 9px; color: var(--paper); background: var(--ink);
+    border: 1px solid var(--ink); text-decoration: none; font-weight: 600;
+    transition: background-color .16s ease, border-color .16s ease, transform .16s ease; }
+  .steps .dl:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); transform: translateY(-1px); }
+  .steps .dl svg { width: 13px; height: 13px; }
+  .ipanel .aside { display: block; margin-top: 3px; color: var(--muted); font-size: 12.5px; }
+  .ipanel .aside a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
   .ipanel .hint { margin-top: 9px; color: var(--muted); font-size: 12px; }
   .ipanel .hint b { color: var(--ink); font-weight: 600; }
 

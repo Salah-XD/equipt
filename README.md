@@ -13,9 +13,14 @@
 
 ## Install
 
-**On claude.ai / desktop** (no code — the way most operators use it): download a
-category bundle from the latest [Release](https://github.com/Salah-XD/equipt/releases),
-then in **Settings → Capabilities → Skills**, upload the skill folder. That's it.
+**On claude.ai / desktop** (no code — the way most operators use it):
+
+- **A whole category at once:** download a plugin zip (e.g. `equipt-marketing.zip`) from the
+  latest [Release](https://github.com/Salah-XD/equipt/releases), then **Customize → Personal plugins
+  (+) → Create plugin → Upload plugin** and select it — every skill in the plugin goes live.
+  *(Paid plans. The plugin's agents install too — they activate in Cowork & Claude Code.)*
+- **Just one skill:** grab that skill's `<name>.zip` and use **Customize → Skills (+) → Create skill
+  → Upload a skill** instead *(works on Free too)*.
 
 **In Claude Code** — via the plugin marketplace:
 

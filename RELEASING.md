@@ -33,8 +33,12 @@ Bump **both** to the same number in the same commit.
 
 **`v*` → `.github/workflows/release.yml`**
 - Runs `npm test`, `npm run lint`, `npm run build:check`; verifies the CLI tests and the site build.
-- Builds the 5 per-plugin skill bundles `dist/<plugin>-skills.zip`.
-- Publishes a **GitHub Release** with those zips (the claude.ai upload path + marketplace).
+- Builds **three** sets of zips:
+  - `dist/plugins/<plugin>.zip` — the whole plugin, **flat** (`.claude-plugin/plugin.json` + `skills/` + `agents/` at the zip **root**, no wrapper folder). This is claude.ai/desktop's **Customize → Personal plugins (+) → Create plugin → Upload plugin** path — installs every skill in the plugin at once (paid plans; the plugin also installs its agents, which activate in Cowork & Claude Code — greyed out in normal claude.ai chat).
+  - `dist/skills/<name>.zip` — one per skill, **wrapped** in a `<name>/` folder. claude.ai/desktop's **Customize → Skills (+) → Create skill → Upload a skill** path (one skill per upload; works on Free).
+  - `dist/<plugin>-skills.zip` — the 5 category bundles (`skills/<name>/…`). For unzipping into Claude Code's `~/.claude/`; not uploadable to claude.ai as-is.
+- Note the **opposite zip shapes**: a *plugin* zip has its manifest at the root; a *skill* zip is wrapped in one named folder. Don't swap them — claude.ai validates each.
+- Publishes a **GitHub Release** with all of those zips.
 - **Does not touch npm.**
 
 **`cli-v*` → `.github/workflows/cli-publish.yml`**

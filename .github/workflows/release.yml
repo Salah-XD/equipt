@@ -20,14 +20,30 @@ jobs:
         run: cd cli && npm ci && npm test
       - name: Verify site build
         run: cd site && npm ci && npm run build
-      - name: Build per-plugin skill zips
+      - name: Build release zips (per-plugin, per-skill, category bundles)
         run: |
-          mkdir -p dist
-          for d in plugins/*/skills; do
-            plugin=$(basename "$(dirname "$d")")
-            (cd "plugins/$plugin" && zip -r "../../dist/${plugin}-skills.zip" skills)
+          mkdir -p dist/skills dist/plugins
+          for p in plugins/*/; do
+            plugin=$(basename "$p")
+            # 1) Upload-plugin zip — FLAT: .claude-plugin/plugin.json + skills/ + agents/ at the zip
+            #    root. The shape claude.ai/desktop's "Customize → Plugins → Upload plugin" requires
+            #    (whole plugin — installs every skill at once). Manifest at root, NOT wrapped.
+            (cd "$p" && zip -rq "../../dist/plugins/${plugin}.zip" .)
+            if [ -d "${p}skills" ]; then
+              # 2) Category bundle (skills/<name>/...) — for unzipping into Claude Code's ~/.claude/.
+              (cd "$p" && zip -rq "../../dist/${plugin}-skills.zip" skills)
+              # 3) Per-skill zips — <name>/SKILL.md WRAPPED in a single folder. The shape
+              #    claude.ai/desktop's "Customize → Skills → Upload skill" requires (one per upload).
+              for s in "${p}skills"/*/; do
+                name=$(basename "$s")
+                (cd "${p}skills" && zip -rq "../../../dist/skills/${name}.zip" "$name")
+              done
+            fi
           done
-          ls -la dist
+          ls -la dist dist/skills dist/plugins
       - uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.zip
+          files: |
+            dist/*.zip
+            dist/skills/*.zip
+            dist/plugins/*.zip
