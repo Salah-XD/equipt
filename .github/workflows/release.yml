@@ -47,6 +47,8 @@ jobs:
         run: |
           tag="${GITHUB_REF_NAME}"
           gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "$tag" --generate-notes
+          # Ensure it's published and marked latest (a partially-failed prior run can leave a draft).
+          gh release edit "$tag" --draft=false --latest >/dev/null
           # Assets already on the release. Re-runs upload only what's MISSING, so even with 500+
           # per-skill zips we stay well under GitHub's primary and secondary rate limits, and a
           # partially-failed run can simply be re-triggered to finish.
