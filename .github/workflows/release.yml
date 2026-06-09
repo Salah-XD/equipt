@@ -41,9 +41,28 @@ jobs:
             fi
           done
           ls -la dist dist/skills dist/plugins
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            dist/*.zip
-            dist/skills/*.zip
-            dist/plugins/*.zip
+      - name: Publish GitHub Release (idempotent + throttled — avoids the secondary rate limit)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "$tag" --generate-notes
+          # Assets already on the release. Re-runs upload only what's MISSING, so even with 500+
+          # per-skill zips we stay well under GitHub's primary and secondary rate limits, and a
+          # partially-failed run can simply be re-triggered to finish.
+          existing="$(gh release view "$tag" --json assets -q '.assets[].name' 2>/dev/null || true)"
+          to_upload=()
+          for f in dist/*.zip dist/plugins/*.zip dist/skills/*.zip; do
+            [ -e "$f" ] || continue
+            printf '%s\n' "$existing" | grep -qxF "$(basename "$f")" || to_upload+=("$f")
+          done
+          total=${#to_upload[@]}
+          echo "Missing assets to upload: $total"
+          # Upload in small paced batches. Pushing 500+ assets at once is what trips the secondary
+          # rate limit, so cap each batch and pause between them.
+          for ((i=0; i<total; i+=20)); do
+            gh release upload "$tag" "${to_upload[@]:i:20}" --clobber
+            echo "  uploaded $(( i+20 < total ? i+20 : total ))/$total"
+            sleep 12
+          done
+          echo "Release $tag now has $(gh release view "$tag" --json assets -q '.assets | length') assets."
